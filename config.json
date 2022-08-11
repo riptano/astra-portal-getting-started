@@ -1,0 +1,12 @@
+{
+  "gettingStarted": {
+    "locale": "en-us",
+    "steps": [{
+      "contentSrc": "GettingStarted/step_1.md",
+      "destination": ""
+    }, {
+      "contentSrc": "GettingStarted/step_2.md",
+      "destination": ""
+    }]
+  }
+}

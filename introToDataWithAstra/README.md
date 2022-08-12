@@ -26,6 +26,7 @@ Ok, now that you have a database created the next step is to create tables to wo
 > Of course, we also need a `users` table - we will start with this one indeed.
 
 **✅ Step 2a. Navigate to the CQL Console and login to the database**
+
 <<LaunchCQLConsole>> 
 
 

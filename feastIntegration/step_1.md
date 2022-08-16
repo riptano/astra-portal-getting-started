@@ -1,5 +1,11 @@
 ## A - Overview
 
+```ini
+[beginner][Python][database][machine learning]
+```
+
+> ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to integrate Feast with Astra.**
+
 [Feast](https://feast.dev/)
 is a (Apache-licensed) open-source feature store for machine learning.
 Feast aims at providing a fast solution to the typical MLOps needs one encounters

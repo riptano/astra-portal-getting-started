@@ -6,6 +6,7 @@ A high level overview of Astra DB, Streaming, etc… to address those “assessi
 ```
 
 > ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to use Astra.**
+>
 > Time to complete: ~ 10 mins
 
 ## Create your first database

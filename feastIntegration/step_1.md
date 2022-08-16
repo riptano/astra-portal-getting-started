@@ -5,6 +5,7 @@
 ```
 
 > ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to integrate Feast with Astra.**
+>
 > Time to complete: ~ 10 mins
 
 [Feast](https://feast.dev/)

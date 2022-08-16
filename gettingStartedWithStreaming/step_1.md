@@ -4,6 +4,7 @@
 ```
 
 > ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to use Astra Streaming and Apache Pulsar.**
+>
 > Time to complete: ~ 15 mins
 
 

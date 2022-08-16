@@ -1,5 +1,5 @@
 # Consume data
-Consume the messages you’re publishing: Java, Python, Golang, Node.js, WebSocket, JMS.
+Consume the messages you’re publishing: [Java], [Python], [Golang], [Node.js], [WebSocket], [JMS].
 
 [Java]: https://astra.datastax.com/org/bee2add4-3a5b-4818-852d-b235e4690bec/streaming/pulsar-gcp-useast1/tenants/quickstart/connect/java/consumer
 

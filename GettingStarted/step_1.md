@@ -23,7 +23,7 @@ Ille inter has **saecula** locum: aliamve bracchia, sacrilegos viridi!
 Texitur arida mox retenta **et hunc** argenteus primum e. Plaga exit Iunone
 saxaque!
 
-<<CreateDBButton>>
+<<CQLConsole>>
 
 ## Good job, let's do another
 

@@ -1,0 +1,19 @@
+{
+  "name": "astra-portal-getting-started",
+  "version": "0.1.0",
+  "description": "Getting Started Guides Content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riptano/astra-portal-getting-started.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riptano/astra-portal-getting-started/issues"
+  },
+  "homepage": "https://github.com/riptano/astra-portal-getting-started#readme"
+}

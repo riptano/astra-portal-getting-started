@@ -6,7 +6,7 @@
       "description": "This is a cool guide for getting started",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
-      "reccomendedLinks": [{
+      "recommendedLinks": [{
         "url": "https://astra.com",
         "text": "Astra Dashboard"
       }, {

@@ -1,12 +1,25 @@
 {
-  "gettingStarted": {
-    "locale": "en-us",
-    "steps": [{
-      "contentSrc": "GettingStarted/step_1.md",
-      "destination": ""
-    }, {
-      "contentSrc": "GettingStarted/step_2.md",
-      "destination": ""
-    }]
-  }
+  "guides": [{
+    "gettingStarted": {
+      "locale": "en-us",
+      "title": "Getting Started with Astra",
+      "description": "This is a cool guide for getting started",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "reccomendedLinks": [{
+        "url": "https://astra.com",
+        "text": "Astra Dashboard"
+      }, {
+        "url": "https://astra.com/createDB",
+        "text": "Create Database"
+      }, {
+        "url": "https://astra.com/zdm",
+        "text": "Zero Downtime Migration"
+      }],
+      "steps": [
+        "GettingStarted/step_1.md",
+        "GettingStarted/step_2.md"
+      ]
+    }
+  }]
 }

@@ -2,19 +2,17 @@
   "guides": [{
     "gettingStarted": {
       "locale": "en-us",
-      "title": "Getting Started with Astra",
-      "description": "This is a cool guide for getting started",
+      "title": "Getting Started with Astra DB 🌱",
+      "description": "Understand Astra and how it differs from open source Apache Cassandra.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{
-        "url": "https://astra.com",
-        "text": "Astra Dashboard"
-      }, {
-        "url": "https://astra.com/createDB",
-        "text": "Create Database"
-      }, {
-        "url": "https://astra.com/zdm",
-        "text": "Zero Downtime Migration"
+        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
+        "text": "Intro to Apache Cassandra for Developers"
+      }],
+      "recommendedGuides": [{
+        "url": "https://astra.com/guides/intro-to-data-with-astra-crud",
+        "text": "Intro to data with Astra (CRUD)"
       }],
       "steps": [
         "GettingStarted/step_1.md",

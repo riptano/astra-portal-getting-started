@@ -7,6 +7,9 @@
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html",
+        "text": "Developing with Stargate APIs on Astra"
+      }, {
         "url": "https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_database_limits",
         "text": "Astra DB database guardrails and limits"
       }],

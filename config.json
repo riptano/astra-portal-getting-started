@@ -1,22 +1,42 @@
 {
   "guides": [{
-    "gettingStarted": {
+    "gettingStartedWithAstraDB": {
       "locale": "en-us",
       "title": "Getting Started with Astra DB 🌱",
       "description": "Understand Astra and how it differs from open source Apache Cassandra.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{
-        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
-        "text": "Intro to Apache Cassandra for Developers"
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_database_limits",
+        "text": "Astra DB database guardrails and limits"
       }],
       "recommendedGuides": [{
         "url": "https://astra.com/guides/intro-to-data-with-astra-crud",
         "text": "Intro to data with Astra (CRUD)"
       }],
       "steps": [
-        "GettingStarted/step_1.md",
-        "GettingStarted/step_2.md"
+        "gettingStartedWithAstra/step_1.md",
+        "gettingStartedWithAstra/step_2.md"
+      ]
+    },
+    "introToDataWithAstraDB": {
+      "locale": "en-us",
+      "title": "Intro to data with Astra 🔌",
+      "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
+        "text": "Intro to Apache Cassandra for Developers"
+      }],
+      "recommendedGuides": [{
+        "url": "https://astra.com/guides/astra-db-application-quickstart",
+        "text": "Astra DB application quickstart (Python)"
+      }],
+      "steps": [
+        "introToDataWithAstra/step_1.md",
+        "introToDataWithAstra/step_2.md",
+        "introToDataWithAstra/step_3.md"
       ]
     }
   }]

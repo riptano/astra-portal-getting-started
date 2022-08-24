@@ -14,7 +14,7 @@ Where all of your database tables are stored within the **database**.
 _If you're already an Apache Cassandra® user this is exactly the same as the keyspaces you are accustomed to and use a replication factor of 3._
 
 ### 3. Cloud deployment **Provider** 
-A list of the available cloud providers. Currently, Astra offers deployment to all three major providers **Google Cloud**, **Amazon Web Services**, and **Microsoft Azure**. 
+A list of the available cloud providers. Currently, Astra offers deployment to all three major providers `Google Cloud`, `Amazon Web Services`, and `Microsoft Azure`. 
 
 _Free tier users are limited to selections with Google Cloud._
 

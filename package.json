@@ -1,6 +1,6 @@
 {
   "name": "@riptano/astra-portal-getting-started",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Getting Started Guides Content",
   "main": "index.js",
   "scripts": {

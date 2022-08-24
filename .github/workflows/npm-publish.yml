@@ -13,7 +13,8 @@ jobs:
           node-version: 16
       - run: git config --global user.name 'Jack Byrne'
       - run: git config --global user.email 'jack.byrne@datastax.com'
-      - run: npm version patch
+      - run: npm version patch -m "[RELEASE] %s"
+      - run: git push
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}

@@ -24,4 +24,4 @@ The geographic region within the chosen cloud provider. Just pick one close to y
 _No cloud provider accounts are needed for any of the options presented. Astra handles all cloud provider deployments and details._
 
 
-### Click [HERE](https://astra.datastax.com/createDatabase) and come back here once you're done.
+### Click [HERE](https://astra.datastax.com/createDatabase) and come back once you're done.

@@ -1,6 +1,10 @@
-# Create your first database
-DataStax Astra DB is built on Apache Cassandra, the most reliable and scalable database on the freaking planet. Astra removes the pain of managing your own database and does it all for you. Just click a button, create a database, and grow your application without bounds. We have your back.
+# Learn about guardrails and how those affect databases
+Databases created within Astra DB are defined with a set of limits, called **guardrails**, that foster good practices and ensure your databases run optimally.
 
-Let's start by creating your first Astra database. Just click the link/button/whatever below to get started and come back here once you're done.
+If you're new to Apache Cassandra® and Astra...
 
-### Click [HERE](https://astra.datastax.com/createDatabase).
+If you're an experienced open source Apache Cassandra® user...
+
+We strongly encourage you to [read our documentation on guardrails](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits) for details.
+
+_Existing open source Apache Cassandra® users might want to check out this [CEP](https://cwiki.apache.org/confluence/display/CASSANDRA/CEP-3%3A+Guardrails). Guardrails are planned..._

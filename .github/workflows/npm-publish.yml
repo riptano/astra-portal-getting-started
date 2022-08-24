@@ -1,5 +1,8 @@
 name: NPM Publish
-on: push
+on:
+  push:
+    branches:
+      - main
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -8,6 +11,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: git config --global user.name 'Jack Byrne'
+      - run: git config --global user.email 'jack.byrne@datastax.com'
+      - run: npm version patch
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          registry: https://npm.pkg.github.com

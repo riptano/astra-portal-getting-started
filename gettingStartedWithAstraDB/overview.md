@@ -14,6 +14,10 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)](http
 _(This came from docs. Admittedly, it sounds a lille markety. Might change this)_
 
 ### In this guide, we will
-- Create an Astra database
+- Learn what an Astra database is and what it provides
 - Learn about guardrails and how those affect databases
 - Learn what application changes are needed to connect to Astra DB
+- Create an Astra database
+
+### Prerequisites
+This is a placeholder to see what it looks like

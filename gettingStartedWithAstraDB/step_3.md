@@ -1,1 +1,1 @@
-# Learn what application changes are needed to connect to Astra DB
+## Learn what application changes are needed to connect to Astra DB

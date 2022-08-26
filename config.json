@@ -1,8 +1,8 @@
 {
   "guides": [{
-    "gettingStartedWithAstraDB": {
+    "overviewOfAstraDB": {
       "locale": "en-us",
-      "title": "Getting Started with Astra DB 🌱",
+      "title": "Overview of Astra DB 🌱",
       "description": "Understand Astra and how it differs from open source Apache Cassandra.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
@@ -19,7 +19,9 @@
       }],
       "steps": [
         "gettingStartedWithAstraDB/step_1.md",
-        "gettingStartedWithAstraDB/step_2.md"
+        "gettingStartedWithAstraDB/step_2.md",
+        "gettingStartedWithAstraDB/step_3.md",
+        "gettingStartedWithAstraDB/step_4.md"
       ]
     },
     "introToDataWithAstraDB": {

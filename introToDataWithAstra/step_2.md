@@ -1,4 +1,4 @@
-## 2. Create tables
+# Create tables
 Ok, now that you have a database created the next step is to create tables to work with. 
 
 > _General Methodology Note_: We'll work with a (rather simplified) "chat application" called **ChatSandra**:

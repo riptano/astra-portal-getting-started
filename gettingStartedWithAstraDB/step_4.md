@@ -1,4 +1,4 @@
-# Create an Astra database 🔥
+## Create an Astra database 🔥
 Let's start by creating an Astra database. Click the link/button/whatever below and follow the prompts to get started.
 
 You'll be presented with four options

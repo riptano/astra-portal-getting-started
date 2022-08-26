@@ -1,4 +1,4 @@
-# Learn about guardrails and how those affect databases
+## Learn about guardrails and how those affect databases
 Databases created within Astra DB are defined with a set of limits, called **guardrails**, that foster good practices and ensure your databases run optimally.
 
 If you're new to Apache Cassandra® and Astra...

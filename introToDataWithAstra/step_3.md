@@ -1,4 +1,4 @@
-## 3. Execute CRUD operations
+# Execute CRUD operations
 CRUD stands for "**create, read, update, and delete**". Simply put, they are the basic types of commands you need to work with ANY database in order to maintain data for your applications.
 
 **✅ Step 3a. (C)RUD = create = insert data, users**

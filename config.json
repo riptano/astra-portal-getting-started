@@ -14,7 +14,7 @@
         "text": "Astra DB database guardrails and limits"
       }],
       "recommendedGuides": [{
-        "url": "https://astra.com/guides/intro-to-data-with-astra-crud",
+        "url": "https://astra.com/guide/introToDataWithAstraDB",
         "text": "Intro to data with Astra (CRUD)"
       }],
       "steps": [
@@ -35,7 +35,7 @@
         "text": "Intro to Apache Cassandra for Developers"
       }],
       "recommendedGuides": [{
-        "url": "https://astra.com/guides/astra-db-application-quickstart",
+        "url": "https://astra.com/guide/astraDbApplicationQuickstart",
         "text": "Astra DB application quickstart (Python)"
       }],
       "steps": [

@@ -18,8 +18,8 @@
         "text": "Intro to data with Astra (CRUD)"
       }],
       "steps": [
-        "gettingStartedWithAstra/step_1.md",
-        "gettingStartedWithAstra/step_2.md"
+        "gettingStartedWithAstraDB/step_1.md",
+        "gettingStartedWithAstraDB/step_2.md"
       ]
     },
     "introToDataWithAstraDB": {

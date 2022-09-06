@@ -1,5 +1,5 @@
 {
-  "guides": [{
+  "guides": {
     "overviewOfAstraDB": {
       "locale": "en-us",
       "title": "Overview of Astra DB 🌱",
@@ -19,9 +19,7 @@
         "text": "Intro to data with Astra (CRUD)"
       }],
       "contentSrc": "gettingStartedWithAstraDB/readme.md",
-      "steps": [
-        "gettingStartedWithAstraDB/readme.md"
-      ]
+      "stepCount": 4
     },
     "introToDataWithAstraDB": {
       "locale": "en-us",
@@ -43,5 +41,5 @@
         "introToDataWithAstra/step_3.md"
       ]
     }
-  }]
+  }
 }

@@ -1,11 +1,4 @@
-# Overview of Astra DB
-```ini
-[beginner][database][apache cassandra]
-```
-
-> ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to use Astra DB.**
->
-> Time to complete: ~ 10 mins
+# Overview
 
 Understand Astra DB and how it differs from its underlying technology, Apache Cassandra®.
 
@@ -17,8 +10,10 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)] to g
 - What changes do I need to connect to Astra DB?
 - Create an Astra database
 
-### ~~Prerequisites~~
-~~This is a placeholder to see what it looks like~~
+# Prerequisites
+This is a placeholder to see what it looks like
+
+# Guide
 
 ## 1  What do I get with Astra DB?
 DataStax [Astra DB] is built on Apache Cassandra®, the most reliable and scalable database in the world. **Astra DB** removes the pain of implementing and managing your own Apache Cassandra database. In addition of removing that complexity, we’ve also built a whole set of Drivers, APIs, and Integrations that will help you easily connect to your application.

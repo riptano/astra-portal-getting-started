@@ -3,7 +3,7 @@
     "overviewOfAstraDB": {
       "locale": "en-us",
       "title": "Overview of Astra DB 🌱",
-      "description": "Understand Astra and how it differs from open source Apache Cassandra.",
+      "description": "Understand Astra DB and how it differs from its underlying technology, Apache Cassandra®.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{
@@ -18,11 +18,7 @@
         "text": "Intro to data with Astra (CRUD)"
       }],
       "steps": [
-        "gettingStartedWithAstraDB/readme.md",
-        "gettingStartedWithAstraDB/step_1.md",
-        "gettingStartedWithAstraDB/step_2.md",
-        "gettingStartedWithAstraDB/step_3.md",
-        "gettingStartedWithAstraDB/step_4.md"
+        "gettingStartedWithAstraDB/readme.md"
       ]
     },
     "introToDataWithAstraDB": {

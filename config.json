@@ -40,6 +40,27 @@
         "introToDataWithAstra/step_2.md",
         "introToDataWithAstra/step_3.md"
       ]
+    },
+    "astraPortalGuideTemplate": {
+      "locale": "en-us",
+      "title": "Astra Portal Getting Started TEMPLATE 🎇",
+      "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
+        "text": "How to create branches in Git"
+      }, {
+        "url": "https://github.com/markdown-templates/markdown-emojis",
+        "text": "All the markdown emojis"
+      }],
+      "recommendedGuides": [{
+        "url": "https://astra.com/guide/overviewOfAstraDB",
+        "text": "Overview of Astra DB"
+      }],
+      "steps": [
+        "astraPortalGuideTemplate/readme.md"
+      ]
     }
   }]
 }

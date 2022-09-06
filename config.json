@@ -17,6 +17,7 @@
         "url": "https://astra.com/guide/introToDataWithAstraDB",
         "text": "Intro to data with Astra (CRUD)"
       }],
+      "contentSrc": "gettingStartedWithAstraDB/readme.md",
       "steps": [
         "gettingStartedWithAstraDB/readme.md",
         "gettingStartedWithAstraDB/step_1.md",

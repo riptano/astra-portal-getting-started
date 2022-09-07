@@ -9,8 +9,8 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)] to g
 - What changes do I need to connect to Astra DB?
 - Create an Astra database
 
-# ~~Prerequisites~~
-~~This is a placeholder to see what it looks like~~
+# Prerequisites
+This is a placeholder to see what it looks like
 
 # Guide
 ## 1  What do I get with Astra DB?

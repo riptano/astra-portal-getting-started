@@ -1,1 +1,0 @@
-## What changes do I need to connect to Astra DB?

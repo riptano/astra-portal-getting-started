@@ -6,7 +6,7 @@
       "description": "Understand Astra DB and how it differs from its underlying technology, Apache Cassandra®.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
-      "tags": ["beginner","database","apache cassandra"],
+      "tags": ["beginner","database","Apache Cassandra"],
       "recommendedLinks": [{
         "url": "https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html",
         "text": "Developing with Stargate APIs on Astra"
@@ -20,32 +20,32 @@
       "contentSrc": "gettingStartedWithAstraDB/readme.md",
       "stepCount": 4
     },
+
     "introToDataWithAstraDB": {
       "locale": "en-us",
       "title": "Intro to data with Astra 🔌",
       "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
       "skillLevel": "Beginner",
       "timeToComplete": "15 minutes",
+      "tags": ["beginner","CQL","database","Apache Cassandra"],
       "recommendedLinks": [{
         "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
         "text": "Intro to Apache Cassandra for Developers"
       }],
-      "recommendedGuides": [{
-        "url": "https://astra.com/guide/astraDbApplicationQuickstart",
-        "text": "Astra DB application quickstart (Python)"
-      }],
-      "steps": [
-        "introToDataWithAstra/step_1.md",
-        "introToDataWithAstra/step_2.md",
-        "introToDataWithAstra/step_3.md"
-      ]
+      "recommendedGuides": [
+        "astraDbApplicationQuickstart"
+      ],
+      "contentSrc": "introToDataWithAstra/readme.md",
+      "stepCount": 3
     },
+    
     "astraPortalGuideTemplate": {
       "locale": "en-us",
       "title": "Astra Portal Getting Started TEMPLATE 🎇",
       "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
+      "tags": ["beginner","template","howto"],
       "recommendedLinks": [{
         "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
         "text": "How to create branches in Git"
@@ -53,13 +53,11 @@
         "url": "https://github.com/markdown-templates/markdown-emojis",
         "text": "All the markdown emojis"
       }],
-      "recommendedGuides": [{
-        "url": "https://astra.com/guide/overviewOfAstraDB",
-        "text": "Overview of Astra DB"
-      }],
-      "steps": [
-        "astraPortalGuideTemplate/readme.md"
-      ]
+      "recommendedGuides": [
+        "overviewOfAstraDB"
+      ],
+      "contentSrc": "astraPortalGuideTemplate/readme.md",
+      "stepCount": 5
     }
   }
 }

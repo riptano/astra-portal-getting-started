@@ -12,7 +12,7 @@ This is a placeholder to see what it looks like
 # Guide
 ## 1 Create your Astra DB instance
 
-<<CreateDBButton>> 
+<<createDatabase>> 
 ```
 PARAMS NEEDED
 databaseName: workshops

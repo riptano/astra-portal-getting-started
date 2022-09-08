@@ -27,7 +27,6 @@
       "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
       "skillLevel": "Beginner",
       "timeToComplete": "15 minutes",
-      "tags": ["beginner","CQL","database","Apache Cassandra"],
       "recommendedLinks": [{
         "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
         "text": "Intro to Apache Cassandra for Developers"
@@ -38,14 +37,13 @@
       "contentSrc": "introToDataWithAstra/readme.md",
       "stepCount": 3
     },
-    
+
     "astraPortalGuideTemplate": {
       "locale": "en-us",
       "title": "Astra Portal Getting Started TEMPLATE 🎇",
       "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
-      "tags": ["beginner","template","howto"],
       "recommendedLinks": [{
         "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
         "text": "How to create branches in Git"

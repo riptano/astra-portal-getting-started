@@ -1,11 +1,12 @@
 {
-  "guides": [{
+  "guides": {
     "overviewOfAstraDB": {
       "locale": "en-us",
       "title": "Overview of Astra DB 🌱",
       "description": "Understand Astra DB and how it differs from its underlying technology, Apache Cassandra®.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
+      "tags": ["beginner","database","apache cassandra"],
       "recommendedLinks": [{
         "url": "https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html",
         "text": "Developing with Stargate APIs on Astra"
@@ -13,13 +14,11 @@
         "url": "https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_database_limits",
         "text": "Astra DB database guardrails and limits"
       }],
-      "recommendedGuides": [{
-        "url": "https://astra.com/guide/introToDataWithAstraDB",
-        "text": "Intro to data with Astra (CRUD)"
-      }],
-      "steps": [
-        "gettingStartedWithAstraDB/readme.md"
-      ]
+      "recommendedGuides": [
+        "introToDataWithAstraDB"
+      ],
+      "contentSrc": "gettingStartedWithAstraDB/readme.md",
+      "stepCount": 4
     },
     "introToDataWithAstraDB": {
       "locale": "en-us",
@@ -62,5 +61,5 @@
         "astraPortalGuideTemplate/readme.md"
       ]
     }
-  }]
+  }
 }

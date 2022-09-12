@@ -32,7 +32,7 @@
         "text": "Intro to Apache Cassandra for Developers"
       }],
       "recommendedGuides": [
-        "astraDbApplicationQuickstart"
+        "overviewOfAstraDB"
       ],
       "contentSrc": "introToDataWithAstra/readme.md",
       "stepCount": 3
@@ -54,7 +54,7 @@
       "recommendedGuides": [
         "overviewOfAstraDB"
       ],
-      "contentSrc": "astraPortalGuideTemplate/readme.md",
+      "contentSrc": "astraPortalGuideTemplate/README.md",
       "stepCount": 5
     }
   }

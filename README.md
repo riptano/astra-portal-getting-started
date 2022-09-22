@@ -87,18 +87,28 @@ Glad you asked. **Actions** are special options that allow you to easily bring a
 An example is database creation. If you want a user to create a database then use ```<<createDatabase>>``` directly in markdown. Again, use **EDIT** mode to see a real example.
 <<createDatabase>>
 
-If you've done this correctly in markdown you'll only see "<>" rendered. However, within an Astra guide this will translate into a fully operational button with status updates and other functionality. **NOTE** that **actions** will potentially bring users into a new flow to complete the **action**, but will then bring users back to the guide once exited.
+If you've done this correctly in markdown you'll only see the rendered action. Within an Astra guide this will translate into a fully operational button or link with status updates and other functionality. **NOTE** that **actions** will potentially bring users into a new flow to complete the **action**, but will then bring users back to the guide once exited.
 
-### Currently available **ACTIONS**
+### Currently available **ACTIONS** _(these will only render within Astra)_
 ```<<createDatabase>>```
+
+<<createDatabase>>
 
 ```<<createToken>>```
 
+<<createToken>>
+
 ```<<launchCQLConsole>>```
+
+<<launchCQLConsole>>
 
 ```<<downloadSCB>>```
 
+<<downloadSCB>>
+
 ```<<launchDataLoader>>```
+
+<<launchDataLoader>>
 
 ## 4 Configuring your guide
 Ok, so now you've got the basics down and have some content. Great, before you submit, there's one more thing for you to do. You must configure your guide.

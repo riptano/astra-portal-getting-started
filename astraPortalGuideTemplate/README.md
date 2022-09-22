@@ -5,7 +5,15 @@ What will they learn, what will they get out of it?
 Notice the formatting being used. 
 Title, any related tags, difficulty, time to complete, any prerequisites
  -->
-# Overview
+# Astra Portal Getting Started TEMPLATE
+```ini
+[beginner][database][apache cassandra]
+```
+
+> ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to write "getting started" guides for DataStax Astra.**
+>
+> Time to complete: ~ 10 mins
+
 Hiya. Welcome to the Astra getting started guide template. Use this template to help "guide" you through authoring "getting started" guides within DataStax Astra. ;)
 
 "Getting Started" guides are a unique way to help Astra users learn about a topic or how to perform a set of actions. The goal is to make it dead simple for a user to run through a guide and achieve some goal.
@@ -18,11 +26,11 @@ Feel free to copy this readme.md in its entirety and use within your guide to ge
 - How to get started
 - Where to put your guide
 - How to format guides and create actions
+- Configuring your guide
 - What NOT to do 😬
 - How to submit a guide
 
-# Prerequisites
-This is a placeholder to see what it looks like
+**Prerequisites**
 
 **If you don't have any prerequisite content just remove this section altogether.**
 
@@ -36,8 +44,6 @@ This section contains items that a user may need from outside of Astra. Examples
 <!--
 You can use inline links (install) or provide them later with a named reference (Download). Either is fine. Up to you.
  -->
-
-# Guide
 
 <!-- 
 For each section use ##, the number of the section itself, and the section title. These will automatically
@@ -81,20 +87,73 @@ Glad you asked. **Actions** are special options that allow you to easily bring a
 An example is database creation. If you want a user to create a database then use ```<<createDatabase>>``` directly in markdown. Again, use **EDIT** mode to see a real example.
 <<createDatabase>>
 
-If you've done this correctly in markdown you'll only see "<>" rendered. However, within an Astra guide this will translate into a fully operational button with status updates and other functionality. **NOTE** that **actions** will potentially bring users into a new flow to complete the **action**, but will then bring users back to the guide once exited.
+If you've done this correctly in markdown you'll only see the rendered action. Within an Astra guide this will translate into a fully operational button or link with status updates and other functionality. **NOTE** that **actions** will potentially bring users into a new flow to complete the **action**, but will then bring users back to the guide once exited.
 
-### Currently available **ACTIONS**
+### Currently available **ACTIONS** _(these will only render within Astra)_
 ```<<createDatabase>>```
+
+<<createDatabase>>
 
 ```<<createToken>>```
 
+<<createToken>>
+
 ```<<launchCQLConsole>>```
+
+<<launchCQLConsole>>
 
 ```<<downloadSCB>>```
 
+<<downloadSCB>>
+
 ```<<launchDataLoader>>```
 
-## 4 What NOT to do 😬
+<<launchDataLoader>>
+
+## 4 Configuring your guide
+Ok, so now you've got the basics down and have some content. Great, before you submit, there's one more thing for you to do. You must configure your guide.
+
+### Metadata
+
+### Resource URLs
+While you may include inline links for content, guides also include explicit resource call outs in the right-hand side navigation. These are for links you really want to bring attention to and should be constrained to just a few links at most.
+
+### Recommended guides
+If your guide is part of a larger set or you want to point users to a different guide upon completion of your guide use the "recommendedGuides" property to do this.
+
+```json
+    "astraPortalGuideTemplate": {
+      "locale": "en-us",
+      "title": "Astra Portal Getting Started TEMPLATE 🎇",
+      "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
+        "text": "How to create branches in Git"
+      }, {
+        "url": "https://github.com/markdown-templates/markdown-emojis",
+        "text": "All the markdown emojis"
+      }],
+```
+```diff
++      "recommendedGuides": [{
++        "url": "https://astra.com/guide/overviewOfAstraDB",
++        "text": "Overview of Astra DB"
++      }],
+```
+```json
+      "steps": [
+        "astraPortalGuideTemplate/readme.md"
+      ]
+    }
+```
+
+
+## 5 What NOT to do 😬
 We ask that you don't include artifacts that go stale, like UI screenshots that change over time. Our goal is to provide guides that are as maintenance free as possible for both you and our users. Nothing like using a guide that was great a year ago only to find out nothing in it works halfway through.
 
-## 5 How to submit a guide
+## 6 How to submit a guide
+```shell
+git push --set-upstream origin yourbranchnamehere
+```

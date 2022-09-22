@@ -56,6 +56,32 @@
       ],
       "contentSrc": "astraPortalGuideTemplate/README.md",
       "stepCount": 6
+    },
+
+    "loadDataIntroAstraDB": {
+      "locale": "en-us",
+      "title": "Load data into your Astra database 📂",
+      "description": "Review various ways to load data into your database.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/manage/upload/astra-data-loader.html",
+        "text": "Use Data Loader in Astra Portal (small datasets < 40MB)"
+      }, {
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-dsbulk.html",
+        "text": "Use DSBulk to load data (medium to large datasets)"
+      }, {
+        "url": "https://awesome-astra.github.io/docs/pages/astra/astra-cli/#8-dsbulk",
+        "text": "Use DSBulk to with Astra Shell (ease of use)"
+      }, {
+        "url": "https://github.com/datastaxdevs/workshop-introduction-to-machine-learning/blob/cedrick-cli/README.md",
+        "text": "DSBulk with Astra HowTo workshop"
+      }],
+      "recommendedGuides": [
+        "introToDataWithAstraDB"
+      ],
+      "contentSrc": "loadDataIntoAstraDB/README.md",
+      "stepCount": 3
     }
   }
 }

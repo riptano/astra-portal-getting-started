@@ -4,7 +4,7 @@ The overview should provide users a high level explanation of what your guide is
 What will they learn, what will they get out of it?
  -->
 # Overview
-Hiya. Welcome to the Astra getting started guide template. Use this template to help "guide" you through authoring "getting started" guides within DataStax Astra. ;)
+Hiya. Welcome to the Astra getting started guide template. Use this template to help "guide" you through authoring "getting started" guides within DataStax Astra. 😏
 
 "Getting Started" guides are a unique way to help Astra users learn about a topic or how to perform a set of actions. The goal is to make it dead simple for a user to run through a guide and achieve some goal.
 
@@ -106,25 +106,25 @@ Ok, so now you've got the basics down and have some content. Great, before you s
 ### Metadata
 Each guide will have it's own section within the config.json. The metadata for THIS guide template looks like this.
 ```json
-    "astraPortalGuideTemplate": {
-      "locale": "en-us",
-      "title": "Astra Portal Getting Started TEMPLATE 🎇",
-      "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
-        "text": "How to create branches in Git"
-      }, {
-        "url": "https://github.com/markdown-templates/markdown-emojis",
-        "text": "All the markdown emojis"
-      }],
-      "recommendedGuides": [
-        "overviewOfAstraDB"
-      ],
-      "contentSrc": "astraPortalGuideTemplate/README.md",
-      "stepCount": 6
-    }
+"astraPortalGuideTemplate": {
+  "locale": "en-us",
+  "title": "Astra Portal Getting Started TEMPLATE 🎇",
+  "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
+  "skillLevel": "Beginner",
+  "timeToComplete": "10 minutes",
+  "recommendedLinks": [{
+    "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
+    "text": "How to create branches in Git"
+  }, {
+    "url": "https://github.com/markdown-templates/markdown-emojis",
+    "text": "All the markdown emojis"
+  }],
+  "recommendedGuides": [
+    "overviewOfAstraDB"
+  ],
+  "contentSrc": "astraPortalGuideTemplate/README.md",
+  "stepCount": 6
+}
 ```
 
 Again, just use this one as an example for your own guide.
@@ -141,7 +141,11 @@ This one is important. Not only is it the unique name given to your guide, but i
 By setting this property the route in Astra will be "https://astra.datastax.com/guide/astraPortalGuideTemplate"
 
 #### Guide details
-The guide detail section will give users high level information about your guide. Things like the `title`, a short `description` no longer than **PUT CHAR MAX HERE**, `skill level`, and approx. `time to complete`.
+The guide detail section will give users high level information about your guide. Things like the `title`, a short `description`, `skill level`, and approx. `time to complete`.
+
+The `title` should conform to **20** chars min, **73** chars max.
+
+The `description` should conform to **40** chars min, **110** chars max.
 ```json
 "locale": "en-us", // just use this value for now
 "title": "Astra Portal Getting Started TEMPLATE 🎇",

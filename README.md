@@ -4,7 +4,7 @@ The overview should provide users a high level explanation of what your guide is
 What will they learn, what will they get out of it?
  -->
 # Overview
-Hiya. Welcome to the Astra getting started guide template. Use this template to help "guide" you through authoring "getting started" guides within DataStax Astra. ;)
+Hiya. Welcome to the Astra getting started guide template. Use this template to help "guide" you through authoring "getting started" guides within DataStax Astra. 😏
 
 "Getting Started" guides are a unique way to help Astra users learn about a topic or how to perform a set of actions. The goal is to make it dead simple for a user to run through a guide and achieve some goal.
 
@@ -104,42 +104,93 @@ If you've done this correctly in markdown you'll only see the rendered action. W
 Ok, so now you've got the basics down and have some content. Great, before you submit, there's one more thing for you to do. You must configure your guide.
 
 ### Metadata
+Each guide will have it's own section within the config.json. The metadata for THIS guide template looks like this.
+```json
+"astraPortalGuideTemplate": {
+  "locale": "en-us",
+  "title": "Astra Portal Getting Started TEMPLATE 🎇",
+  "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
+  "skillLevel": "Beginner",
+  "timeToComplete": "10 minutes",
+  "recommendedLinks": [{
+    "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
+    "text": "How to create branches in Git"
+  }, {
+    "url": "https://github.com/markdown-templates/markdown-emojis",
+    "text": "All the markdown emojis"
+  }],
+  "recommendedGuides": [
+    "overviewOfAstraDB"
+  ],
+  "contentSrc": "astraPortalGuideTemplate/README.md",
+  "stepCount": 6
+}
+```
 
-### Resource URLs
-While you may include inline links for content, guides also include explicit resource call outs in the right-hand side navigation. These are for links you really want to bring attention to and should be constrained to just a few links at most.
+Again, just use this one as an example for your own guide.
 
-### Recommended guides
-If your guide is part of a larger set or you want to point users to a different guide upon completion of your guide use the "recommendedGuides" property to do this.
+### Breaking it down
+Ok, let's break each property down to see what they do.
+
+#### Guide name AND route
+This one is important. Not only is it the unique name given to your guide, but it determines the route to the guide within Astra. **Case matters!** 
 
 ```json
-    "astraPortalGuideTemplate": {
-      "locale": "en-us",
-      "title": "Astra Portal Getting Started TEMPLATE 🎇",
-      "description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
-        "text": "How to create branches in Git"
-      }, {
-        "url": "https://github.com/markdown-templates/markdown-emojis",
-        "text": "All the markdown emojis"
-      }],
+"astraPortalGuideTemplate": {
 ```
-```diff
-+      "recommendedGuides": [{
-+        "url": "https://astra.com/guide/overviewOfAstraDB",
-+        "text": "Overview of Astra DB"
-+      }],
-```
+By setting this property the route in Astra will be "https://astra.datastax.com/guide/astraPortalGuideTemplate"
+
+#### Guide details
+The guide detail section will give users high level information about your guide. Things like the `title`, a short `description`, `skill level`, and approx. `time to complete`.
+
+The `title` should conform to **20** chars min, **73** chars max.
+
+The `description` should conform to **40** chars min, **110** chars max.
 ```json
-      "steps": [
-        "astraPortalGuideTemplate/readme.md"
-      ]
-    }
+"locale": "en-us", // just use this value for now
+"title": "Astra Portal Getting Started TEMPLATE 🎇",
+"description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
+"skillLevel": "Beginner",
+"timeToComplete": "10 minutes",
+```
+Each of these values will then be automatically rendered within Astra, both in the title cards displayed on the home page and within the guides themselves.
+
+#### Recommended Links
+While you may include inline links for content, guides also include explicit resource call outs in the right-hand side navigation. These are for links you really want to bring attention to and should be constrained to just a few links at most. 
+
+The example below contains two links that will be displayed under the auto-generated table of contents to the right.
+```json
+"recommendedLinks": [{
+  "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
+  "text": "How to create branches in Git"
+}, {
+  "url": "https://github.com/markdown-templates/markdown-emojis",
+  "text": "All the markdown emojis"
+}],
 ```
 
+#### Recommended guides
+If your guide is part of a larger set or you want to point users to a different guide upon completion of your guide use the "recommendedGuides" property to do this. Similar to recommended links you can provide multiple guides if you wise. 
 
+Values you use within the `recommendGuides` section **MUST MATCH** guide names from the config.json **EXACTLY**.
+
+```json
+"recommendedGuides": [
+  "overviewOfAstraDB", "introToDataWithAstraDB"
+],
+```
+
+#### Source and step count
+Finally, we come to the `contentSrc` and `stepCount` properties. 
+
+The `contentSrc` property tells the guide renderer where in the repository your guide exists. If this value is incorrect your guide will not render. 
+
+The `stepCount` property tells the renderer how many steps you have in your guide. For example, this guide has six steps ending with "6 How to submit a guide". So, the `stepCount` in this case should be "6". The renderer will do the rest and auto-generate the table of contents and all that.
+```json
+    "contentSrc": "astraPortalGuideTemplate/README.md",
+    "stepCount": 6
+}
+```
 ## 5 What NOT to do 😬
 We ask that you don't include artifacts that go stale, like UI screenshots that change over time. Our goal is to provide guides that are as maintenance free as possible for both you and our users. Nothing like using a guide that was great a year ago only to find out nothing in it works halfway through.
 

@@ -17,7 +17,7 @@
       "recommendedGuides": [
         "introToDataWithAstraDB"
       ],
-      "contentSrc": "overviewOfAstraDB/readme.md",
+      "contentSrc": "overviewOfAstraDB/README.md",
       "stepCount": 4
     },
 
@@ -34,7 +34,7 @@
       "recommendedGuides": [
         "overviewOfAstraDB"
       ],
-      "contentSrc": "introToDataWithAstra/readme.md",
+      "contentSrc": "introToDataWithAstra/README.md",
       "stepCount": 3
     },
 
@@ -60,8 +60,8 @@
 
     "loadDataIntroAstraDB": {
       "locale": "en-us",
-      "title": "Load data into your Astra database 📂",
-      "description": "Review various ways to load data into your database.",
+      "title": "Load data into an Astra database 📂",
+      "description": "Review various ways to load data into a database.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{
@@ -81,7 +81,7 @@
         "introToDataWithAstraDB"
       ],
       "contentSrc": "loadDataIntoAstraDB/README.md",
-      "stepCount": 3
+      "stepCount": 4
     }
   }
 }

@@ -52,7 +52,7 @@
         "text": "All the markdown emojis"
       }],
       "recommendedGuides": [
-        "overviewOfAstraDB"
+        "overviewOfAstraDB", "introToDataWithAstraDB"
       ],
       "contentSrc": "astraPortalGuideTemplate/README.md",
       "stepCount": 6

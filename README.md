@@ -2,18 +2,8 @@
 This is the overview section. 
 The overview should provide users a high level explanation of what your guide is all about at a glance. 
 What will they learn, what will they get out of it?
-Notice the formatting being used. 
-Title, any related tags, difficulty, time to complete, any prerequisites
  -->
-# Astra Portal Getting Started TEMPLATE
-```ini
-[beginner][database][apache cassandra]
-```
-
-> ⚠️ Difficulty: **`Beginner`, we don't expect you to know how to write "getting started" guides for DataStax Astra.**
->
-> Time to complete: ~ 10 mins
-
+# Overview
 Hiya. Welcome to the Astra getting started guide template. Use this template to help "guide" you through authoring "getting started" guides within DataStax Astra. ;)
 
 "Getting Started" guides are a unique way to help Astra users learn about a topic or how to perform a set of actions. The goal is to make it dead simple for a user to run through a guide and achieve some goal.

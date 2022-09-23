@@ -28,9 +28,11 @@ This section contains items that a user may need from outside of Astra. Examples
 - If any prereqs are required be explicit and call them out
 - Provide links to needed resources
 - Here is an example:
-    - [Download] and [install](https://maven.apache.org/install.html) Maven.
+    - [Download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html) Maven.
 
-[Download]: https://maven.apache.org/download.cgi
+Here's something for fun
+
+![test image for fun](https://media.giphy.com/media/107QsHzZW54hJC/giphy.gif)
 <!--
 You can use inline links (install) or provide them later with a named reference (Download). Either is fine. Up to you.
  -->

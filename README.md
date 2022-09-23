@@ -28,9 +28,11 @@ This section contains items that a user may need from outside of Astra. Examples
 - If any prereqs are required be explicit and call them out
 - Provide links to needed resources
 - Here is an example:
-    - [Download] and [install](https://maven.apache.org/install.html) Maven.
+    - [Download](https://maven.apache.org/download.cgi) and [install](https://maven.apache.org/install.html) Maven.
 
-[Download]: https://maven.apache.org/download.cgi
+Here's something for fun
+
+![test image for fun](https://media.giphy.com/media/107QsHzZW54hJC/giphy.gif)
 <!--
 You can use inline links (install) or provide them later with a named reference (Download). Either is fine. Up to you.
  -->
@@ -148,8 +150,8 @@ The `title` should conform to **20** chars min, **73** chars max.
 The `description` should conform to **40** chars min, **110** chars max.
 ```json
 "locale": "en-us", // just use this value for now
-"title": "Astra Portal Getting Started TEMPLATE 🎇",
-"description": "Get an overview of how to write 'getting started' guides for DataStax Astra.",
+"title": "Astra Portal Getting Started TEMPLATE 🎇, but I need more to hit 73 chars🚀",
+"description": "Get an overview of how to write 'getting started' guides for DataStax Astra and then keep going to 110 chars.🌈",
 "skillLevel": "Beginner",
 "timeToComplete": "10 minutes",
 ```

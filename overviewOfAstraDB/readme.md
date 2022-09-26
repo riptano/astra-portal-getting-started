@@ -3,7 +3,7 @@ Understand Astra DB and how it differs from its underlying technology, Apache Ca
 
 You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html) to greatly simplify cloud-native Cassandra application development. Astra DB reduces deployment time from weeks to minutes, and delivers a combination of serverless, pay-as-you-go pricing with the freedom and agility of multi-cloud and open-source software. All that functionality is yours without the hassles of complex database and infrastructure administration.
 
-**In this guide, we will**
+**In this guide, we will learn**
 - What do I get with Astra DB?
 - What are guardrails and how do they affect databases?
 - What changes do I need to connect to Astra DB?

@@ -82,6 +82,26 @@
       ],
       "contentSrc": "loadDataIntoAstraDB/README.md",
       "stepCount": 4
+    },
+
+    "astraDBApplicationQuickstartPython": {
+      "locale": "en-us",
+      "title": "How to get started with your Python application and Astra DB 🚀",
+      "description": "Starting with a sample app, this guide walks you through connecting Astra DB using Python.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/manage/upload/astra-data-loader.html",
+        "text": "For something more in depth, check out this machine learning workshop"
+      }, {
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-dsbulk.html",
+        "text": "Use DSBulk to load data (medium to large datasets)"
+      }],
+      "recommendedGuides": [
+        "introToDataWithAstraDB"
+      ],
+      "contentSrc": "astraDBApplicationQuickstartPython/README.md",
+      "stepCount": 4
     }
   }
 }

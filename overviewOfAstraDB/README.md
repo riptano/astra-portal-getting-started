@@ -6,7 +6,7 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)](http
 **In this guide, we will learn**
 - What do I get with Astra DB?
 - What are guardrails and how do they affect databases?
-- What changes do I need to connect to Astra DB?
+- What changes do I need to connect my application to Astra DB?
 - Create an Astra database
 
 # Guide
@@ -27,10 +27,24 @@ Databases created within Astra DB are defined with a set of limits, called **[gu
 
 We strongly encourage you to read our documentation on [guardrails](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits) for details.
 
-_Existing open source Apache Cassandra® users might want to check out this [CEP](https://cwiki.apache.org/confluence/display/CASSANDRA/CEP-3%3A+Guardrails). Guardrails are planned..._
+## 3 What changes do I need to connect my application to Astra DB?
+That depends on whether you are a first time user to Apache Cassandra® and Astra or if you have an existing implementation.
 
-## 3 What changes do I need to connect to Astra DB?
-OMG totally nothing. Just RTFM!
+### Existing Apache Cassandra® implementation using drivers
+If you have an existing application using the DataStax drivers connected to an open source Apache Cassandra® cluster you'll need to ensure you are using an Astra compatible driver. Follow the instructions [HERE for information on each supported language](https://docs.datastax.com/en/astra-serverless/docs/connect/drivers/migrating-datastax-drivers-to-connect-to-astra-databases.html). Changes are usually quite minimal and once in place will usually switch from providing your username, password, and a set of seed nodes to providing a secure connect bundle that contains everything needed to securely connect to Astra.
+
+### First time Apache Cassandra®/Astra user
+If you're new to Apache Cassandra® and Astra you have a whole set of options.
+
+#### Drivers
+[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) do drivery things...
+
+#### Stargate APIs
+The Stargate APIs consist of [REST, GraphQL, Document, and gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html). These are all "driverless" methods of connecting to Astra.
+- REST does
+- GraphQL does
+- Document does
+- gRPC does
 
 ## 4 Create an Astra database 🔥
 Let's start by creating an Astra database. Click the link/button/whatever below and follow the prompts to get started.

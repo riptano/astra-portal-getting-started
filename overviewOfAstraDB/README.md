@@ -7,7 +7,7 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)](http
 - What do I get with Astra DB?
 - What are guardrails and how do they affect databases?
 - What changes do I need to connect my application to Astra DB?
-- Create an Astra database
+- How to Create an Astra database with the UI
 
 # Guide
 ## 1  What do I get with Astra DB?
@@ -33,21 +33,21 @@ That depends on whether you are a first time user to Apache Cassandra® and Astr
 ### Existing Apache Cassandra® implementation using drivers
 If you have an existing application using the DataStax drivers connected to an open source Apache Cassandra® cluster you'll need to ensure you are using an Astra compatible driver. Follow the instructions [HERE for information on each supported language](https://docs.datastax.com/en/astra-serverless/docs/connect/drivers/migrating-datastax-drivers-to-connect-to-astra-databases.html). Changes are usually quite minimal and once in place will usually switch from providing your username, password, and a set of seed nodes to providing a secure connect bundle that contains everything needed to securely connect to Astra.
 
-### First time Apache Cassandra®/Astra user
-If you're new to Apache Cassandra® and Astra you have a whole set of options.
+### First time Apache Cassandra®/Astra user or looking for options other than drivers
+If you're new to Apache Cassandra® and Astra or looking for other options you have a whole set of choices.
 
 #### Drivers
-[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) do drivery things...
+[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) have the best performance and configuration options, but with that comes more complexity and the need to maintain driver versions in application code. If you are looking for a performant and "lightweight" HTTP based alternative to drivers gRPC is a good option.
 
 #### Stargate APIs
-The Stargate APIs consist of [REST, GraphQL, Document, and gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html). These are all "driverless" methods of connecting to Astra.
-- REST does
-- GraphQL does
-- Document does
-- gRPC does
+The Stargate APIs consist of [REST, GraphQL, Document, and gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html). These are all "driverless" methods of connecting to Astra. All are provided by default within Astra.
+- [REST API](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-rest.html) - Pretty much the standard way to handle HTTP based application communications
+- [GraphQL API](https://docs.datastax.com/en/astra-serverless/docs/develop/graphql.html) - Extremely flexible table and payload definitions. Originally developed for mobile communications to keep payload sizes down. Allows chaining of multiple queries into a single result payload (think about having control you wish you had with REST). 
+- [Document API](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-doc.html) - Native storage, retrieval, and manipulation of JSON documents
+- [gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html) - A cloud native "lightweight" and fast "driver" that allows direct CQL calls (on par performance with native drivers)
 
-## 4 Create an Astra database 🔥
-Let's start by creating an Astra database. Click the link/button/whatever below and follow the prompts to get started.
+## 4 How to Create an Astra database with the UI 🔥
+Now that you have a better idea of what to consider when using Astra, let's get you started by creating an Astra database. Click the button below and follow the prompts to get started.
 
 You'll be presented with four options
 
@@ -69,10 +69,9 @@ The geographic region within the chosen cloud provider. Just pick one close to y
 
 _No cloud provider accounts are needed for any of the options presented. Astra handles all cloud provider deployments and details._
 
+Click the button below to create a database.
+
 <<createDatabase>>
 
-[Astra DB]: (https://docs.datastax.com/en/astra-serverless/docs/)
 
 [consistency level]: (https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_cassandra_query_language_cql)
-[faq]: (https://docs.datastax.com/en/astra-serverless/docs/astra-faq.html)
-[APIs (REST, GraphQL, Document, gRPC)]: (https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html)

@@ -58,7 +58,7 @@
       "stepCount": 6
     },
 
-    "loadDataIntroAstraDB": {
+    "loadDataIntoAstraDB": {
       "locale": "en-us",
       "title": "Load data into an Astra database 📂",
       "description": "Review various ways to load data into a database.",

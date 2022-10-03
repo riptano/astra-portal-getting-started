@@ -13,7 +13,7 @@ In this guide we'll explore connecting your app to Astra using Python.
 - You should have a recent version of Python 3.
 
 # Guide
-## 1 Build and verify your local Python development environment.
+## 1. Build and verify your local Python development environment.
 
 For this guide, you will need both a local installation of Python 3 and the DataStax Python Driver for Apache Cassandra.  To verify your Python installation, run the following command:
 
@@ -47,7 +47,7 @@ You should see output similar to this:
 cassandra driver version = 3.25.0
 ```
 
-## 2 Set your Astra DB environment variables
+## 2. Set your Astra DB environment variables
 
 For our new Python project, we're going to use two environment variables: `ASTRA_DB_TOKEN` and `ASTRA_DB_SECURE_BUNDLE_LOCATION`.  Copy the token from the CSV file you downloaded from astra.datastax.com.  Run the below command to set it as an environment variable.
 
@@ -67,7 +67,7 @@ You can verify that these variables were set up correctly with the following com
 env | grep ASTRA
 ```
 
-## 3 Create a new project and connect to Astra DB
+## 3. Create a new project and connect to Astra DB
 
 Let's start by creating a new Python program to connect to Astra DB.  Open your favorite IDE and create a new file called `testAstraDB.py`.  We will start by adding three imports:
 
@@ -117,7 +117,7 @@ Running this code (with the two environment variables set appropriately) yields 
 cluster name = cndb
 ```
 
-## 3 Using a prepared statement
+## 4. Using a prepared statement
 
 Now that we've shown how to connect and run a static query, let's use a prepared statement.  Prepared statements are good for queries that we plan on running several times for different key values.
 
@@ -179,7 +179,7 @@ short_desc
 specifications
 ```
 
-## 4 Summary
+## 5. Summary
 
 In summary, we have talked through configuring our local Python development environment, and using environment variables to reference our Astra DB credentials and secure connect bundle.  We have also show how to run a simple, static query, as well as how to query results using a prepared statement.  This should provide a solid foundation for building more complex Python applications.
 

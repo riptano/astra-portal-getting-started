@@ -38,6 +38,23 @@
       "stepCount": 3
     },
 
+    "astraDBApplicationQuickstartPython": {
+      "locale": "en-us",
+      "title": "How to get started with your Python application and Astra DB 🚀",
+      "description": "Starting with a sample app, this guide walks you through connecting Astra DB using Python.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastaxdevs/workshop-cassandra-application-development",
+        "text": "For more examples, check out the Python section of this workshop on application development."
+      }],
+      "recommendedGuides": [
+        "introToDataWithAstraDB"
+      ],
+      "contentSrc": "astraDBApplicationQuickstartPython/README.md",
+      "stepCount": 5
+    },
+
     "astraPortalGuideTemplate": {
       "locale": "en-us",
       "title": "Astra Portal Getting Started TEMPLATE 🎇, but I need more to hit 73 chars🚀",
@@ -82,23 +99,7 @@
       ],
       "contentSrc": "loadDataIntoAstraDB/README.md",
       "stepCount": 4
-    },
-
-    "astraDBApplicationQuickstartPython": {
-      "locale": "en-us",
-      "title": "How to get started with your Python application and Astra DB 🚀",
-      "description": "Starting with a sample app, this guide walks you through connecting Astra DB using Python.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://github.com/datastaxdevs/workshop-cassandra-application-development",
-        "text": "For more examples, check out the Python section of this workshop on application development."
-      }],
-      "recommendedGuides": [
-        "introToDataWithAstraDB"
-      ],
-      "contentSrc": "astraDBApplicationQuickstartPython/README.md",
-      "stepCount": 5
     }
+
   }
 }

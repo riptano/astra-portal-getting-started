@@ -13,7 +13,7 @@ While you don't _have to_ use the following database and keyspace name, it would
 
 First off, create a database with the following database and keyspace name with the button below. Once complete, come back here and continue in the next section.
 
-| Parameter | Value 
+| Parameter | Value |
 |---|---|
 | Database Name | workshops  |
 | Keyspace Name | machine_learning |

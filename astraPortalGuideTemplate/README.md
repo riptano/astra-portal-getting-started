@@ -12,6 +12,8 @@ It is assumed that if you are following this template that you intend to write a
 
 Feel free to copy this readme.md in its entirety and use within your guide to get started.
 
+If you'd like to see a working example of this guide [navigate HERE]("https://astra.datastax.com/guide/astraPortalGuideTemplate") and login to Astra.
+
 **In this guide, we will discuss**
 - How to get started
 - Where to put your guide

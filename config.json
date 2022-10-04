@@ -91,17 +91,14 @@
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{
-        "url": "https://docs.datastax.com/en/astra-serverless/docs/manage/upload/astra-data-loader.html",
-        "text": "For something more in depth, check out this machine learning workshop"
-      }, {
-        "url": "https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-dsbulk.html",
-        "text": "Use DSBulk to load data (medium to large datasets)"
+        "url": "https://github.com/datastaxdevs/workshop-cassandra-application-development",
+        "text": "For more examples, check out the Python section of this workshop on application development."
       }],
       "recommendedGuides": [
         "introToDataWithAstraDB"
       ],
       "contentSrc": "astraDBApplicationQuickstartPython/README.md",
-      "stepCount": 4
+      "stepCount": 5
     }
   }
 }

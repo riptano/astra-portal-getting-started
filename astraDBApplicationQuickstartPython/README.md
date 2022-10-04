@@ -7,10 +7,17 @@ In this guide we'll explore connecting your app to Astra using Python.
 - Execute a query using a prepared statement
 
 # Prerequisites
-- You should have an Astra account.
-- You should [Create an Astra Database](../overviewOfAstraDB#4-how-to-create-an-astra-database-with-the-ui-).
-- You should Have an Astra Token and have downloaded your Secure bundle.
-- You should have a recent version of Python 3.
+If you haven't already, go ahead and create a new Astra DB database.
+
+<<createDatabase>>
+```
+PARAMS NEEDED
+databaseName: workshops
+keyspaceName: ecommerce
+region: closest in free tier
+```
+
+You also should have a recent version of Python 3 installed.
 
 # Guide
 ## 1. Build and verify your local Python development environment.
@@ -49,13 +56,21 @@ cassandra driver version = 3.25.0
 
 ## 2. Set your Astra DB environment variables
 
-For our new Python project, we're going to use two environment variables: `ASTRA_DB_TOKEN` and `ASTRA_DB_SECURE_BUNDLE_LOCATION`.  Copy the token from the CSV file you downloaded from astra.datastax.com.  Run the below command to set it as an environment variable.
+For this section, copy your Astra DB Token.  If you need to create one, you can do that here:
+
+<<createToken>>
+
+For our new Python project, we're going to use two environment variables: `ASTRA_DB_TOKEN` and `ASTRA_DB_SECURE_BUNDLE_LOCATION`.  Copy the token and run the below command to set it as an environment variable.
 
 ```bash
 export ASTRA_DB_TOKEN="AstraCS:qFDPGYOURASTRADBTOKENf15fc"
 ```
 
-You will also need to create an environment variable containing the location of your (downloaded) secure bundle.
+You will also need to create an environment variable containing the location of your (downloaded) secure bundle.  If you have not downloaded your secure bundle yet, you can do that here:
+
+<<downloadSCB>>
+
+This should download it to your `~/Downloads` directory.  Feel free to copy it somewhere else if you like, but just make sure to refer to its location as shown here:
 
 ```bash
 export ASTRA_DB_SECURE_BUNDLE_LOCATION="/Users/yourusername/securebundledir/secure-connect-bundle.zip"

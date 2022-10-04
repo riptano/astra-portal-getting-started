@@ -10,12 +10,6 @@ In this guide we'll explore connecting your app to Astra using Python.
 If you haven't already, go ahead and create a new Astra DB database.
 
 <<createDatabase>>
-```
-PARAMS NEEDED
-databaseName: workshops
-keyspaceName: ecommerce
-region: closest in free tier
-```
 
 You also should have a recent version of Python 3 installed.
 

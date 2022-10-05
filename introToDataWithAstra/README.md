@@ -9,16 +9,9 @@ Do cool shit be learning some CRUD operations in Astradatabase and infrastructur
 # Prerequisites
 This is a placeholder to see what it looks like
 
-# Guide
 ## 1 Create your Astra DB instance
 
 <<createDatabase>> 
-```
-PARAMS NEEDED
-databaseName: workshops
-keyspaceName: chatsandra
-region: closest in free tier
-```
 
 ## 2 Create tables
 Ok, now that you have a database created the next step is to create tables to work with. 

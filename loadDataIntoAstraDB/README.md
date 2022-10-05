@@ -7,7 +7,6 @@ In this guide we'll explore multiple ways to load data into an Astra database. T
 - Use the Astra data loader to load YOUR data
 - Use DSBulk with the Astra Shell
 
-# Guide
 ## 1 Create a database to explore data loading
 While you don't _have to_ use the following database and keyspace name, it would be best if you do to follow the examples below. If not, you'll have to replace out your own values.
 

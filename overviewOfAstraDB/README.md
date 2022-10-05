@@ -71,6 +71,3 @@ _No cloud provider accounts are needed for any of the options presented. Astra h
 Click the button below to create a database.
 
 <<createDatabase>>
-
-
-[consistency level]: (https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_cassandra_query_language_cql)

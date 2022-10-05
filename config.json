@@ -50,7 +50,7 @@
     "astraDBApplicationQuickstartPython": {
       "locale": "en-us",
       "title": "How to get started with your Python application and Astra DB 🚀",
-      "description": "Starting with a sample app, this `hands-on` guide walks you through connecting Astra DB using Python.",
+      "description": "Starting with a sample app, this hands-on guide walks you through connecting Astra DB using Python.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{

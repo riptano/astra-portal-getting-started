@@ -11,11 +11,19 @@ In this guide we'll explore multiple ways to load data into an Astra database. T
 While you don't _have to_ use the following database and keyspace name, it would be best if you do to follow the examples below. If not, you'll have to replace out your own values.
 
 First off, create a database with the following database and keyspace name with the button below. Once complete, come back here and continue in the next section.
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
 
-| Parameter | Value |
-|---|---|
-| Database Name | workshops  |
+```
++---------------+------------------+
+| Parameter     | Value            |
++---------------+------------------+
+| Database Name | workshops        |
 | Keyspace Name | machine_learning |
++---------------+------------------+
+```
 
 <<createDatabase>>
 

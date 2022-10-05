@@ -6,12 +6,9 @@ Do cool shit be learning some CRUD operations in Astradatabase and infrastructur
 - Create tables
 - Execute CRUD operations
 
-# Prerequisites
-This is a placeholder to see what it looks like
-
 ## 1 Create your Astra DB instance
 
-<<createDatabase>> 
+<<createDatabase>>
 
 ## 2 Create tables
 Ok, now that you have a database created the next step is to create tables to work with. 

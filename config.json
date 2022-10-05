@@ -21,60 +21,6 @@
       "stepCount": 4
     },
 
-    "introToDataWithAstraDB": {
-      "locale": "en-us",
-      "title": "Intro to data with Astra 🔌",
-      "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "15 minutes",
-      "recommendedLinks": [{
-        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
-        "text": "Intro to Apache Cassandra for Developers"
-      }],
-      "recommendedGuides": [
-        "overviewOfAstraDB"
-      ],
-      "contentSrc": "introToDataWithAstra/README.md",
-      "stepCount": 3
-    },
-
-    "astraDBApplicationQuickstartPython": {
-      "locale": "en-us",
-      "title": "How to get started with your Python application and Astra DB 🚀",
-      "description": "Starting with a sample app, this guide walks you through connecting Astra DB using Python.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://github.com/datastaxdevs/workshop-cassandra-application-development",
-        "text": "For more examples, check out the Python section of this workshop on application development."
-      }],
-      "recommendedGuides": [
-        "introToDataWithAstraDB"
-      ],
-      "contentSrc": "astraDBApplicationQuickstartPython/README.md",
-      "stepCount": 5
-    },
-
-    "astraPortalGuideTemplate": {
-      "locale": "en-us",
-      "title": "Astra Portal Getting Started TEMPLATE 🎇, but I need more to hit 73 chars🚀",
-      "description": "Get an overview of how to write 'getting started' guides for DataStax Astra and then keep going to 110 chars.🌈",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
-        "text": "How to create branches in Git"
-      }, {
-        "url": "https://github.com/markdown-templates/markdown-emojis",
-        "text": "All the markdown emojis"
-      }],
-      "recommendedGuides": [
-        "overviewOfAstraDB", "introToDataWithAstraDB"
-      ],
-      "contentSrc": "astraPortalGuideTemplate/README.md",
-      "stepCount": 6
-    },
-
     "loadDataIntoAstraDB": {
       "locale": "en-us",
       "title": "Load data into an Astra database 📂",
@@ -99,6 +45,60 @@
       ],
       "contentSrc": "loadDataIntoAstraDB/README.md",
       "stepCount": 4
+    },
+
+    "astraDBApplicationQuickstartPython": {
+      "locale": "en-us",
+      "title": "How to get started with your Python application and Astra DB 🚀",
+      "description": "Starting with a sample app, this `hands-on` guide walks you through connecting Astra DB using Python.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastaxdevs/workshop-cassandra-application-development",
+        "text": "For more examples, check out the Python section of this workshop on application development."
+      }],
+      "recommendedGuides": [
+        "introToDataWithAstraDB"
+      ],
+      "contentSrc": "astraDBApplicationQuickstartPython/README.md",
+      "stepCount": 5
+    },
+
+    "introToDataWithAstraDB": {
+      "locale": "en-us",
+      "title": "Intro to data with Astra 🔌",
+      "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
+        "text": "Intro to Apache Cassandra for Developers"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB"
+      ],
+      "contentSrc": "introToDataWithAstra/README.md",
+      "stepCount": 3
+    },
+
+    "astraPortalGuideTemplate": {
+      "locale": "en-us",
+      "title": "Astra Portal Getting Started TEMPLATE 🎇, but I need more to hit 73 chars🚀",
+      "description": "Get an overview of how to write 'getting started' guides for DataStax Astra and then keep going to 110 chars.🌈",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://www.freecodecamp.org/news/how-to-create-a-local-git-branch/",
+        "text": "How to create branches in Git"
+      }, {
+        "url": "https://github.com/markdown-templates/markdown-emojis",
+        "text": "All the markdown emojis"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "astraPortalGuideTemplate/README.md",
+      "stepCount": 6
     }
 
   }

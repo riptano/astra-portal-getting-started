@@ -11,6 +11,7 @@ In this guide we'll explore multiple ways to load data into an Astra database. T
 While you don't _have to_ use the following database and keyspace name, it would be best if you do to follow the examples below. If not, you'll have to replace out your own values.
 
 First off, create a database with the following database and keyspace name with the button below. Once complete, come back here and continue in the next section.
+
 | Syntax      | Description |
 | ----------- | ----------- |
 | Header      | Title       |
@@ -29,7 +30,6 @@ First off, create a database with the following database and keyspace name with 
 
 ## 2 Use the Astra data loader to load example data
 
-
 <<launchDataLoader>>
 
 
@@ -38,7 +38,7 @@ First off, create a database with the following database and keyspace name with 
 
 ## 4 Use DSBulk with the Astra Shell
 
-```
+```shell
 astra db get workshops
 ```
 
@@ -66,7 +66,7 @@ astra db get workshops
 
 #### 4a) Start the CQL shell and connect to database `guide` and keyspace `explore_data_load`:
 
-```
+```shell
 astra db cqlsh guide -k explore_data_load
 ```
 
@@ -105,7 +105,7 @@ quit;
 
 #### 4c) Populate table `socialmedia`
 
-```
+```shell
 astra db dsbulk workshops \
   load \
   -url jupyter/data/socialMedia.csv \

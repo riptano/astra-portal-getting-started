@@ -34,27 +34,27 @@ First off, create a database with the following database and keyspace name with 
 astra db get workshops
 ```
 
-> 🖥️ Output
->
-> ```
-> +------------------------+-----------------------------------------+
-> | Attribute              | Value                                   |
-> +------------------------+-----------------------------------------+
-> | Name                   | workshops                               |
-> | id                     | bb61cfd6-2702-4b19-97b6-3b89a04c9be7    |
-> | Status                 | ACTIVE                                  |
-> | Default Cloud Provider | AWS                                     |
-> | Default Region         | us-east-1                               |
-> | Default Keyspace       | machine_learning                        |
-> | Creation Time          | 2022-08-29T06:13:06Z                    |
-> |                        |                                         |
-> | Keyspaces              | [0] machine_learning                    |
-> |                        |                                         |
-> |                        |                                         |
-> | Regions                | [0] us-east-1                           |
-> |                        |                                         |
-> +------------------------+-----------------------------------------+
-> ```
+🖥️ Output
+
+```
++------------------------+-----------------------------------------+
+| Attribute              | Value                                   |
++------------------------+-----------------------------------------+
+| Name                   | workshops                               |
+| id                     | bb61cfd6-2702-4b19-97b6-3b89a04c9be7    |
+| Status                 | ACTIVE                                  |
+| Default Cloud Provider | AWS                                     |
+| Default Region         | us-east-1                               |
+| Default Keyspace       | machine_learning                        |
+| Creation Time          | 2022-08-29T06:13:06Z                    |
+|                        |                                         |
+| Keyspaces              | [0] machine_learning                    |
+|                        |                                         |
+|                        |                                         |
+| Regions                | [0] us-east-1                           |
+|                        |                                         |
++------------------------+-----------------------------------------+
+```
 
 #### 4a) Start the CQL shell and connect to database `guide` and keyspace `explore_data_load`:
 

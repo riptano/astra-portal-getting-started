@@ -7,15 +7,15 @@ In this guide we'll explore multiple ways to load data into an Astra database. T
 - Use the Astra data loader to load YOUR data
 - Use DSBulk with the Astra Shell
 
+# Prerequisites
+While not required for ALL of the following sections you'll want to have 
+- Access to a local terminal
+- Java 8 or higher
+
 ## 1 Create a database to explore data loading
 While you don't _have to_ use the following database and keyspace name, it would be best if you do to follow the examples below. If not, you'll have to replace out your own values.
 
 First off, create a database with the following database and keyspace name with the button below. Once complete, come back here and continue in the next section.
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
 
 ```
 +---------------+------------------+
@@ -37,7 +37,64 @@ First off, create a database with the following database and keyspace name with 
 
 
 ## 4 Use DSBulk with the Astra Shell
+The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
 
+#### 4a) Install Astra Shell
+The first thing we'll need to do is install the Astra Shell. Execute the following commands in a local terminal.
+```shell
+curl -Ls "https://dtsx.io/get-astra-cli"
+```
+
+#### 4b) Generate a token for access (you can use an exisitng token if you have one)
+Now, let's setup the shell. We'll need to get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
+
+What's cool is one you pass the token to Astra Shell it will handle everything else for you. Use the following action to create a token if you don't already have one.
+
+Recommended role = "Organization Administrator"
+
+<<createToken>>
+
+Great, now use the setup command, pass in your token when asked, and we'll load up some data.
+
+```shell
+astra setup
+```
+
+> 🖥️ Output
+>
+> ```
+> +-------------------------------+
+> +-     Astra CLI SETUP         -+
+> +-------------------------------+
+> 
+> Welcome to Astra Cli. We will guide you to start.
+> 
+> [Astra Setup]
+> To use the cli you need to:
+ > • Create an Astra account on : https://astra.datastax.com
+ > • Create an Authentication token following: https://dtsx.io/create-astra-token
+> 
+> [Cli Setup]
+> You will be asked to enter your token, it will be saved locally in ~/. astrarc
+> 
+> • Enter your token (starting with AstraCS) : 
+> AstraCS:AAAAAA
+> [ INFO ] - Configuration Saved.
+> 
+> 
+> [cedrick.lunven@gmail.com]
+> ASTRA_DB_APPLICATION_TOKEN=AstraCS:AAAAAAAA
+> 
+> [What's NEXT ?]
+> You are all set.(configuration is stored in ~/.astrarc) You can now:
+>    • Use any command, 'astra help' will get you the list
+>    • Try with 'astra db list'
+>    • Enter interactive mode using 'astra'
+> 
+> Happy Coding !
+> ```
+
+Now, let's use the shell to get information about the `workshops` database we created earlier just to check everything is working as expected.
 ```shell
 astra db get workshops
 ```
@@ -45,29 +102,29 @@ astra db get workshops
 🖥️ Output
 
 ```
-+------------------------+-----------------------------------------+
-| Attribute              | Value                                   |
-+------------------------+-----------------------------------------+
-| Name                   | workshops                               |
-| id                     | bb61cfd6-2702-4b19-97b6-3b89a04c9be7    |
-| Status                 | ACTIVE                                  |
-| Default Cloud Provider | AWS                                     |
-| Default Region         | us-east-1                               |
-| Default Keyspace       | machine_learning                        |
-| Creation Time          | 2022-08-29T06:13:06Z                    |
-|                        |                                         |
-| Keyspaces              | [0] machine_learning                    |
-|                        |                                         |
-|                        |                                         |
-| Regions                | [0] us-east-1                           |
-|                        |                                         |
-+------------------------+-----------------------------------------+
++------------------------+--------------------------------------+
+| Attribute              | Value                                |
++------------------------+--------------------------------------+
+| Name                   | workshops                            |
+| id                     | bb61cfd6-2702-4b19-97b6-3b89a04c9be7 |
+| Status                 | ACTIVE                               |
+| Default Cloud Provider | AWS                                  |
+| Default Region         | us-east-1                            |
+| Default Keyspace       | machine_learning                     |
+| Creation Time          | 2022-08-29T06:13:06Z                 |
+|                        |                                      |
+| Keyspaces              | [0] machine_learning                 |
+|                        |                                      |
+|                        |                                      |
+| Regions                | [0] us-east-1                        |
+|                        |                                      |
++------------------------+--------------------------------------+
 ```
 
-#### 4a) Start the CQL shell and connect to database `guide` and keyspace `explore_data_load`:
+#### 4c) Start the CQL shell and connect to database `workshops` and keyspace `machine_learning`
 
 ```shell
-astra db cqlsh guide -k explore_data_load
+astra db cqlsh workshops -k machine_learning
 ```
 
 > 🖥️ Output
@@ -82,7 +139,7 @@ astra db cqlsh guide -k explore_data_load
 > token@cqlsh:machine_learning> 
 > ```
 
-#### 4b) Initialize the Schema with `cqlsh`
+#### 4d) Initialize the Schema with `cqlsh`
 
 ```sql
 CREATE TABLE IF NOT EXISTS socialmedia (
@@ -103,7 +160,7 @@ CREATE TABLE IF NOT EXISTS socialmedia (
 quit;
 ```
 
-#### 4c) Populate table `socialmedia`
+#### 4e) Populate table `socialmedia`
 
 ```shell
 astra db dsbulk workshops \

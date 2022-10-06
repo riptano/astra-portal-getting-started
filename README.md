@@ -8,9 +8,11 @@ Hiya. Welcome to the Astra getting started guide template. Use this template to 
 
 "Getting Started" guides are a unique way to help Astra users learn about a topic or how to perform a set of actions. The goal is to make it dead simple for a user to run through a guide and achieve some goal.
 
-It is assumed that if you are following this template that you intend to write a guide for DataStax Astra. With that, we highly encourage you to donwload this markdown file and view it in both edit and rendered modes so you can easily see hidden comments.
+It is assumed that if you are following this template that you intend to write a guide for DataStax Astra. With that, we highly encourage you to download this markdown file and view it in both edit and rendered modes so you can easily see hidden comments.
 
 Feel free to copy this readme.md in its entirety and use within your guide to get started.
+
+If you'd like to see a working example of this guide [navigate HERE]("https://astra.datastax.com/guide/astraPortalGuideTemplate") and login to Astra.
 
 **In this guide, we will discuss**
 - How to get started

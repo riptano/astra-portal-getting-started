@@ -2,7 +2,7 @@
 Do cool shit be learning some CRUD operations in Astradatabase and infrastructure administration.
 
 **In this guide, we will**
-- Create your Astra DB instance
+- Create an Astra DB instance
 - Create tables
 - Execute CRUD operations
 

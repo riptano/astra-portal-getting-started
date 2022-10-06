@@ -165,7 +165,7 @@ quit;
 ```shell
 astra db dsbulk workshops \
   load \
-  -url https://github.com/riptano/astra-portal-getting-started/tree/main/loadDataIntoAstraDB/socialMedia.csv \
+  -url https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/socialMedia.csv \
   -c csv \
   -delim ',' \
   -m "status_id,social_type,num_reactions,num_comments,num_shares,num_likes,num_loves,num_wows,num_hahas,num_sads,num_angrys" \

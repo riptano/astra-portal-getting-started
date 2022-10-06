@@ -182,3 +182,9 @@ astra db dsbulk workshops \
 > total | failed | rows/s | p50ms |  p99ms | p999ms | batches
 > 6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
 > ```
+
+#### 4f) Check data load
+If the previous command worked properly we should now see some data in the `socialmedia` table.
+```shell
+astra db cqlsh workshops -e "SELECT * FROM machine_learning.socialmedia LIMIT 5;"
+```

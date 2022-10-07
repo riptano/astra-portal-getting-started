@@ -4,7 +4,7 @@ In this guide we'll explore multiple ways to load data into an Astra database. T
 **In this guide, we will**
 - Create a database to explore data loading
 - Use the Astra data loader to load example data
-- Use the Astra data loader to load YOUR data
+- Use the Astra data loader to load a CSV
 - Use DSBulk with the Astra Shell
 
 # Prerequisites
@@ -17,23 +17,27 @@ While you don't _have to_ use the following database and keyspace name, it would
 
 First off, create a database with the following database and keyspace name with the button below. Once complete, come back here and continue in the next section.
 
-```shell
-+---------------+------------------+
-| Parameter     | Value            |
-+---------------+------------------+
-| Database Name | workshops        |
-| Keyspace Name | machine_learning |
-+---------------+------------------+
+**Database Name** = 
+```shell 
+workshops
+```
+
+**Keyspace Name** = 
+```shell 
+machine_learning
 ```
 
 <<createDatabase>>
+
+It should only take a couple minutes for your database to become `ACTIVE`. Once that occurs the guide will notify you and you can continue to the next step.
 
 ## 2 Use the Astra data loader to load example data
 
 <<launchDataLoader>>
 
 
-## 3 Use the Astra data loader to load YOUR data
+## 3 Use the Astra data loader to load a CSV
+Ok, first thing, you'll need a CSV to work with. [DOWNLOAD socialMedia.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/socialMedia.csv) by right clicking on the `DOWNLOAD` link above and choose **Save As**. 
 
 
 ## 4 Use DSBulk with the Astra Shell

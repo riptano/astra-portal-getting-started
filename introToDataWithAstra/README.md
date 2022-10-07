@@ -120,8 +120,8 @@ Now that we've inserted a few rows, let's take a look at how to read the data ba
 
 ```sql
 // Read (some columns of) rows in a certain partition of "users" table
-SELECT email, name, password FROM users
-  WHERE user_id = 11111111-1111-1111-1111-111111111111;
+SELECT email, name, password FROM users 
+  WHERE email = 'otzi@mail.com';
 ```
 
 ### 3d **CR(`U`)D** = update = update data
@@ -129,12 +129,11 @@ At this point we've **_CREATED_** and **_READ_** some data, but what happens whe
 
 ```sql
 UPDATE users 
-  SET email = 'otzi.oney@gmail.com' 
-    WHERE user_id = 11111111-1111-1111-1111-111111111111
-    AND   email = 'otzi@mail.com';
+  SET password = '78910' 
+    WHERE email = 'otzi@mail.com';
 
-SELECT email, name, password FROM users
-  WHERE user_id = 11111111-1111-1111-1111-111111111111;
+SELECT email, name, password FROM users 
+  WHERE email = 'otzi@mail.com';
 ```
 
 That's it, we successfully edited a post (on both tables).
@@ -154,7 +153,7 @@ _Generally speaking, it's best to perform as few delete operations as possible o
 SELECT email, name, password FROM users;
 
 DELETE FROM users
-  WHERE user_id = 11111111-1111-1111-1111-111111111111;
+  WHERE email = 'otzi@mail.com';
 
 SELECT email, name, password FROM users;
 ```

@@ -1,3 +1,4 @@
+status_id,social_type,num_reactions,num_comments,num_shares,num_likes,num_loves,num_wows,num_hahas,num_sads,num_angrys
 1,video,529,512,262,432,92,3,1,1,0
 2,photo,150,0,0,150,0,0,0,0,0
 3,video,227,236,57,204,21,1,1,0,0

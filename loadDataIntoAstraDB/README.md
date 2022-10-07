@@ -3,9 +3,9 @@ In this guide we'll explore multiple ways to load data into an Astra database. T
 
 **In this guide, we will**
 - Create a database to explore data loading
-- Use the Astra data loader to load example data
-- Use the Astra data loader to load a CSV
+- Use the Astra data loader to upload your own dataset
 - Use DSBulk with the Astra Shell
+- Verify both datasets using the CQL Console
 
 # Prerequisites
 While not required for ALL of the following sections you'll want to have 
@@ -31,25 +31,62 @@ machine_learning
 
 It should only take a couple minutes for your database to become `ACTIVE`. Once that occurs the guide will notify you and you can continue to the next step.
 
-## 2 Use the Astra data loader to load example data
+## 2 Use the Astra data loader to upload your own dataset
+The Astra data loader is good for small sets of data (< 40MB) or data you want to experiment and test with. 
+
+First thing, you'll need a **CSV** file to work with.
+
+[DOWNLOAD movies.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/movies.csv) <-- _right click on the `DOWNLOAD` link and choose **Save As**_
+
+Now launch the data loader using the link below. This will open the loader in a separate tab. 
+
+_You may want to view this side-by-side with this guide._
 
 <<launchDataLoader>>
 
+Once the loader is open follow the instructions for the `Upload your own dataset` section at the top. Use the socialMedia **CSV** file you just downloaded.
 
-## 3 Use the Astra data loader to load a CSV
-Ok, first thing, you'll need a CSV to work with. [DOWNLOAD socialMedia.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/socialMedia.csv) by right clicking on the `DOWNLOAD` link above and choose **Save As**. 
+Here, you will see the field `Table Name`, a preview of the dataset, and the field `Partition keys`. Let's not worry about the details for now, just ensure each field has the following values.
 
+**Table Name** _should already contain_
+```shell
+movies
+```
+_The loader will auto create this table for us_
 
-## 4 Use DSBulk with the Astra Shell
+**Partition Keys**
+```shell
+movieid
+```
+
+Move on to the next step and choose values for the `Target Database` and `Target Keypsace` fields.
+
+**Target Database** _should already contain_
+```shell
+workshops
+```
+_This is the database we created earlier_
+
+**Target Keypsace**
+```shell
+machine_learning
+```
+_This is the keyspace we created earlier to contain our tables._
+
+Once all values are selected click `Finish`. 
+
+At this point the dataset will be loaded in the background and you will receive both an email when the process starts and when the data is loaded. This shouldn't take too long, but for now, just move on to the next step. We'll come back and verify the data later.
+
+## 3 Use DSBulk with the Astra Shell
 The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
 
-#### 4a) Install Astra Shell
+#### 3a) Install Astra Shell
 The first thing we'll need to do is install the Astra Shell. Execute the following commands in a local terminal.
 ```shell
 curl -Ls "https://dtsx.io/get-astra-cli"
 ```
 
-#### 4b) Generate a token for access (you can use an exisitng token if you have one)
+#### 3b) Generate a token for access (you can use an exisitng token if you have one)
 Now, let's setup the shell. We'll need to get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
 
 What's cool is one you pass the token to Astra Shell it will handle everything else for you. Use the following action to create a token if you don't already have one.
@@ -125,7 +162,7 @@ astra db get workshops
 +------------------------+--------------------------------------+
 ```
 
-#### 4c) Start the CQL shell and connect to database `workshops` and keyspace `machine_learning`
+#### 3c) Start the CQL shell and connect to database `workshops` and keyspace `machine_learning`
 
 ```shell
 astra db cqlsh workshops -k machine_learning
@@ -143,7 +180,7 @@ astra db cqlsh workshops -k machine_learning
 > token@cqlsh:machine_learning> 
 > ```
 
-#### 4d) Initialize the Schema with `cqlsh`
+#### 3d) Initialize the Schema with `cqlsh`
 
 ```sql
 CREATE TABLE IF NOT EXISTS socialmedia (
@@ -164,7 +201,7 @@ CREATE TABLE IF NOT EXISTS socialmedia (
 quit;
 ```
 
-#### 4e) Populate table `socialmedia`
+#### 3e) Populate table `socialmedia`
 
 ```shell
 astra db dsbulk workshops \
@@ -187,8 +224,28 @@ astra db dsbulk workshops \
 > 6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
 > ```
 
-#### 4f) Check data load
+#### 3f) Check data load
 If the previous command worked properly we should now see some data in the `socialmedia` table.
 ```shell
 astra db cqlsh workshops -e "SELECT * FROM machine_learning.socialmedia LIMIT 5;"
 ```
+
+## 4 Verify both datasets using the CQL Console
+At this point, we've used both the **Astra Data Loader** and the **Astra Shell with DSBulk** to load the `movies` and `socialMedia` tables with data. 
+
+In this final step we'll use the **CQL Console** to verify our data. Launch the **CQL Console below**.
+
+<<launchCQLConsole>>
+
+Now execute the following command in the console to verify both datasets.
+```shell
+SELECT * FROM machine_learning.movies LIMIT 5;
+SELECT * FROM machine_learning.socialmedia LIMIT 5;
+```
+
+Nice job! Hopefully now you have a better idea on some of the various ways you can use to load data into an Astra database. 
+
+If you liked this guide and want to learn more, click the link in the **Recommended Guides** section below to learn about using `CRUD` operations to create, read, update, and delete data.
+
+Happy coding and data loading 😃 
+

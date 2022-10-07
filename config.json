@@ -26,7 +26,7 @@
       "title": "Load data into an Astra database 📂",
       "description": "Review various ways to load data into a database.",
       "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
+      "timeToComplete": "15 minutes",
       "recommendedLinks": [{
         "url": "https://docs.datastax.com/en/astra-serverless/docs/manage/upload/astra-data-loader.html",
         "text": "Use Data Loader in Astra Portal (small datasets < 40MB)"

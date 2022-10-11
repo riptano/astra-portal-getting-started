@@ -36,7 +36,7 @@ The Astra data loader is good for small sets of data (< 40MB) or data you want t
 
 First thing, you'll need a **CSV** file to work with.
 
-[DOWNLOAD movies.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/movies.csv) <-- _right click on the `DOWNLOAD` link and choose **Save As**_
+[DOWNLOAD movies.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/movies.csv) <-- _right click on the `DOWNLOAD` link and choose **Save Link As**_
 
 Now launch the data loader using the link below. This will open the loader in a separate tab. 
 
@@ -73,9 +73,9 @@ machine_learning
 ```
 _This is the keyspace we created earlier to contain our tables._
 
-Once all values are selected click `Finish`. 
+Once all values are selected click **"Finish"**. 
 
-At this point the dataset will be loaded in the background and you will receive both an email when the process starts and when the data is loaded. This shouldn't take too long, but for now, just move on to the next step. We'll come back and verify the data later.
+At this point the dataset will be loaded in the background and you will receive both an email when the process starts and when the data is loaded. This shouldn't take too long, but for now, just move on to the **"Next"** step. We'll come back and verify the data later.
 
 ## 3 Use DSBulk with the Astra Shell
 The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
@@ -83,7 +83,7 @@ The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) i
 #### 3a) Install Astra Shell
 The first thing we'll need to do is install the Astra Shell. Execute the following commands in a local terminal.
 ```shell
-curl -Ls "https://dtsx.io/get-astra-cli"
+curl -Ls "https://dtsx.io/get-astra-cli | bash"
 ```
 
 #### 3b) Generate a token for access (you can use an exisitng token if you have one)
@@ -210,7 +210,7 @@ astra db dsbulk workshops \
   -c csv \
   -delim ',' \
   -m "status_id,social_type,num_reactions,num_comments,num_shares,num_likes,num_loves,num_wows,num_hahas,num_sads,num_angrys" \
-  -header false \
+  -header true \
   -k "machine_learning" \
   -t socialmedia
 ```
@@ -243,7 +243,8 @@ SELECT * FROM machine_learning.movies LIMIT 5;
 SELECT * FROM machine_learning.socialmedia LIMIT 5;
 ```
 
-Nice job! Hopefully now you have a better idea on some of the various ways you can use to load data into an Astra database. 
+## 5 Summary 
+In summary, we learned how to load data using both the **Astra Data Loader** and the **Astra Shell with DSBulk**. The **Astra Data Loader** is good for small sets of test or experimental data while the **Astra Shell with DSBulk** can handle larger sets of data that may need some time to load.
 
 If you liked this guide and want to learn more, click the link in the **Recommended Guides** section below to learn about using `CRUD` operations to create, read, update, and delete data.
 

@@ -44,7 +44,7 @@
         "introToDataWithAstraDB"
       ],
       "contentSrc": "loadDataIntoAstraDB/README.md",
-      "stepCount": 4
+      "stepCount": 5
     },
 
     "astraDBApplicationQuickstartPython": {

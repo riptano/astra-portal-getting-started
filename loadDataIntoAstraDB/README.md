@@ -101,65 +101,65 @@ Great, now use the setup command, pass in your token when asked, and we'll load 
 astra setup
 ```
 
-> 🖥️ Output
->
-> ```console
-> +-------------------------------+
-> +-     Astra CLI SETUP         -+
-> +-------------------------------+
-> 
-> Welcome to Astra Cli. We will guide you to start.
-> 
-> [Astra Setup]
-> To use the cli you need to:
- > • Create an Astra account on : https://astra.datastax.com
- > • Create an Authentication token following: https://dtsx.io/create-astra-token
-> 
-> [Cli Setup]
-> You will be asked to enter your token, it will be saved locally in ~/. astrarc
-> 
-> • Enter your token (starting with AstraCS) : 
-> AstraCS:AAAAAA
-> [ INFO ] - Configuration Saved.
-> 
-> 
-> [cedrick.lunven@gmail.com]
-> ASTRA_DB_APPLICATION_TOKEN=AstraCS:AAAAAAAA
-> 
-> [What's NEXT ?]
-> You are all set.(configuration is stored in ~/.astrarc) You can now:
->    • Use any command, 'astra help' will get you the list
->    • Try with 'astra db list'
->    • Enter interactive mode using 'astra'
-> 
-> Happy Coding !
-> ```
+### 🖥️ Output
+
+```yaml
++-------------------------------+
++-     Astra CLI SETUP         -+
++-------------------------------+
+
+Welcome to Astra Cli. We will guide you to start.
+
+[Astra Setup]
+To use the cli you need to:
+ • Create an Astra account on : https://astra.datastax.com
+ • Create an Authentication token following: https://dtsx.io/create-astra-token
+
+[Cli Setup]
+You will be asked to enter your token, it will be saved locally in ~/. astrarc
+
+• Enter your token (starting with AstraCS) : 
+AstraCS:AAAAAA
+[ INFO ] - Configuration Saved.
+
+
+[cedrick.lunven@gmail.com]
+ASTRA_DB_APPLICATION_TOKEN=AstraCS:AAAAAAAA
+
+[What's NEXT ?]
+You are all set.(configuration is stored in ~/.astrarc) You can now:
+   • Use any command, 'astra help' will get you the list
+   • Try with 'astra db list'
+   • Enter interactive mode using 'astra'
+
+Happy Coding !
+```
 
 Now, let's use the shell to get information about the `workshops` database we created earlier just to check everything is working as expected.
 ```shell
 astra db get workshops
 ```
 
-🖥️ Output
+### 🖥️ Output
 
-```console
-+------------------------+--------------------------------------+
-| Attribute              | Value                                |
-+------------------------+--------------------------------------+
-| Name                   | workshops                            |
-| id                     | bb61cfd6-2702-4b19-97b6-3b89a04c9be7 |
-| Status                 | ACTIVE                               |
-| Default Cloud Provider | AWS                                  |
-| Default Region         | us-east-1                            |
-| Default Keyspace       | machine_learning                     |
-| Creation Time          | 2022-08-29T06:13:06Z                 |
-|                        |                                      |
-| Keyspaces              | [0] machine_learning                 |
-|                        |                                      |
-|                        |                                      |
-| Regions                | [0] us-east-1                        |
-|                        |                                      |
-+------------------------+--------------------------------------+
+```yaml
++------------------------+------------------------------+
+| Attribute              | Value                        |        
++------------------------+------------------------------+
+| Name                   | workshops                    |        
+| id                     | bb61cfd6-2702-4b19-97b6-3... |
+| Status                 | ACTIVE                       |       
+| Default Cloud Provider | AWS                          |       
+| Default Region         | us-east-1                    |       
+| Default Keyspace       | machine_learning             |       
+| Creation Time          | 2022-08-29T06:13:06Z         |       
+|                        |                              |       
+| Keyspaces              | [0] machine_learning         |       
+|                        |                              |        
+|                        |                              |       
+| Regions                | [0] us-east-1                |       
+|                        |                              |       
++------------------------+------------------------------+
 ```
 
 #### 3c) Start the CQL shell and connect to database `workshops` and keyspace `machine_learning`
@@ -168,17 +168,17 @@ astra db get workshops
 astra db cqlsh workshops -k machine_learning
 ```
 
-> 🖥️ Output
->
-> ```console
-> [ INFO ] - Cqlsh has been installed
-> 
-> Cqlsh is starting please wait for connection establishment...
-> Connected to cndb at 127.0.0.1:9042.
-> [cqlsh 6.8.0 | Cassandra 4.0.0.6816 | CQL spec 3.4.5 | Native protocol v4]
-> Use HELP for help.
-> token@cqlsh:machine_learning> 
-> ```
+### 🖥️ Output
+
+```yaml
+[ INFO ] - Cqlsh has been installed
+
+Cqlsh is starting please wait for connection establishment...
+Connected to cndb at 127.0.0.1:9042.
+[cqlsh 6.8.0 | Cassandra 4.0.0.6816 | CQL spec 3.4.5 | Native protocol v4]
+Use HELP for help.
+token@cqlsh:machine_learning> 
+```
 
 #### 3d) Initialize the Schema with `cqlsh`
 
@@ -215,14 +215,13 @@ astra db dsbulk workshops \
   -t socialmedia
 ```
 
-> 🖥️ Output
->
-> ```console
-> DSBulk is starting please wait ...
-> 
-> total | failed | rows/s | p50ms |  p99ms | p999ms | batches
-> 6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
-> ```
+### 🖥️ Output
+```yaml
+DSBulk is starting please wait ...
+
+total | failed | rows/s | p50ms |  p99ms | p999ms | batches
+6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
+```
 
 #### 3f) Check data load
 If the previous command worked properly we should now see some data in the `socialmedia` table.

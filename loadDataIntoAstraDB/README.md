@@ -103,7 +103,7 @@ astra setup
 
 ### 🖥️ Output
 
-```yaml
+```bash
 +-------------------------------+
 +-     Astra CLI SETUP         -+
 +-------------------------------+
@@ -141,7 +141,7 @@ astra db get workshops
 ```
 
 ### 🖥️ Output
-> ```yaml
+> ```bash
 > +------------------------+------------------------------+
 > | Attribute              | Value                        |        
 > +------------------------+------------------------------+
@@ -168,7 +168,7 @@ astra db cqlsh workshops -k machine_learning
 ```
 
 ### 🖥️ Output
-> ```yaml
+> ```bash
 > [ INFO ] - Cqlsh has been installed
 > 
 > Cqlsh is starting please wait for connection establishment...
@@ -214,7 +214,7 @@ astra db dsbulk workshops \
 ```
 
 ### 🖥️ Output
-> ```yaml
+> ```bash
 > DSBulk is starting please wait ...
 > 
 > total | failed | rows/s | p50ms |  p99ms | p999ms | batches

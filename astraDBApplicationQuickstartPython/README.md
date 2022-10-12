@@ -7,7 +7,9 @@ In this guide we'll explore connecting your app to Astra using Python.
 - Execute a query using a prepared statement
 
 # Prerequisites
-If you haven't already, go ahead and create a new Astra DB database.
+If you haven't already, go ahead and create a new Astra DB database. 
+
+_This should only take a couple of minutes. Feel free to move on while it's being created._
 
 <<createDatabase>>
 
@@ -27,7 +29,7 @@ You should see output similar to this:
 Python 3.10.2
 ```
 
-If you do not, or if you get an error from that command, visit https://www.python.org/downloads/ for more information on downloads and installation instructions for your machine architecture.
+If you do not, or if you get an error from that command, visit [https://www.python.org/downloads/](https://www.python.org/downloads/) for more information on downloads and installation instructions for your machine architecture.
 
 To install The DataStax Python Driver for Apache Cassandra, you can use Pip (Python's package manager).
 
@@ -49,7 +51,9 @@ cassandra driver version = 3.25.0
 
 ## 2 Set your Astra DB environment variables
 
-For this section, copy your Astra DB Token.  If you need to create one, you can do that here:
+For this section, copy your Astra DB Token.  If you need to create one, you can do that here: 
+
+_Recommended **role** = "Database Administrator"_
 
 <<createToken>>
 
@@ -165,26 +169,28 @@ for row in rows:
     print(row[0])
 ```
 
-When you run the code, be sure to pass the names of an existing keyspace and table:
+When you run the code, be sure to pass the names of an existing **keyspace** and **table**:
 
 ```bash
-python testAstraDB.py ecommerce product
+python testAstraDB.py system local
 ```
 
-For this example, the column names from the product table in the ecommerce keyspace (used in [DataStax's E-commerce Workshop](https://github.com/datastaxdevs/workshop-ecommerce-app#3-create-your-schema)) are shown.  Using another keyspace and table should produce results similar to this:
+_For this example, we're just using "**system**" (keyspace) and "**local**" (table name) to ensure you get some output. You could use whatever keyspace and table names you have access to in the database you are using._
+
+<!-- The column names from the product table in the ecommerce keyspace (used in [DataStax's E-commerce Workshop](https://github.com/datastaxdevs/workshop-ecommerce-app#3-create-your-schema)) are shown.  Using another keyspace and table should produce results similar to this: -->
 
 ```bash
-Columns for ecommerce.product
-brand
-images
-linked_documents
-long_desc
-model_number
-name
-product_group
-product_id
-short_desc
-specifications
+Columns for system.local
+bootstrapped
+broadcast_address
+cluster_name
+cql_version
+data_center
+dse_version
+gossip_generation
+graph
+host_id
+...
 ```
 
 ## 5 Summary

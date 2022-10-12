@@ -80,13 +80,13 @@ At this point the dataset will be loaded in the background and you will receive 
 ## 3 Use DSBulk with the Astra Shell
 The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
 
-#### 3a) Install Astra Shell
+#### 3A - Install Astra Shell
 The first thing we'll need to do is install the Astra Shell. Execute the following commands in a local terminal.
 ```shell
 curl -Ls "https://dtsx.io/get-astra-cli | bash"
 ```
 
-#### 3b) Generate a token for access (you can use an exisitng token if you have one)
+#### 3B - Generate a token for access (you can use an exisitng token if you have one)
 Now, let's setup the shell. We'll need to get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
 
 What's cool is one you pass the token to Astra Shell it will handle everything else for you. Use the following action to create a token if you don't already have one.
@@ -141,46 +141,44 @@ astra db get workshops
 ```
 
 ### 🖥️ Output
+> ```yaml
+> +------------------------+------------------------------+
+> | Attribute              | Value                        |        
+> +------------------------+------------------------------+
+> | Name                   | workshops                    |        
+> | id                     | bb61cfd6-2702-4b19-97b6-3... |
+> | Status                 | ACTIVE                       |       
+> | Default Cloud Provider | AWS                          |       
+> | Default Region         | us-east-1                    |       
+> | Default Keyspace       | machine_learning             |       
+> | Creation Time          | 2022-08-29T06:13:06Z         |       
+> |                        |                              |       
+> | Keyspaces              | [0] machine_learning         |       
+> |                        |                              |        
+> |                        |                              |       
+> | Regions                | [0] us-east-1                |       
+> |                        |                              |       
+> +------------------------+------------------------------+
+> ```
 
-```yaml
-+------------------------+------------------------------+
-| Attribute              | Value                        |        
-+------------------------+------------------------------+
-| Name                   | workshops                    |        
-| id                     | bb61cfd6-2702-4b19-97b6-3... |
-| Status                 | ACTIVE                       |       
-| Default Cloud Provider | AWS                          |       
-| Default Region         | us-east-1                    |       
-| Default Keyspace       | machine_learning             |       
-| Creation Time          | 2022-08-29T06:13:06Z         |       
-|                        |                              |       
-| Keyspaces              | [0] machine_learning         |       
-|                        |                              |        
-|                        |                              |       
-| Regions                | [0] us-east-1                |       
-|                        |                              |       
-+------------------------+------------------------------+
-```
-
-#### 3c) Start the CQL shell and connect to database `workshops` and keyspace `machine_learning`
+#### 3C - Start the CQL shell and connect to database `workshops` and keyspace `machine_learning`
 
 ```shell
 astra db cqlsh workshops -k machine_learning
 ```
 
 ### 🖥️ Output
+> ```yaml
+> [ INFO ] - Cqlsh has been installed
+> 
+> Cqlsh is starting please wait for connection establishment...
+> Connected to cndb at 127.0.0.1:9042.
+> [cqlsh 6.8.0 | Cassandra 4.0.0.6816 | CQL spec 3.4.5 | Native protocol v4]
+> Use HELP for help.
+> token@cqlsh:machine_learning> 
+> ```
 
-```yaml
-[ INFO ] - Cqlsh has been installed
-
-Cqlsh is starting please wait for connection establishment...
-Connected to cndb at 127.0.0.1:9042.
-[cqlsh 6.8.0 | Cassandra 4.0.0.6816 | CQL spec 3.4.5 | Native protocol v4]
-Use HELP for help.
-token@cqlsh:machine_learning> 
-```
-
-#### 3d) Initialize the Schema with `cqlsh`
+#### 3D - Initialize the Schema with `cqlsh`
 
 ```sql
 CREATE TABLE IF NOT EXISTS socialmedia (
@@ -201,7 +199,7 @@ CREATE TABLE IF NOT EXISTS socialmedia (
 quit;
 ```
 
-#### 3e) Populate table `socialmedia`
+#### 3E - Populate table `socialmedia`
 
 ```shell
 astra db dsbulk workshops \
@@ -216,14 +214,14 @@ astra db dsbulk workshops \
 ```
 
 ### 🖥️ Output
-```yaml
-DSBulk is starting please wait ...
+> ```yaml
+> DSBulk is starting please wait ...
+> 
+> total | failed | rows/s | p50ms |  p99ms | p999ms | batches
+> 6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
+> ```
 
-total | failed | rows/s | p50ms |  p99ms | p999ms | batches
-6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
-```
-
-#### 3f) Check data load
+#### 3F - Check data load
 If the previous command worked properly we should now see some data in the `socialmedia` table.
 ```shell
 astra db cqlsh workshops -e "SELECT * FROM machine_learning.socialmedia LIMIT 5;"

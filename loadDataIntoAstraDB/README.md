@@ -83,7 +83,7 @@ The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) i
 #### 3A - Install Astra Shell
 The first thing we'll need to do is install the Astra Shell. Execute the following commands in a local terminal.
 ```shell
-curl -Ls "https://dtsx.io/get-astra-cli | bash"
+curl -Ls https://dtsx.io/get-astra-cli | bash
 ```
 
 #### 3B - Generate a token for access (you can use an exisitng token if you have one)

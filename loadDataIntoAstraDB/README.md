@@ -91,7 +91,7 @@ Now, let's setup the shell. We'll need to get an Astra token ready for this step
 
 What's cool is one you pass the token to Astra Shell it will handle everything else for you. Use the following action to create a token if you don't already have one.
 
-Recommended role = "Organization Administrator"
+**Recommended role** = "Organization Administrator"
 
 <<createToken>>
 

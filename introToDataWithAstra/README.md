@@ -1,36 +1,39 @@
 # Overview
-Do cool shit be learning some CRUD operations in Astradatabase and infrastructure administration.
+Get up and running with the **CRUD** operations you’ll need for building a PoC or working with your app.
 
 **In this guide, we will**
-- Create an Astra DB instance
+- Create a database
 - Create tables
-- Execute CRUD operations
+- Execute (Create, Read, Update, Delete) CRUD operations
 
-## 1 Create your Astra DB instance
-First off, create a database with the following database and keyspace name with the button below. Once complete, come back here and continue in the next section.
+## 1 Create a database
+First off, create a database with the following database and keyspace name with the button below. Once you’ve created a database and it becomes active, continue to the next section.
 
-```shell
-+---------------+------------------+
-| Parameter     | Value            |
-+---------------+------------------+
-| Database Name | workshops        |
-| Keyspace Name | chatsandra       |
-+---------------+------------------+
+**Database Name:** 
+```shell 
+workshops
+```
+
+**Keyspace Name:** 
+```shell 
+chatsandra
 ```
 
 <<createDatabase>>
 
 ## 2 Create tables
-Ok, now that you have a database created the next step is to create tables to work with. 
+Ok, now that you have a database created, the next step is to create tables to work with. 
 
 ### 2a Launch the CQL Console and login to the database
-The command below will launch the Astra CQL Console in another tab. You may want to put the console and this guide side by side for easy copying.
+Open the CQL Console using the button below. 
+
+_You may want to put the console and this guide side by side for easy copying._
 
 <<launchCQLConsole>>
 
 
-### 2b Describe keyspaces and USE the `chatsandra` one we just created
-Ok, now we're ready to rock. Creating tables is quite easy, but before we create one we need to tell the database which keyspace we are working with.
+### 2b Describe keyspaces and set keypsace context to **chatsandra**
+Ok, now we're ready to rock. Creating tables is easy, but before we create one, we need to tell the database which keyspace to use.
 
 First, let's **_DESCRIBE_** all of the keyspaces that are in the database. This will give us a list of the available keyspaces.
 
@@ -38,24 +41,23 @@ First, let's **_DESCRIBE_** all of the keyspaces that are in the database. This 
 ```sql
 DESC KEYSPACES;
 ```
-_"desc" is short for "describe", either is valid._
+_"DESC" is short for "DESCRIBE"; either is valid._
 
-> CQL commands usually end with a semicolon `;`. If you hit Enter, nothing happens and you don't even get your prompt back, most likely it's because you have not closed the command with `;`. If in trouble, you can always get back to the prompt with `Ctrl-C` and start typing the command anew.
+> CQL commands usually end with a semicolon '**_;_**'. If you hit 'Enter' and nothing happens (and you don't even get your prompt back), it's often because your command wasn't closed with a '**_;_**'. If in trouble, you can always get back to the prompt with **_Ctrl-C_**. Then, you can start typing a new command.
 
-Depending on your setup you might see a different set of keyspaces than in the image. The one we care about for now is **_chatsandra_**. From here, execute the **_USE_** command with the **_chatsandra_** keyspace to tell the database our context is within **_chatsandra_**.
+The one we care about for now is **_chatsandra_**. From here, execute the **_USE_** command with the **_chatsandra_** keyspace to tell the database our context is within **_chatsandra_**.
 
-> Take advantage of the TAB-completion in the CQL Console. Try typing `use cha` and then pressing TAB, for example.
+> _Pro-tip: Take advantage of the TAB-completion in the CQL Console. Try typing **_USE cha_** and then pressing TAB, for example._
 
 📘 **Command to execute**
 ```sql
 USE chatsandra;
 ```
 
-Notice how the prompt displays ```<username>@cqlsh:chatsandra>``` informing us we are **using** the **_chatsandra_** keyspace. Now we are ready to create our table.
+Notice how the prompt displays **_<...@cqlsh:chatsandra>_**, informing us we are **_using_** the **_chatsandra_** keyspace. Now we are ready to create our table.
 
-### 2c Create the `users` table
-At this point we can execute a command to create the **users** table.
-Just copy/paste the following command into your CQL console at the prompt.
+### 2c Create the **_users_** table
+At this point, we can execute a command to create a new table. We’ll be creating a table to contain user information. Just copy/paste the following command into your CQL console and hit **_enter_**.
 
 📘 **Command to execute**
 
@@ -72,19 +74,18 @@ CREATE TABLE IF NOT EXISTS users (
 Then **_DESCRIBE_** your keyspace tables to ensure it is there.
 
 📘 **Command to execute**
-
 ```sql
 DESC TABLES;
 ```
 
-Aaaand **BOOM**, you created a table in your database. That's it.
+Aaaand **BOOM!**, you created a table in your database. That's it.
 Now let's start working with data.
 
 ## 3 Execute CRUD operations
 CRUD stands for "**create, read, update, and delete**". Simply put, they are the basic types of commands you need to work with ANY database in order to maintain data for your applications.
 
-### 3a **(`C`)RUD** = create = insert data, users
-We created the `users` table a moment ago, let's put some data in it. This is done with the **INSERT** statement. We'll start by inserting three rows into the **_users_** table.
+### 3a **(_C_)RUD** = create = insert data, users
+We created the **_users_** table a moment ago, now let's put some data in it. This is done with the **INSERT** statement. We'll start by inserting three rows into the **_users_** table.
 
 Copy and paste the following in your CQL Console:
 _(We provided a few variations to get a feel for the syntax needed.)_
@@ -115,8 +116,10 @@ INSERT INTO users (email, name, password, user_id) VALUES (
 );
 ```
 
-### 3b **C(`R`)UD** = read = read data
+### 3b **C(_R_)UD** = read = read data
 Now that we've inserted a few rows, let's take a look at how to read the data back out. This is done with a **SELECT** statement.
+
+📘 **Command to execute**
 
 ```sql
 // Read (some columns of) rows in a certain partition of "users" table
@@ -124,8 +127,10 @@ SELECT email, name, password FROM users
   WHERE email = 'otzi@mail.com';
 ```
 
-### 3d **CR(`U`)D** = update = update data
+### 3d **CR(_U_)D** = update = update data
 At this point we've **_CREATED_** and **_READ_** some data, but what happens when you want to change some existing data to some new value? That's where **UPDATE** comes into play.
+
+📘 **Commands to execute**
 
 ```sql
 UPDATE users 
@@ -139,7 +144,7 @@ SELECT email, name, password FROM users
 That's it, we successfully edited a post (on both tables).
 All that's left now is to **DELETE** some data.
 
-### 3e **CRU(`D`)** = delete = remove data
+### 3e **CRU(_D_)** = delete = remove data
 
 The final operation from our **CRUD** acronym is **DELETE**. This is the operation we use when we want to remove data from the database.
 In Apache Cassandra you can **DELETE** from the cell level all the way up to the partition

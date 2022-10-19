@@ -102,6 +102,8 @@ While DSBulk is pretty easy to use on its own, the Astra Shell makes using it a 
 
 ### 3A - Install Astra Shell
 The first thing we'll need to do is install the Astra Shell. Execute the following command in a local terminal.
+
+📘 **Command to execute**
 ```shell
 curl -Ls https://dtsx.io/get-astra-cli | bash
 ```
@@ -117,11 +119,13 @@ What's cool is once you pass the token to Astra Shell, it will handle everything
 
 Now use the setup command. Pass in your token when asked, and we’ll load some data!
 
+📘 **Command to execute**
+
 ```shell
 astra setup
 ```
 
-#### 🖥️ Output
+🖥️ **Output**
 
 ```bash
 +-------------------------------+
@@ -156,11 +160,13 @@ Happy Coding !
 ```
 
 Now, let's use the shell to get information about the _workshops_ database we created earlier just to check everything is working as expected.
+
+📘 **Command to execute**
 ```shell
 astra db get workshops
 ```
 
-#### 🖥️ Output
+🖥️ **Output**
 > ```bash
 > +------------------------+------------------------------+
 > | Attribute              | Value                        |        
@@ -184,11 +190,13 @@ astra db get workshops
 ### 3C - Start the CQL shell and connect to database 
 Pass the name of the **database** we created _(workshops)_ and **keyspace** _(machine_learning)_ to the "astra db cqlsh" command. This will launch the shell ready to go using our keyspace.
 
+📘 **Command to execute**
+
 ```shell
 astra db cqlsh workshops -k machine_learning
 ```
 
-#### 🖥️ Output
+🖥️ **Output**
 > ```bash
 > [ INFO ] - Cqlsh has been installed
 > 
@@ -201,6 +209,8 @@ astra db cqlsh workshops -k machine_learning
 
 ### 3D - Initialize the Schema with _cqlsh_
 Paste and execute the following _CREATE TABLE_ command into the console.
+
+📘 **Command to execute**
 
 ```sql
 CREATE TABLE IF NOT EXISTS socialmedia (
@@ -224,6 +234,7 @@ quit;
 ### 3E - Populate table _socialmedia_
 Now, let's load some data into our new **socialMedia** table using **DSBulk**. _Notice the columns listed below match the columns we created in our table above._
 
+📘 **Command to execute**
 ```shell
 astra db dsbulk workshops \
   load \
@@ -236,7 +247,7 @@ astra db dsbulk workshops \
   -t socialmedia
 ```
 
-#### 🖥️ Output
+🖥️ **Output**
 > ```bash
 > DSBulk is starting please wait ...
 > 
@@ -246,6 +257,8 @@ astra db dsbulk workshops \
 
 ### 3F - Check data load
 If the previous command worked, we should now see some data in the **socialmedia** table.
+
+📘 **Command to execute**
 ```shell
 astra db cqlsh workshops -e "SELECT * FROM machine_learning.socialmedia LIMIT 5;"
 ```
@@ -258,6 +271,8 @@ In this final step we'll use the **CQL Console** to verify our data. Launch the 
 <<launchCQLConsole>>
 
 Now paste and execute the following command in the console to verify both datasets.
+
+📘 **Command to execute**
 ```shell
 SELECT * FROM machine_learning.movies LIMIT 5;
 SELECT * FROM machine_learning.socialmedia LIMIT 5;

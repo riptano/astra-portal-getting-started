@@ -19,6 +19,8 @@ _This should only take a couple of minutes. Feel free to move on while it's bein
 ## 2 Build and verify your local Python development environment
 You will need both a local installation of Python 3 and the DataStax Python Driver for Apache Cassandra. To verify your Python installation, run the following command:
 
+📘 **Command to execute**
+
 ```bash
 python -V
 ```
@@ -33,11 +35,15 @@ _If you do not, or if you get an error from that command, visit [https://www.pyt
 
 To install The DataStax Python Driver for Apache Cassandra, you can use Pip (Python's package manager).
 
+📘 **Command to execute**
+
 ```bash
 pip install cassandra-driver
 ```
 
 To verify your driver installation, run the following command:
+
+📘 **Command to execute**
 
 ```bash
 python -c 'import cassandra; print ("cassandra driver version = " + cassandra.__version__)'
@@ -58,6 +64,8 @@ Recommended **role:** "Database Administrator"
 
 For our new Python project, we're going to use two environment variables: **ASTRA_DB_TOKEN** and **ASTRA_DB_SECURE_BUNDLE_LOCATION**. Copy the token and run the below command to set it as an environment variable.
 
+📘 **Command to execute**
+
 ```bash
 export ASTRA_DB_TOKEN="AstraCS:qFDPGYOURASTRADBTOKENf15fc"
 ```
@@ -68,11 +76,15 @@ You will also need to create an environment variable containing the location of 
 
 This should download it to your **~/Downloads** directory.  Feel free to copy it somewhere else if you like, but just make sure to refer to its location as shown here:
 
+📘 **Command to execute**
+
 ```bash
 export ASTRA_DB_SECURE_BUNDLE_LOCATION="/Users/yourusername/securebundledir/secure-connect-bundle.zip"
 ```
 
 You can verify that these variables were set up correctly with the following command:
+
+📘 **Command to execute**
 
 ```bash
 env | grep ASTRA
@@ -163,6 +175,8 @@ for row in rows:
 ```
 
 When you run the code, be sure to pass the names of an existing **keyspace** and **table**:
+
+📘 **Command to execute**
 
 ```bash
 python testAstraDB.py system local

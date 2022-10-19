@@ -29,7 +29,7 @@ machine_learning
 
 <<createDatabase>>
 
-It should only take a couple minutes for your database to become `ACTIVE`. Once your database becomes Active, you’ll see its information appear above.
+It should only take a couple minutes for your database to become `ACTIVE`. Once your database becomes active, you’ll see its information appear above.
 
 ## 2 Use the Astra data loader to upload your own dataset
 The Astra data loader is good for smaller sets of data (under 40MB), or data you want to experiment and test with. 
@@ -155,7 +155,7 @@ You are all set.(configuration is stored in ~/.astrarc) You can now:
 Happy Coding !
 ```
 
-Now, let's use the shell to get information about the `workshops` database we created earlier just to check everything is working as expected.
+Now, let's use the shell to get information about the _workshops_ database we created earlier just to check everything is working as expected.
 ```shell
 astra db get workshops
 ```
@@ -182,7 +182,7 @@ astra db get workshops
 > ```
 
 ### 3C - Start the CQL shell and connect to database 
-Pass the name of the **database** we created _("workshops")_ and **keyspace** _("machine_learning")_ to the "astra db cqlsh" command. This will launch the shell ready to go using our keyspace.
+Pass the name of the **database** we created _(workshops)_ and **keyspace** _(machine_learning)_ to the "astra db cqlsh" command. This will launch the shell ready to go using our keyspace.
 
 ```shell
 astra db cqlsh workshops -k machine_learning
@@ -245,13 +245,13 @@ astra db dsbulk workshops \
 > ```
 
 ### 3F - Check data load
-If the previous command worked, we should now see some data in the `socialmedia` table.
+If the previous command worked, we should now see some data in the **socialmedia** table.
 ```shell
 astra db cqlsh workshops -e "SELECT * FROM machine_learning.socialmedia LIMIT 5;"
 ```
 
 ## 4 Verify both datasets using the CQL Console
-At this point, we've used both the **Astra Data Loader** and the **Astra Shell with DSBulk** to load the `movies` and `socialMedia` tables with data. 
+At this point, we've used both the **Astra Data Loader** and the **Astra Shell with DSBulk** to load the **movies** and **socialMedia** tables with data. 
 
 In this final step we'll use the **CQL Console** to verify our data. Launch the **CQL Console below**.
 
@@ -268,7 +268,7 @@ In summary, we learned how to load data using both the **Astra Data Loader** and
 
 The following examples and data are taken from the free [Introduction to Machine Learning Workshop](https://github.com/datastaxdevs/workshop-introduction-to-machine-learning/blob/cedrick-cli/README.md). If you want to go deeper, click the link to experience to full workshop up on GitHub.
 
-If you liked this guide and want to learn more, click the link in the **Recommended Guides** section below to learn about using `CRUD` operations to create, read, update, and delete data.
+If you liked this guide and want to learn more, click the link in the **Recommended Guides** section below to learn about using **CRUD** operations to create, read, update, and delete data.
 
 Happy coding and data loading 😃 
 

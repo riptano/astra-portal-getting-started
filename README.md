@@ -13,8 +13,7 @@ It is assumed that if you are following this template that you intend to write a
 If you'd like to see a working example of this guide [navigate here](https://astra.datastax.com/guide/astraPortalGuideTemplate) and login to Astra.
 
 **In this guide, we will discuss**
-- How to get started
-- Where to put your guide
+- Creating your guide in Github
 - How to format guides and create actions
 - Configuring your guide
 - What **_not_** to do 😬
@@ -42,40 +41,84 @@ be picked up by a preprocessor and used to properly style the guide. While you c
 whatever markdown you want you don't need to worry about trying to match styles within Astra, we'll do that for you.
 Notice the example below "## 1 How to get started".
  -->
-## 1  How to get started
-### Download the repo locally
-You'll be submitting a pull request for your content so you'll want to download this repo locally so you can easily create, iterate on, and commit changes.
+## 1  Creating your guide in Github
+### 1a Pick a name for your guide directory
+Try to make this short and descriptive. 
 
-If you're not familair with how to download a repo, refer to the [Github support doc](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to show you how.
+Use **_camelCase_**, _meaning capitalize the first letter of each new word after the first word_. 
 
-If you haven't already, ensure you view this markdown in **_edit_** mode to get instructions for each section.
+This will be the path used in Astra to access your guide.
 
-<!-- 
-Notice the code blocks in the following section. These are completely valid to use within guides.
- -->
-### Create a branch
-You'll need to create a branch to submit your pull request. Use the following command, **replacing the branch name**, for something unique to your guide.
+Here are some examples:
+- introToDataWithAstra
+- overviewOfAstraDB
+- astraDBApplicationQuickstartPython
 
-📘 **Command to execute**
-```shell
-git checkout -b yourbranchnamehere
-```
+### 1b Create a directory and your README.md file
+Now that you have a directory name you can create it along with your README.md in Github. 
 
-The above command should have auto switched to your new branch. Let's check anyway just to be sure.
+To do this, click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option within this repo. This will bring you to a page like you see in the image below.
 
-📘 **Command to execute**
-```shell
-git branch
-```
+>![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
 
-## 2  Where to put your guide
-### Create a folder in the repo to contain guide contents
-Ensure you create your guide folder with something identifiable. For example, we could use something like "/astraPortalGuideTemplate" for this guide. It's pretty open. We just ask you not use something like "/guide" that's overly generic.
+Here, you will both name your guide directory and create a README.md file to work from.
 
-### Copy **_this_** readme.md
-Make a copy of **_this_** readme.md to use in your own guide as a starting point and store in your newly created folder.
+Start off by typing the **_name of the directory for your guide_** in the field provided. Then, type a slash character **_"/"_** right after the directory name and add **_README.md_**. 
 
-## 3 How to format guides and create actions
+So in the example above, we typed **_"yourDirectory/README.md"_** directly in the field provided.
+
+### 1c Add text to README.md
+If you already have some text for your **_README.md_** file can you paste it directly into the field provided. 
+
+_Note the example "**Put things here in the README.md file**" in the image above._
+
+_Also, don't worry if you don't have all of your text ready, you can always edit more later._
+
+### 1d Create a branch
+Ok, now we're ready to create a branch.
+
+To do this, scroll down to the bottom of the page from the previous step.
+
+Click the **_Create a new branch and start a pull request_** radio button.
+
+Fill out the branch name in the field provided. Github should automatically fill in your username. Just add your directory name and the word **_"guide"_** separated by dashses (for example: **_SonicDMG-yourDirectory-guide_**) as you see in the image below.
+
+>![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
+
+Then click **_Propose new file_**.
+
+### 1e Create a draft pull request
+Now that you have a branch you should see a screen like the one below.
+
+>![Draft pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/draftPR.png?raw=true)
+
+Click the **_...pull request_** dropdown on the lower right hand corner.
+
+Choose the **_Create draft pull request_** option. The button will change to **_Draft pull request_**.
+
+Now click this button to create a draft pull request. _A draft pull request means you are still making edits and it's not ready for review._
+
+### 1f Navigate to your README.md and edit
+Finally, we need to get to your newly created **_README.md_** and open it for editing. 
+
+Look at the image below. 
+
+You should see a link to the branch you just created.
+
+Click this link. This will bring you directly to your newly created branch within Github.
+
+>![Navigate to readme](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToReadme.png?raw=true)
+
+Now click on the new directory you added previously.
+>![Navigate to directory](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToDirectory.png?raw=true)
+
+**_README.md_** should be selected by default. Click on the **_edit_** (_pencil_) icon on the top right to start editing.
+
+>![Edit readme](https://github.com/riptano/astra-portal-getting-started/blob/main/editReadme.png?raw=true)
+
+Once you're done with your edits, scroll down to the bottom of the page and **_commit_** your changes to your branch.
+
+## 2 How to format guides and create actions
 Generally, formatting is pretty open and follows normal markdown styles. The main caveats being guide metadata in the overview, using numbered sections for proper styling within Astra, and using **actions**.
 
 ### Uhhh, what are actions?
@@ -109,7 +152,7 @@ _**Note:** **Actions** will potentially bring users into a new flow to complete 
 
 <<launchDataLoader>>
 
-## 4 Configuring your guide
+## 3 Configuring your guide
 Ok, so now you've got the basics down and have some content. Great, before you submit, there's one more thing for you to do. You must configure your guide.
 
 ### Metadata
@@ -200,22 +243,16 @@ The `stepCount` property tells the renderer how many steps you have in your guid
     "stepCount": 6
 }
 ```
-## 5 What **_not_** to do 😬
+## 4 What **_not_** to do 😬
 We ask that you don't include artifacts that go stale, like UI screenshots that change over time. Our goal is to provide guides that are as maintenance free as possible for both you and our users. Nothing like using a guide that was great a year ago only to find out nothing in it works halfway through.
 
-## 6 How to submit a guide
-Ok great, your guide is ready and now you want to submit a pull request (PR) to get it published. With that, here are a couple guidelines to follow.
+## 5 How to submit a guide
+Ok great, your guide is ready and now you want to submit a pull request (PR) to get it published. All we need to do is mark your draft pull request "Ready for review" in the **_Pull requests_** tab in Github. 
 
-### 6a Create a descriptive title so we know what we're looking at
-Nothing like seeing a title like "Monday" to really leave us guessing. Maybe use something like "Create README for Intro to some cool topic".
+Click the **_Pull requests_** tab.
 
-### 6b Edit directly in Github unless you know what you are doing
-If you've never created a PR in github before and/or are not familiar with executing github commands from a local terminal, just create your directory and your README.md directly in Github.
+Click on your pull request.
 
-To do this click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option.
+Click the **_Ready for review_** button.
 
-![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
-
-![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
-
-![Open pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/openPR.png?raw=true)
+That's it! At this point one of the review team will be notified to start reviewing your request. Awesome job!

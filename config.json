@@ -99,6 +99,29 @@
       ],
       "contentSrc": "astraPortalGuideTemplate/README.md",
       "stepCount": 6
+    },
+
+    "introToConnectionMethods": {
+      "locale": "en-us",
+      "title": "Intro to Connection Methods for Astra DB 🤝",
+      "description": "Learn more about Astra DB's APIs, Drivers, gRPC Clients, and SDKs.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/connect/connecting.html",
+        "text": "Astra DB Connection Methods Overview"
+      }, {
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/connect/connecting.html#_working_with_secure_connect_bundle",
+        "text": "Secure Connect Bundle Documentation"
+      }, {
+        "url": "https://docs.datastax.com/en/astra-serverless/docs/quickstart/qs-document.html",
+        "text": "API Quickstart"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB"
+      ],
+      "contentSrc": "introToConnectionMethods/README.md",
+      "stepCount": 4
     }
 
   }

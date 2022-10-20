@@ -10,16 +10,14 @@ Hiya. Welcome to the Astra getting started guide template. Use this template to 
 
 It is assumed that if you are following this template that you intend to write a guide for DataStax Astra. With that, we highly encourage you to download this markdown file and view it in both edit and rendered modes so you can easily see hidden comments.
 
-Feel free to copy this readme.md in its entirety and use within your guide to get started.
-
-If you'd like to see a working example of this guide [navigate HERE]("https://astra.datastax.com/guide/astraPortalGuideTemplate") and login to Astra.
+If you'd like to see a working example of this guide [navigate here](https://astra.datastax.com/guide/astraPortalGuideTemplate) and login to Astra.
 
 **In this guide, we will discuss**
 - How to get started
 - Where to put your guide
 - How to format guides and create actions
 - Configuring your guide
-- What NOT to do 😬
+- What **_not_** to do 😬
 - How to submit a guide
 
 **Prerequisites**
@@ -49,18 +47,24 @@ Notice the example below "## 1 How to get started".
 ### Download the repo locally
 You'll be submitting a pull request for your content so you'll want to download this repo locally so you can easily create, iterate on, and commit changes.
 
-If you haven't already, ensure you view this markdown in **EDIT** mode to get instructions for each section.
+If you're not familair with how to download a repo, refer to the [Github support doc](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to show you how.
+
+If you haven't already, ensure you view this markdown in **_edit_** mode to get instructions for each section.
 
 <!-- 
 Notice the code blocks in the following section. These are completely valid to use within guides.
  -->
 ### Create a branch
 You'll need to create a branch to submit your pull request. Use the following command, **replacing the branch name**, for something unique to your guide.
+
+📘 **Command to execute**
 ```shell
 git checkout -b yourbranchnamehere
 ```
 
 The above command should have auto switched to your new branch. Let's check anyway just to be sure.
+
+📘 **Command to execute**
 ```shell
 git branch
 ```
@@ -69,8 +73,8 @@ git branch
 ### Create a folder in the repo to contain guide contents
 Ensure you create your guide folder with something identifiable. For example, we could use something like "/astraPortalGuideTemplate" for this guide. It's pretty open. We just ask you not use something like "/guide" that's overly generic.
 
-### Copy **THIS** readme.md
-Make a copy of **THIS** readme.md to use in your own guide as a starting point and store in your newly created folder.
+### Copy **_this_** readme.md
+Make a copy of **_this_** readme.md to use in your own guide as a starting point and store in your newly created folder.
 
 ## 3 How to format guides and create actions
 Generally, formatting is pretty open and follows normal markdown styles. The main caveats being guide metadata in the overview, using numbered sections for proper styling within Astra, and using **actions**.
@@ -78,12 +82,14 @@ Generally, formatting is pretty open and follows normal markdown styles. The mai
 ### Uhhh, what are actions?
 Glad you asked. **Actions** are special options that allow you to easily bring a user through a set of Astra specific operations with a simple button click. The goal is to remove friction from the user experience and make it easier for guide creators to add in more complex operations.
 
-An example is database creation. If you want a user to create a database then use ```<<createDatabase>>``` directly in markdown. Again, use **EDIT** mode to see a real example.
+An example is database creation. If you want a user to create a database then use ```<<createDatabase>>``` directly in markdown. Again, use **_edit_** mode to see a real example.
 <<createDatabase>>
 
-If you've done this correctly in markdown you'll only see the rendered action. Within an Astra guide this will translate into a fully operational button or link with status updates and other functionality. **NOTE** that **actions** will potentially bring users into a new flow to complete the **action**, but will then bring users back to the guide once exited.
+If you've done this correctly in markdown you'll only see the rendered action. Within an Astra guide this will translate into a fully operational button or link with status updates and other functionality. 
 
-### Currently available **ACTIONS** _(these will only render within Astra)_
+_**Note:** **Actions** will potentially bring users into a new flow to complete the **action**, but will then bring users back to the guide once exited._
+
+### Currently available **_actions_** _(these will only render within Astra)_
 ```<<createDatabase>>```
 
 <<createDatabase>>
@@ -136,7 +142,7 @@ Again, just use this one as an example for your own guide.
 ### Breaking it down
 Ok, let's break each property down to see what they do.
 
-#### Guide name AND route
+#### Guide name **_and_** route
 This one is important. Not only is it the unique name given to your guide, but it determines the route to the guide within Astra. **Case matters!** 
 
 ```json
@@ -195,10 +201,22 @@ The `stepCount` property tells the renderer how many steps you have in your guid
     "stepCount": 6
 }
 ```
-## 5 What NOT to do 😬
+## 5 What **_not_** to do 😬
 We ask that you don't include artifacts that go stale, like UI screenshots that change over time. Our goal is to provide guides that are as maintenance free as possible for both you and our users. Nothing like using a guide that was great a year ago only to find out nothing in it works halfway through.
 
 ## 6 How to submit a guide
-```shell
-git push --set-upstream origin yourbranchnamehere
-```
+Ok great, your guide is ready and now you want to submit a pull request (PR) to get it published. With that, here are a couple guidelines to follow.
+
+### 6a Create a descriptive title so we know what we're looking at
+Nothing like seeing a title like "Monday" to really leave us guessing. Maybe use something like "Create README for Intro to some cool topic".
+
+### 6b Edit directly in Github unless you know what you are doing
+If you've never created a PR in github before and/or are not familiar with executing github commands from a local terminal, just create your directory and your README.md directly in Github.
+
+To do this click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option.
+
+![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
+
+![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
+
+![Open pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/openPR.png?raw=true)

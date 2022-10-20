@@ -272,7 +272,7 @@ In this final step we'll use the **CQL Console** to verify our data. Launch the 
 
 Now paste and execute the following command in the console to verify both datasets.
 
-📘 **Command to execute**
+📘 **Commands to execute**
 ```shell
 SELECT * FROM machine_learning.movies LIMIT 5;
 SELECT * FROM machine_learning.socialmedia LIMIT 5;

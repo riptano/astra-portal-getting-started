@@ -34,26 +34,26 @@ It should only take a couple minutes for your database to become `ACTIVE`. Once 
 ## 2 Use the Astra data loader to upload your own dataset
 The Astra data loader is good for smaller sets of data (under 40MB), or data you want to experiment and test with. 
 
-### 2A - Prepare a CSV file
+### 2a Prepare a CSV file
 First thing, you'll need a **CSV** file to work with. We've created one for you to use as an example.
 
 [DOWNLOAD movies.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/movies.csv) <-- _right click on the `DOWNLOAD` link and choose **Save Link As**_
 
 _**NOTE:** Mac users will need to explicitly set the movies file extension to .csv, otherwise it will try and download the file with *.txt._
 
-### 2B - Open the Data Loader
+### 2b Open the Data Loader
 Now launch the data loader using the link below. This will open the loader in a separate tab. 
 
 _You may want to view this side-by-side with this guide._
 
 <<launchDataLoader>>
 
-### 2C - Upload the CSV file
+### 2c Upload the CSV file
 Once the loader is open follow the instructions for the **"Upload your own dataset"** section at the top. Use the **movies** CSV file you just downloaded. 
 
 Once the upload is complete, a **"Next"** button will appear. Click this to move on.
 
-### 2D - Preview data and set the partition key
+### 2d Preview data and set the partition key
 Now you should see the **"Data Preview and Types"** section. Here, you will see the field **"Table Name"**, a preview of the dataset, and the field **"Partition keys"**. Let's not worry about the details for now, just ensure each field has the following values.
 
 **Table Name** _should already contain_
@@ -71,7 +71,7 @@ For the partition key you will need to click the **"Partition Keys"** dropdown a
 
 Click **"Next"**.
 
-### 2E - Set target database and keyspace
+### 2e Set target database and keyspace
 Move on to the next step and choose values for the **Target Database** and **Target Keypsace** fields. The **"Target Database"** field should already be filled out with the database you created in this guide.
 
 **Target Database** _should already contain_
@@ -90,7 +90,7 @@ Choose **"machine_learning"** from the **"Target Keyspace"** field.
 
 Once all values are selected click **"Finish"**. 
 
-### 2F - Load data in background
+### 2f Load data in background
 At this point the dataset will be loaded in the background and you will receive both an email when the process starts and when the data is loaded. This should only take a couple of minutes, but for now, just move on to section 3 below. We'll come back and verify the data later.
 
 ## 3 Use DSBulk Loader with the Astra Shell
@@ -100,7 +100,7 @@ The [DSBulk Loader](https://docs.datastax.com/en/dsbulk/docs/dsbulkAbout.html) c
 
 While DSBulk is pretty easy to use on its own, the Astra Shell makes using it a little simpler and provides a whole set of other options we'll explore below.
 
-### 3A - Install Astra Shell
+### 3a Install Astra Shell
 The first thing we'll need to do is install the Astra Shell. Execute the following command in a local terminal.
 
 📘 **Command to execute**
@@ -108,7 +108,7 @@ The first thing we'll need to do is install the Astra Shell. Execute the followi
 curl -Ls https://dtsx.io/get-astra-cli | bash
 ```
 
-### 3B - Generate a token for access _(you can use an existing token if you have one)_
+### 3b Generate a token for access _(you can use an existing token if you have one)_
 Now, let's setup the shell. We'll need to get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
 
 What's cool is once you pass the token to Astra Shell, it will handle everything else for you. Use the following action to create a token if you don't already have one.
@@ -187,7 +187,7 @@ astra db get workshops
 > +------------------------+------------------------------+
 > ```
 
-### 3C - Start the CQL shell and connect to database 
+### 3c Start the CQL shell and connect to database 
 Pass the name of the **database** we created _(workshops)_ and **keyspace** _(machine_learning)_ to the "astra db cqlsh" command. This will launch the shell ready to go using our keyspace.
 
 📘 **Command to execute**
@@ -207,7 +207,7 @@ astra db cqlsh workshops -k machine_learning
 > token@cqlsh:machine_learning> 
 > ```
 
-### 3D - Initialize the Schema with _cqlsh_
+### 3d Initialize the Schema with _cqlsh_
 Paste and execute the following _CREATE TABLE_ command into the console.
 
 📘 **Command to execute**
@@ -231,7 +231,7 @@ CREATE TABLE IF NOT EXISTS socialmedia (
 quit;
 ```
 
-### 3E - Populate table _socialmedia_
+### 3e Populate table _socialmedia_
 Now, let's load some data into our new **socialMedia** table using **DSBulk**. _Notice the columns listed below match the columns we created in our table above._
 
 📘 **Command to execute**
@@ -255,7 +255,7 @@ astra db dsbulk workshops \
 > 6,622 |      0 |  2,308 | 69.28 | 103.81 | 132.12 |    1.00
 > ```
 
-### 3F - Check data load
+### 3f Check data load
 If the previous command worked, we should now see some data in the **socialmedia** table.
 
 📘 **Command to execute**

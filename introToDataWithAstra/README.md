@@ -84,7 +84,7 @@ Now let's start working with data.
 ## 3 Execute CRUD operations
 CRUD stands for "**create, read, update, and delete**". Simply put, they are the basic types of commands you need to work with ANY database in order to maintain data for your applications.
 
-### 3a **(_C_)RUD** = create = insert data, users
+### 3a **(C)RUD** = create = insert data, users
 We created the **_users_** table a moment ago, now let's put some data in it. This is done with the **INSERT** statement. We'll start by inserting three rows into the **_users_** table.
 
 Copy and paste the following in your CQL Console:
@@ -116,7 +116,7 @@ INSERT INTO users (email, name, password, user_id) VALUES (
 );
 ```
 
-### 3b **C(_R_)UD** = read = read data
+### 3b **C(R)UD** = read = read data
 Now that we've inserted a few rows, let's take a look at how to read the data back out. This is done with a **SELECT** statement.
 
 📘 **Command to execute**
@@ -127,7 +127,7 @@ SELECT email, name, password FROM users
   WHERE email = 'otzi@mail.com';
 ```
 
-### 3d **CR(_U_)D** = update = update data
+### 3d **CR(U)D** = update = update data
 At this point we've **_CREATED_** and **_READ_** some data, but what happens when you want to change some existing data to some new value? That's where **UPDATE** comes into play.
 
 📘 **Commands to execute**
@@ -144,7 +144,7 @@ SELECT email, name, password FROM users
 That's it, we successfully edited a post (on both tables).
 All that's left now is to **DELETE** some data.
 
-### 3e **CRU(_D_)** = delete = remove data
+### 3e **CRU(D)** = delete = remove data
 
 The final operation from our **CRUD** acronym is **DELETE**. This is the operation we use when we want to remove data from the database.
 In Apache Cassandra you can **DELETE** from the cell level all the way up to the partition

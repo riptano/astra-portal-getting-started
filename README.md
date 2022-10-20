@@ -215,8 +215,8 @@ If you've never created a PR in github before and/or are not familiar with execu
 
 To do this click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option.
 
-![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png)
+![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
 
-![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png)
+![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
 
-![Open pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/openPR.png)
+![Open pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/openPR.png?raw=true)

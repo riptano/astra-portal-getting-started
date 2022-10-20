@@ -59,7 +59,7 @@ Now that you have a directory name you can create it along with your README.md i
 
 To do this, click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option within this repo. This will bring you to a page like you see in the image below.
 
-![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
+>![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
 
 Here, you will both name your guide directory and create a README.md file to work from.
 
@@ -77,20 +77,20 @@ _Also, don't worry if you don't have all of your text ready, you can always edit
 ### 1d Create a branch
 Ok, now we're ready to create a branch.
 
-To this this, scroll down to the bottom of the page from the previous step.
+To do this, scroll down to the bottom of the page from the previous step.
 
-Click **_Create a new branch and start a pull request_**.
+Click the **_Create a new branch and start a pull request_** radio button.
 
 Fill out the branch name in the field provided. Github should automatically fill in your username. Just add your directory name and the word **_"guide"_** separated by dashses (for example: **_SonicDMG-yourDirectory-guide_**) as you see in the image below.
 
-![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
+>![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
 
 Then click **_Propose new file_**.
 
 ### 1e Create a draft pull request
 Now that you have a branch you should see a screen like the one below.
 
-![Draft pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/draftPR.png?raw=true)
+>![Draft pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/draftPR.png?raw=true)
 
 Click the **_...pull request_** dropdown on the lower right hand corner.
 
@@ -107,13 +107,18 @@ You should see a link to the branch you just created.
 
 Click this link. This will bring you directly to your newly created branch within Github.
 
-![Navigate to readme](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToReadme.png?raw=true)
+>![Navigate to readme](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToReadme.png?raw=true)
 
-![Navigate to directory](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToDirectory.png?raw=true)
+Now click on the new directory you added previously.
+>![Navigate to directory](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToDirectory.png?raw=true)
 
-![Edit readme](https://github.com/riptano/astra-portal-getting-started/blob/main/editReadme.png?raw=true)
+**_README.md_** should be selected by default. Click on the **_edit_** (_pencil_) icon on the top right to start editing.
 
-## 3 How to format guides and create actions
+>![Edit readme](https://github.com/riptano/astra-portal-getting-started/blob/main/editReadme.png?raw=true)
+
+Once you're done with your edits, scroll down to the bottom of the page and **_commit_** your changes to your branch.
+
+## 2 How to format guides and create actions
 Generally, formatting is pretty open and follows normal markdown styles. The main caveats being guide metadata in the overview, using numbered sections for proper styling within Astra, and using **actions**.
 
 ### Uhhh, what are actions?
@@ -147,7 +152,7 @@ _**Note:** **Actions** will potentially bring users into a new flow to complete 
 
 <<launchDataLoader>>
 
-## 4 Configuring your guide
+## 3 Configuring your guide
 Ok, so now you've got the basics down and have some content. Great, before you submit, there's one more thing for you to do. You must configure your guide.
 
 ### Metadata
@@ -238,26 +243,16 @@ The `stepCount` property tells the renderer how many steps you have in your guid
     "stepCount": 6
 }
 ```
-## 5 What **_not_** to do 😬
+## 4 What **_not_** to do 😬
 We ask that you don't include artifacts that go stale, like UI screenshots that change over time. Our goal is to provide guides that are as maintenance free as possible for both you and our users. Nothing like using a guide that was great a year ago only to find out nothing in it works halfway through.
 
-## 6 How to submit a guide
-Ok great, your guide is ready and now you want to submit a pull request (PR) to get it published. With that, here are some guidelines to follow.
+## 5 How to submit a guide
+Ok great, your guide is ready and now you want to submit a pull request (PR) to get it published. All we need to do is mark your draft pull request "Ready for review" in the **_Pull requests_** tab in Github. 
 
-### 6a Create a descriptive title so we know what we're looking at
-Nothing like seeing a title like "Monday" to really leave us guessing. Maybe use something like "Create README for Intro to some cool topic".
+Click the **_Pull requests_** tab.
 
-### 6b Edit directly in Github unless you know what you are doing
-If you've never created a PR in github before and/or are not familiar with executing github commands from a local terminal follow the steps below from **_6c_** on.
+Click on your pull request.
 
-### 6c Create a directory and your README.md file
-To do this click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option. This will bring you to a page like you see in the image below.
+Click the **_Ready for review_** button.
 
-
-Here, you will both name your guide directory and create a README.md file to work from.
-
-### 6d Create a branch for your guide
-![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
-
-### 6e Open a PR to submit
-![Open pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/openPR.png?raw=true)
+That's it! At this point one of the review team will be notified to start reviewing your request. Awesome job!

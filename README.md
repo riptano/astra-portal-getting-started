@@ -16,7 +16,7 @@ If you'd like to see a working example of this guide [navigate here](https://ast
 - Creating your guide in Github
 - How to format guides and create actions
 - Configuring your guide
-- What **_not_** to do 😬
+- What not to do 😬
 - How to submit a guide
 
 # Prerequisites

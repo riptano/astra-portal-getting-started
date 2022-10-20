@@ -16,7 +16,7 @@ If you'd like to see a working example of this guide [navigate here](https://ast
 - Creating your guide in Github
 - How to format guides and create actions
 - Configuring your guide
-- What **_not_** to do 😬
+- What not to do 😬
 - How to submit a guide
 
 # Prerequisites
@@ -60,6 +60,8 @@ Now that you have a directory name you can create it along with your README.md i
 To do this, click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option within this repo. This will bring you to a page like you see in the image below.
 
 >![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
+
+<img src="https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true" width="100%" />
 
 Here, you will both name your guide directory and create a README.md file to work from.
 

@@ -20,8 +20,7 @@ If you'd like to see a working example of this guide [navigate here](https://ast
 - What **_not_** to do 😬
 - How to submit a guide
 
-**Prerequisites**
-
+# Prerequisites
 **If you don't have any prerequisite content just remove this section altogether.**
 
 This section contains items that a user may need from outside of Astra. Examples are things like Maven for Java or installing Node or Python. 

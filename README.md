@@ -59,7 +59,7 @@ Now that you have a directory name you can create it along with your README.md i
 
 To do this, click the **_Add file_** drop down in the top right hand corner and choose the **_Create new file_** option within this repo. This will bring you to a page like you see in the image below.
 
->![Create directory and readme](https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true)
+<img alt="Create directory and readme" src="https://github.com/riptano/astra-portal-getting-started/blob/main/createDirectoryAndReadme.png?raw=true" width="100%" />
 
 Here, you will both name your guide directory and create a README.md file to work from.
 
@@ -83,14 +83,14 @@ Click the **_Create a new branch and start a pull request_** radio button.
 
 Fill out the branch name in the field provided. Github should automatically fill in your username. Just add your directory name and the word **_"guide"_** separated by dashses (for example: **_SonicDMG-yourDirectory-guide_**) as you see in the image below.
 
->![Create guide branch](https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true)
+<img alt="Create guide branch" src="https://github.com/riptano/astra-portal-getting-started/blob/main/createGuideBranch.png?raw=true" width="100%" />
 
 Then click **_Propose new file_**.
 
 ### 1e Create a draft pull request
 Now that you have a branch you should see a screen like the one below.
 
->![Draft pull request](https://github.com/riptano/astra-portal-getting-started/blob/main/draftPR.png?raw=true)
+<img alt="Draft pull request" src="https://github.com/riptano/astra-portal-getting-started/blob/main/draftPR.png?raw=true" width="100%" />
 
 Click the **_...pull request_** dropdown on the lower right hand corner.
 
@@ -107,16 +107,21 @@ You should see a link to the branch you just created.
 
 Click this link. This will bring you directly to your newly created branch within Github.
 
->![Navigate to readme](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToReadme.png?raw=true)
+<img alt="Navigate to readme" src="https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToReadme.png?raw=true" width="100%" />
 
 Now click on the new directory you added previously.
->![Navigate to directory](https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToDirectory.png?raw=true)
+
+<img alt="Navigate to directory" src="https://github.com/riptano/astra-portal-getting-started/blob/main/navigateToDirectory.png?raw=true" width="100%" />
 
 **_README.md_** should be selected by default. Click on the **_edit_** (_pencil_) icon on the top right to start editing.
 
->![Edit readme](https://github.com/riptano/astra-portal-getting-started/blob/main/editReadme.png?raw=true)
+<img alt="Edit readme" src="https://github.com/riptano/astra-portal-getting-started/blob/main/editReadme.png?raw=true" width="100%" />
 
 Once you're done with your edits, scroll down to the bottom of the page and **_commit_** your changes to your branch.
+
+_Note: Once you have a draft PR in place you can continue to make changes as needed._ 
+
+Follow the sections below to learn how to format your guide. Once complete, the last step (5) will explain how to submit your PR for final review.
 
 ## 2 How to format guides and create actions
 Generally, formatting is pretty open and follows normal markdown styles. The main caveats being guide metadata in the overview, using numbered sections for proper styling within Astra, and using **actions**.
@@ -243,7 +248,7 @@ The `stepCount` property tells the renderer how many steps you have in your guid
     "stepCount": 6
 }
 ```
-## 4 What **_not_** to do 😬
+## 4 What not to do 😬
 We ask that you don't include artifacts that go stale, like UI screenshots that change over time. Our goal is to provide guides that are as maintenance free as possible for both you and our users. Nothing like using a guide that was great a year ago only to find out nothing in it works halfway through.
 
 ## 5 How to submit a guide

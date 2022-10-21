@@ -14,7 +14,7 @@ Gain an understanding of the different connection methods you can use to connect
 ## 1  Different Connection Methods, and when to use 'em
 Astra DB has a bunch of different connection methods to take advantage of. APIs are great for getting started quickly. Drivers are tried and tested – Cassandra battle-tanks. gRPC represents the future, and combine some of the best things you get from using APIs and Drivers – they're cloud-native out of the box. And finally, there's a bunch of SDKs available for you. Want to see them all in practice? Go ahead and create a database to get started.
 
-```<<createDatabase>>```
+<<createDatabase>>
 
 ### Pros and Cons
 Reasons for why to use one method over another.
@@ -37,7 +37,7 @@ Description of Document API
 ## 3 Drivers
 The **SCB** is essential, so get after it.
 
-```<<downloadSCB>>```
+<<downloadSCB>>
 
 ### Language
 

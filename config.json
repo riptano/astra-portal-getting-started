@@ -73,12 +73,15 @@
       "recommendedLinks": [{
         "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
         "text": "Intro to Apache Cassandra for Developers"
+      }, {
+        "url": "https://docs.datastax.com/en/astra-cql/doc/cql/cqlQuickReference.html",
+        "text": "CQL quick reference"
       }],
       "recommendedGuides": [
-        "overviewOfAstraDB"
+        "loadDataIntoAstraDB", "astraDBApplicationQuickstartPython"
       ],
       "contentSrc": "introToDataWithAstra/README.md",
-      "stepCount": 3
+      "stepCount": 4
     },
 
     "astraPortalGuideTemplate": {

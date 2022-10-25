@@ -84,8 +84,8 @@ Now let's start working with data.
 ## 3 Execute CRUD operations
 CRUD stands for "**create, read, update, and delete**". Simply put, they are the basic types of commands you need to work with ANY database in order to maintain data for your applications.
 
-### 3a **(C)RUD** = create = insert data, users
-We created the **_users_** table a moment ago, now let's put some data in it. This is done with the **INSERT** statement. We'll start by inserting three rows into the **_users_** table.
+### 3a **(C)RUD** = create = insert data
+We created the **_users_** table a moment ago, now let's put some data in it. This is done with the **INSERT** statement. We'll begin by inserting three rows into the **_users_** table.
 
 Copy and paste the following in your CQL Console:
 _(We provided a few variations to get a feel for the syntax needed.)_
@@ -117,18 +117,17 @@ INSERT INTO users (email, name, password, user_id) VALUES (
 ```
 
 ### 3b **C(R)UD** = read = read data
-Now that we've inserted a few rows, let's take a look at how to read the data back out. This is done with a **SELECT** statement.
+Now that we've inserted a few rows, let's take a look at how to read the data. This is done with a **SELECT** statement.
 
 📘 **Command to execute**
 
 ```sql
-// Read (some columns of) rows in a certain partition of "users" table
 SELECT email, name, password FROM users 
   WHERE email = 'otzi@mail.com';
 ```
 
 ### 3d **CR(U)D** = update = update data
-At this point we've **_CREATED_** and **_READ_** some data, but what happens when you want to change some existing data to some new value? That's where **UPDATE** comes into play.
+At this point we've **_CREATED_** and **_READ_** some data. Let’s now figure out how to change some existing data to a new value. That’s where **_UPDATE_** comes into play.
 
 📘 **Commands to execute**
 
@@ -141,16 +140,16 @@ SELECT email, name, password FROM users
   WHERE email = 'otzi@mail.com';
 ```
 
-That's it, we successfully edited a post (on both tables).
+That's it! We successfully edited a post (on both tables).
 All that's left now is to **DELETE** some data.
 
 ### 3e **CRU(D)** = delete = remove data
 
 The final operation from our **CRUD** acronym is **DELETE**. This is the operation we use when we want to remove data from the database.
-In Apache Cassandra you can **DELETE** from the cell level all the way up to the partition
-_(meaning I could remove a single column in a single row or I could remove a whole partition)_ using the same **DELETE** command.
 
-_Generally speaking, it's best to perform as few delete operations as possible on the largest amount of data. Think of it this way, if you want to delete ALL data in a table, don't delete each individual cell, just **TRUNCATE** the table. If you need to delete all the rows in a partition, don't delete each row, **DELETE** the partition, and so on._
+In Apache Cassandra, you can **_DELETE_** from the cell level all the way up to the partition using the same **_DELETE_** command. This means you can remove a single column in a single row, or you can remove a whole partition. 
+
+_Generally speaking, it's best to perform as few delete operations as possible on the largest amount of data. Think of it this way: if you want to delete ALL data in a table, don't delete each individual cell, just **TRUNCATE** the table. If you need to delete all the rows in a partition, don't delete each row, **DELETE** the partition, and so on._
 
 📘 **Commands to execute**
 
@@ -163,4 +162,11 @@ DELETE FROM users
 SELECT email, name, password FROM users;
 ```
 
-Notice now that we have one less user: it is as simple as that.
+Notice now that we have one less user. It's as simple as that!
+
+## 4 Summary 
+In summary, we learned how to execute basic CRUD operations using CQL along with some CQL basics. 
+
+This will get you going, but there's a lot more we can do.
+
+If you'd like to go deeper, take a look at the following free workshop [Intro to Apache Cassandra for Developers](https://github.com/datastaxdevs/workshop-intro-to-cassandra). Or you can click below to explore how to load data into Astra and try your hand at an quickstart app using Python.

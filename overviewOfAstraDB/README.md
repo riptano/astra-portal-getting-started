@@ -10,10 +10,10 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)](http
 - How to Create an Astra database with the UI 🔥
 
 ## 1  What do I get with Astra DB?
-DataStax [Astra DB](https://docs.datastax.com/en/astra-serverless/docs/) is built on Apache Cassandra®, the most reliable and scalable database in the world. Astra DB removes the pain of implementing and managing your own Apache Cassandra database. In addition of removing that complexity, we’ve also built a whole set of Drivers, APIs, and Integrations that will help you easily connect to your application.
+DataStax [Astra DB](https://docs.datastax.com/en/astra-serverless/docs/) is built on Apache Cassandra, the most reliable and scalable database in the world. Astra DB removes the pain of implementing and managing your own Apache Cassandra database. In addition of removing that complexity, we’ve also built a whole set of Drivers, APIs, and Integrations that will help you easily connect to your application.
 
 ### Under the hood
-Creating a database within Astra provides you with a **[serverless](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_databases)** database cluster built on Apache Cassandra® and starts using a replication factor of 3.
+Creating a database within Astra provides you with a **[serverless](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_databases)** database cluster built on Apache Cassandra and starts using a replication factor of 3.
 
 By **"[serverless](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_databases)"** we mean that **Astra** databases are elastic and can scale to meet your demands. **Astra** also separates storage and compute to keep Total Cost of Ownership (TCO) down. No need to pay for processing time if your application is in-between operations.
 
@@ -24,16 +24,21 @@ Finally, **Astra** provides a whole set of tools and [APIs (REST, GraphQL, Docum
 ## 2 What are guardrails and how do they affect databases?
 Databases created within Astra DB are defined with a set of limits, called **[guardrails](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits)**, that foster good practices and ensure your databases run optimally.
 
+Examples of guardarils are:
+- [The size of values allowed in a single column](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_columns)
+- [The number of Storage Attached Indexes you can have per table](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_storage_attached_indexing_sai_limits)
+- [Rate-limiting](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_workloads)
+
 We strongly encourage you to read our documentation on [guardrails](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits) for details.
 
 ## 3 What changes do I need to connect my application to Astra DB?
-That depends on whether you are a first time user to Apache Cassandra® and Astra, or if you have an existing implementation.
+That depends on whether you are a first time user to Apache Cassandra and Astra, or if you have an existing implementation.
 
-### Existing Apache Cassandra® implementation using drivers
-If you have an existing application using the DataStax drivers connected to an open source Apache Cassandra® cluster you'll need to ensure you are using an Astra compatible driver. Follow the instructions [here for information on each supported language](https://docs.datastax.com/en/astra-serverless/docs/connect/drivers/migrating-datastax-drivers-to-connect-to-astra-databases.html). Changes are usually often minimal and once in place will usually switch from providing your username, password, and a set of seed nodes to providing a secure connect bundle that contains everything needed to securely connect to Astra.
+### Existing Apache Cassandra implementation using drivers
+If you have an existing application using the DataStax drivers connected to an open source Apache Cassandra cluster you'll need to ensure you are using an Astra compatible driver. Follow the instructions [here for information on each supported language](https://docs.datastax.com/en/astra-serverless/docs/connect/drivers/migrating-datastax-drivers-to-connect-to-astra-databases.html). Changes are usually often minimal and once in place will usually switch from providing your username, password, and a set of seed nodes to providing a secure connect bundle that contains everything needed to securely connect to Astra.
 
-### First time Apache Cassandra®/Astra user or looking for options other than drivers
-If you're new to Apache Cassandra® and Astra, or looking for other options you have multiple choices.
+### First time Apache Cassandra/Astra user or looking for options other than drivers
+If you're new to Apache Cassandra and Astra, or looking for other options you have multiple choices.
 
 #### Drivers
 [Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) have the best performance and configuration options. But with that comes more complexity and the need to maintain driver versions in application code. If you are looking for a performant and "lightweight" HTTP based alternative to drivers, [gRPC]((https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html)) is a good option.
@@ -56,7 +61,7 @@ The name you assign to your database. This is the name displayed within the Astr
 ### [Keyspace](https://docs.datastax.com/en/astra-serverless/docs/manage/db/manage-keyspaces.html) name
 Where all of your database tables are stored within the **database**. 
 
-_If you're already an Apache Cassandra® user this is exactly the same as the keyspaces you are accustomed to and use a replication factor of 3._
+_If you're already an Apache Cassandra user this is exactly the same as the keyspaces you are accustomed to and use a replication factor of 3._
 
 ### Cloud deployment **Provider** 
 A list of the available cloud providers. Currently, Astra offers deployment to all three major providers **_Google Cloud_**, **_Amazon Web Services_**, and **_Microsoft Azure_**. 

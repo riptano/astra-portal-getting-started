@@ -22,9 +22,9 @@ Astra currently supports deployment to all three of the major cloud providers: G
 Finally, **Astra** provides a whole set of tools and [APIs (REST, GraphQL, Document, gRPC)](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html) to make it easy to hook up your application. Take a look at this [FAQ](https://docs.datastax.com/en/astra-serverless/docs/astra-faq.html) to learn more.
 
 ## 2 What are guardrails and how do they affect databases?
-Databases created within Astra DB are defined with a set of limits, called **[guardrails](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits)**, that foster good practices and ensure your databases run optimally.
+[Guardrails]((https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits)) are a set of limits for all databases created within Astra DB. Guardrails foster good practices, and ensure your databases run optimally.
 
-Examples of guardarils are:
+Here are some examples of guardrails:
 - [The size of values allowed in a single column](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_columns)
 - [The number of Storage Attached Indexes you can have per table](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_storage_attached_indexing_sai_limits)
 - [Rate-limiting](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_workloads)

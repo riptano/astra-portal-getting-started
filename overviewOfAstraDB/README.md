@@ -22,7 +22,7 @@ Astra currently supports deployment to all three of the major cloud providers: G
 Finally, **Astra** provides a whole set of tools and [APIs (REST, GraphQL, Document, gRPC)](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html) to make it easy to hook up your application. Take a look at this [FAQ](https://docs.datastax.com/en/astra-serverless/docs/astra-faq.html) to learn more.
 
 ## 2 What are guardrails and how do they affect databases?
-[Guardrails]((https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits)) are a set of limits for all databases created within Astra DB. Guardrails foster good practices, and ensure your databases run optimally.
+[Guardrails](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_astra_db_database_guardrails_and_limits) are a set of limits for all databases created within Astra DB. Guardrails foster good practices, and ensure your databases run optimally.
 
 Here are some examples of guardrails:
 - [The size of values allowed in a single column](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_columns)
@@ -41,7 +41,7 @@ If you have an existing application using the DataStax drivers connected to an o
 If you're new to Apache Cassandra and Astra, or looking for other options you have multiple choices.
 
 #### Drivers
-[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) have the best performance and configuration options. But with that comes more complexity and the need to maintain driver versions in application code. If you are looking for a performant and "lightweight" HTTP based alternative to drivers, [gRPC]((https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html)) is a good option.
+[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) have the best performance and configuration options. But with that comes more complexity and the need to maintain driver versions in application code. If you are looking for a performant and "lightweight" HTTP based alternative to drivers, [gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html) is a good option.
 
 #### Stargate APIs
 The Stargate APIs consist of [REST, GraphQL, Document, and gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html). These are all "driverless" methods of connecting to Astra. All are provided by Astra.

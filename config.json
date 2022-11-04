@@ -18,13 +18,13 @@
         "introToDataWithAstraDB"
       ],
       "contentSrc": "overviewOfAstraDB/README.md",
-      "stepCount": 4
+      "stepCount": 5
     },
 
     "loadDataIntoAstraDB": {
       "locale": "en-us",
       "title": "Load data into an Astra database 📂",
-      "description": "Review various ways to load data into a database.",
+      "description": "Review various ways to load large or small datasets into an Astra database.",
       "skillLevel": "Beginner",
       "timeToComplete": "15 minutes",
       "recommendedLinks": [{
@@ -35,7 +35,7 @@
         "text": "Use DSBulk to load data (medium to large datasets)"
       }, {
         "url": "https://awesome-astra.github.io/docs/pages/astra/astra-cli/#8-dsbulk",
-        "text": "Use DSBulk to with Astra Shell (ease of use)"
+        "text": "Use DSBulk to with Astra CLI (ease of use)"
       }, {
         "url": "https://github.com/datastaxdevs/workshop-introduction-to-machine-learning/blob/cedrick-cli/README.md",
         "text": "DSBulk with Astra HowTo workshop"

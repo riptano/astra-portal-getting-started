@@ -4,7 +4,7 @@ In this guide, we'll explore multiple ways to load data into an Astra database.
 **In this guide, we will**
 - Create a database to explore data loading
 - Use the Astra data loader to upload your own dataset
-- Use DSBulk with the Astra Shell
+- Use DSBulk with the Astra CLI
 - Verify both datasets using the CQL Console
 
 # Prerequisites
@@ -93,15 +93,15 @@ Once all values are selected click **"Finish"**.
 ### 2f Load data in background
 At this point the dataset will be loaded in the background and you will receive both an email when the process starts and when the data is loaded. This should only take a couple of minutes, but for now, just move on to section 3 below. We'll come back and verify the data later.
 
-## 3 Use DSBulk Loader with the Astra Shell
-The [Astra Shell](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
+## 3 Use DSBulk Loader with the Astra CLI
+The [Astra CLI](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
 
 The [DSBulk Loader](https://docs.datastax.com/en/dsbulk/docs/dsbulkAbout.html) can be used for small or large amounts of data, has full error reporting and logging, can load and un-load data, and can reliably count database records. This is a command line tool and can be used in automated processes.
 
-While DSBulk is pretty easy to use on its own, the Astra Shell makes using it a little simpler and provides a whole set of other options we'll explore below.
+While DSBulk is pretty easy to use on its own, the Astra CLI makes using it a little simpler and provides a whole set of other options we'll explore below.
 
-### 3a Install Astra Shell
-The first thing we'll need to do is install the Astra Shell. Execute the following command in a local terminal.
+### 3a Install Astra CLI
+The first thing we'll need to do is install the Astra CLI. Execute the following command in a local terminal.
 
 📘 **Command to execute**
 ```shell
@@ -109,9 +109,9 @@ curl -Ls https://dtsx.io/get-astra-cli | bash
 ```
 
 ### 3b Generate a token for access _(you can use an existing token if you have one)_
-Now, let's setup the shell. We'll need to get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
+Now, let's setup the cli. We'll need to get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
 
-What's cool is once you pass the token to Astra Shell, it will handle everything else for you. Use the following action to create a token if you don't already have one.
+What's cool is once you pass the token to Astra CLI, it will handle everything else for you. Use the following action to create a token if you don't already have one.
 
 **Recommended role:** _"Organization Administrator"_
 
@@ -264,7 +264,7 @@ astra db cqlsh workshops -e "SELECT * FROM machine_learning.socialmedia LIMIT 5;
 ```
 
 ## 4 Verify both datasets using the CQL Console
-At this point, we've used both the **Astra Data Loader** and the **Astra Shell with DSBulk** to load the **movies** and **socialMedia** tables with data. 
+At this point, we've used both the **Astra Data Loader** and the **Astra CLI with DSBulk** to load the **movies** and **socialMedia** tables with data. 
 
 In this final step we'll use the **CQL Console** to verify our data. Launch the **CQL Console below**.
 
@@ -279,7 +279,7 @@ SELECT * FROM machine_learning.socialmedia LIMIT 5;
 ```
 
 ## 5 Summary 
-In summary, we learned how to load data using both the **Astra Data Loader** and the **Astra Shell with DSBulk**. The **Astra Data Loader** is good for small sets of test or experimental data while the **Astra Shell with DSBulk** can handle larger sets of data that may need some time to load.
+In summary, we learned how to load data using both the **Astra Data Loader** and the **Astra CLI with DSBulk**. The **Astra Data Loader** is good for small sets of test or experimental data while the **Astra CLI with DSBulk** can handle larger sets of data that may need some time to load.
 
 The following examples and data are taken from the free [Introduction to Machine Learning Workshop](https://github.com/datastaxdevs/workshop-introduction-to-machine-learning/blob/cedrick-cli/README.md). If you want to go deeper, click the link to experience to full workshop up on GitHub.
 

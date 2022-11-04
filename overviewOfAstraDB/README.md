@@ -76,3 +76,13 @@ _No cloud provider accounts are needed for any of the options presented. Astra h
 Click the button below to create a database.
 
 <<createDatabase>>
+
+## 5 Summary
+Ok, great! You have a database and you know a bit more about Astra DB. Now it's time to start working with some data, and hook up your app.
+
+Feel free to explore **_CRUD operations_** in the recommended guide below, or check out our list of **_integrations_** and **_sample apps_** in the navigation to the left.
+
+All are designed to help connect your app quickly and easily, so you can focus on building something awesome. We'll handle the data.
+
+Happy building! 🚀
+

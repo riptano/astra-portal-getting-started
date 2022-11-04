@@ -21,6 +21,8 @@ chatsandra
 
 <<createDatabase>>
 
+This will only take a couple minutes. Once your database is **_ACTIVE_**, continue on to the next section.
+
 ## 2 Create tables
 Ok, now that you have a database created, the next step is to create tables to work with. 
 

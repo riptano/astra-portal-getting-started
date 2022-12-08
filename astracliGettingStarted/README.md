@@ -1,5 +1,5 @@
 # Overview
-In this guide we will learn how to use the DataStax Astra command line interface (Astra CLI) with both Astra DB and Astra Streaming. The Astra CLI is a set of commands used to create and manage your Astra resources. The Astra CLI is designed to get you working quickly with Astra, with an emphasis on automation.
+In this guide we will learn how to use the DataStax Astra command line interface (Astra CLI) with both Astra DB and Astra Streaming. The Astra CLI is a set of commands used to create and manage your Astra resources. The Astra CLI is designed to get you working quickly with Astra, with an emphasis on automation. The CLI enables you to work with your Astra DB resources, query data through CQLSH, load data with DSBulk, configure and manage your Astra Streaming artifacts, and define Users and Roles.
 
 **In this guide, we will**
 - Install the Astra CLI
@@ -114,7 +114,7 @@ astra <TAB> <TAB>
     --no-color  config      db          help        role        setup       shell       user  
     ```
 
-Groups of command will get you the different command avalable.
+The help documentation is organized by groups of commands. You can access help documentation at the top level, at the level of a specific command, or for the options within a command. 
 
 - Display the top level main help
 
@@ -139,7 +139,7 @@ astra help
     See 'astra help <command>' for more information on a specific command.
     ```
 
-- Display help for command group `astra db`
+- Display help for the command group `astra db`
 
 ```bash
 astra help db
@@ -182,4 +182,4 @@ astra help db
     ```
     
 ## 3 Working with Astra DB
-
+Now that we are configured with our Astra account and know how to access the list of commands, let's start using Astra DB.

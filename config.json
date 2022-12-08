@@ -47,6 +47,26 @@
       "stepCount": 5
     },
 
+    "astracliGettingStarted": {
+      "locale": "en-us",
+      "title": "Get started with the Astra CLI and Astra DB 🚀",
+      "description": "A quick introduction to the Astra CLI where you will install, create a database, query, and more in minutes.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "hhttps://github.com/datastax/astra-cli",
+        "text": "Astra CLI GitHub Repository"
+        }, {
+        "url": "https://awesome-astra.github.io/docs/pages/astra/astra-cli/",
+        "text": "Documenation and additional examples using the Astra CLI"
+      }],
+      "recommendedGuides": [
+        "loadDataIntoAstraDB"
+      ],
+      "contentSrc": "astracliGettingStarted/README.md",
+      "stepCount": 4
+    },
+
     "astraDBApplicationQuickstartPython": {
       "locale": "en-us",
       "title": "How to get started with your Python application and Astra DB 🚀",

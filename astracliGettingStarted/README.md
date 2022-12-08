@@ -1,13 +1,13 @@
 # Overview
-In this guide we will learn how to use the DataStax Astra command line interface (Astra CLI) with both Astra DB and Astra Streaming. The Astra CLI is a set of commands used to create and manage your Astra resources. The Astra CLI is designed to get you working quickly with Astra, with an emphasis on automation. The CLI enables you to work with your Astra DB resources, query data through CQLSH, load data with DSBulk, configure and manage your Astra Streaming artifacts, and define Users and Roles.
+Astra CLI is a command line interface for both Astra DB and Astra Streaming. With a focus on automation, the Astra CLI gives you a set of commands to quickly create and manage your Astra resources. The CLI enables you to work with your Astra DB resources, query data through CQLSH, load data with DSBulk, configure and manage your Astra Streaming artifacts, and define Users and Roles.
 
-**In this guide, we will**
+**In this guide, we'll**
 - Install the Astra CLI
 - Configure the CLI with your Astra account
 - Use the CLI to connect to and manage Astra DB
 
 # Prerequisites
-To use the Astra CLI you need to create a token with the _"Organization Administrator"_ role.
+To use the Astra CLI, you need to create a token with the _"Organization Administrator"_ role.
 
 <<createToken>>
 
@@ -50,7 +50,7 @@ curl -Ls "https://dtsx.io/get-astra-cli" | bash
 In this step, we will configure the CLI to use your Astra token and get familiar with some basic commands.
 
 ### 2a Configuring your token
-Before issuing commands you will need to initialize the configuration file `~/.astrarc`. 
+Before issuing commands, you will need to initialize the configuration file `~/.astrarc`. 
 
 To to so run the following command. During setup, you will be asked to provide your token (AstraCS:...).
 
@@ -75,7 +75,7 @@ astra setup
     🔑 Enter token (starting with AstraCS...):
     ```
 
-You are all set. The configuration (mainly your token) is stored in file `~/.astrarc`.
+You're all set! The configuration (mainly your token) is stored in file `~/.astrarc`.
 
 ### 2b Your first commands
 - Display current version of the cli, validating setup is complete.
@@ -182,11 +182,11 @@ astra help db
     ```
     
 ## 3 Working with Astra DB
-Now that we are configured with our Astra account and know how to access the list of commands, let's start using Astra DB.
+Now that we're configured with our Astra account and know how to access the list of commands, let's start using Astra DB.
 
 ### 3a List Databases
 
-To get the list of non terminated database in your oganization use the command `list` in the group `db`. You can change the output of the database list to _csv_ by adding `-o csv` or to _json_ by adding `-o json`.
+To get the list of non terminated database in your oganization, use the command `list` in the group `db`. You can change the output of the database list to _csv_ by adding `-o csv` or to _json_ by adding `-o json`.
 
 ```bash
 astra db list
@@ -207,17 +207,17 @@ astra db list
 
 ### 3b Create Database
 
-Let's create a database using `db create`. If not specified, the region will be the default free region and the keyspace will be the database name but you can change those settings with `-r` and `-k` respectivitely.
+Let's create a database using `db create`. If not specified, the region will be the default free region, and the keyspace will be the database name. You can change those settings with `-r` and `-k` respectivitely.
 
 ```bash
 astra db create demo
 ```
 
-By default the `create` command is a synchronous call which will wait until the database is created and active. If you would like to issue the command asynchronously, just add `--asynch`
+By default, the `create` command is a synchronous call which will wait until the database is created and active. If you would like to issue the command asynchronously, just add `--asynch`
 
 ### 3c Resume Database
 
-In the free tier, after 23 hours of inactivity your database will be hibernated. To wake up the db, use the `resume` command.
+In the free tier, your database will be hibernated after 23 hours of inactivity. To wake up the db, use the `resume` command.
 
 For example, if you had a database named `hemidactylus`:
 
@@ -251,7 +251,7 @@ To get general information for the database, use the `get` command. To access th
 astra db get demo
 ```
 
-In the output you specifically see the list of keyspaces available and the different regions.
+In the output, you specifically see the list of keyspaces available and the different regions.
 
 ???+ abstract "🖥️ Sample output" 
 
@@ -287,7 +287,7 @@ ls
 
 ### 3f Querying with CQLSH
 
-CQLSH is a standalone interface to work with Astra using CQL (Cassandra Query Language). With CQLSH you can execute any number of CQL operations on the database including creating tables, querying data, and much, much more. The Astra CLI will download, install, setup and wrap CQLSH for you so that you can more easily interact with Astra.
+CQLSH is a standalone interface to work with Astra using CQL (Cassandra Query Language). With CQLSH, you can execute any number of CQL operations on the database including creating tables, querying data, and much, much more. The Astra CLI will download, install, setup and wrap CQLSH for you so that you can more easily interact with Astra.
 
 #### Launch CQLSH
 If no options are provided,  you enter `cqlsh` interactive mode
@@ -308,7 +308,7 @@ astra db cqlsh demo
 
 #### Execute CQL
 
-To execute a CQL Statement with `cqlsh` use the flag `-e`.
+To execute a CQL Statement with `cqlsh`, use the flag `-e`.
 
 ```bash
 astra db cqlsh demo -e "describe keyspaces;"
@@ -316,7 +316,7 @@ astra db cqlsh demo -e "describe keyspaces;"
 
 #### Execute CQL Files
 
-To execute CQL Files with `cqlsh` use the flag `-f`. You can also use the CQL syntax SOURCE.
+To execute CQL Files with `cqlsh`, use the flag `-f`. You can also use the CQL syntax SOURCE.
 
 ```bash
 astra db cqlsh demo -f sample.cql
@@ -324,16 +324,16 @@ astra db cqlsh demo -f sample.cql
 
 ### 3g Delete Database
 
-To delete a db use the `delete` command.
+To delete a db, use the `delete` command.
 
 ```bash
 astra db delete demo
 ```
-Similar to database creation, `delete` command is a synchronous call which will wait until the database is deleted. If you would like to issue the command asynchronously, just add `--asynch`
+Similar to database creation, `delete` command is a synchronous call which will wait until the database is deleted. If you would like to issue the command asynchronously, just add `--asynch`.
 
 ### 4 Summary
 
-In summary, we learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI both in your local development environment and in your automation and CI/CD scripts. 
+In summary, we learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI, both in your local development environment and in your automation and CI/CD scripts. 
 
 If you liked this guide and want to learn more about loading data, click the **Recommended Guides** section below to start using DSBulk.
 

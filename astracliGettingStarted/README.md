@@ -306,12 +306,17 @@ Use HELP for help.
 token@cqlsh>
 ```
 
+Now exit the cqlsh shell to exit interactive mode
+```bash
+exit
+```
+
 #### Execute CQL
 
 To execute a CQL Statement with `cqlsh`, use the flag `-e`.
 
 ```bash
-astra db cqlsh demo -e "describe keyspaces;"
+astra db cqlsh demo -e "describe keyspaces";
 ```
 
 #### Execute CQL Files
@@ -321,6 +326,7 @@ To execute CQL Files with `cqlsh`, use the flag `-f`. You can also use the CQL s
 ```bash
 astra db cqlsh demo -f sample.cql
 ```
+_Note, "sample.cql" in the above command is just an example. The command above will state that it cannot find the file if you execute it._
 
 ### 3g Delete Database
 

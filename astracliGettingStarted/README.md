@@ -32,10 +32,9 @@ To install (or reinstall) the CLI use the following command in a terminal:
 curl -Ls "https://dtsx.io/get-astra-cli" | bash
 ```
 
-??? question "Where is Astra CLI installed on my machine ?"
+**Where is Astra CLI installed on my machine?**
 
     - The Astra CLI is installed in `~/.astra/cli`. This folder is deleted and recreated during installation.
-    
     - Your configuration is saved in the `~/.astrarc` file and will not be lost during reinstallation.
 
 ### Install on Windows
@@ -58,22 +57,22 @@ To to so run the following command. During setup, you will be asked to provide y
 astra setup
 ```
 
-???+ abstract "🖥️ `astra setup` command output"
+**Sample Output**
 
-    ```shell
-        _____            __                
-       /  _  \   _______/  |_____________   
-      /  /_\  \ /  ___/\   __\_  __ \__  \ 
-    /    |    \\___ \  |  |  |  | \// __ \_
-    \____|__  /____  > |__|  |__|  (____  /
-             \/     \/                   \/
+```shell
+    _____            __                
+    /  _  \   _______/  |_____________   
+    /  /_\  \ /  ___/\   __\_  __ \__  \ 
+/    |    \\___ \  |  |  |  | \// __ \_
+\____|__  /____  > |__|  |__|  (____  /
+            \/     \/                   \/
 
-            ------------------------
-            ---       SETUP      ---
-            ------------------------
+        ------------------------
+        ---       SETUP      ---
+        ------------------------
 
-    🔑 Enter token (starting with AstraCS...):
-    ```
+🔑 Enter token (starting with AstraCS...):
+```
 
 You're all set! The configuration (mainly your token) is stored in file `~/.astrarc`.
 
@@ -90,16 +89,17 @@ astra --version
 astra config list
 ```
 
-???+ abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    +-----------------------------------------+
-    | configuration                           |
-    +-----------------------------------------+
-    | default (cedrick.lunven@datastax.com)   |
-    | cedrick.lunven@datastax.com             |
-    +-----------------------------------------+
-    ```
+```shell
++-----------------------------------------+
+| configuration                           |
++-----------------------------------------+
+| default (cedrick.lunven@datastax.com)   |
+| cedrick.lunven@datastax.com             |
++-----------------------------------------+
+```
+
 ### 2c Accessing Help Documentation
 
 The CLI provides extensive documentation for every command. It also provides bash-style autocompletion, use the `TAB` key twice to get a list of commands and options.
@@ -108,11 +108,11 @@ The CLI provides extensive documentation for every command. It also provides bas
 astra <TAB> <TAB>
 ```
 
-???+ abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    --no-color  config      db          help        role        setup       shell       user  
-    ```
+```shell
+--no-color  config      db          help        role        setup       shell       user  
+```
 
 The help documentation is organized by groups of commands. You can access help documentation at the top level, at the level of a specific command, or for the options within a command. 
 
@@ -122,22 +122,22 @@ The help documentation is organized by groups of commands. You can access help d
 astra help
 ```
 
-???+ abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    usage: astra <command> [ <args> ]
+```shell
+usage: astra <command> [ <args> ]
 
-    Commands are:
-        help     View help for any command
-        setup    Initialize configuration file
-        shell    Interactive mode (default if no command provided)
-        config   Manage configuration file
-        db       Manage databases
-        role     Manage roles (RBAC)
-        user     Manage users
+Commands are:
+    help     View help for any command
+    setup    Initialize configuration file
+    shell    Interactive mode (default if no command provided)
+    config   Manage configuration file
+    db       Manage databases
+    role     Manage roles (RBAC)
+    user     Manage users
 
-    See 'astra help <command>' for more information on a specific command.
-    ```
+See 'astra help <command>' for more information on a specific command.
+```
 
 - Display help for the command group `astra db`
 
@@ -145,41 +145,41 @@ astra help
 astra help db
 ```
 
-???+ abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    NAME
-            astra db - Manage databases
+```shell
+NAME
+        astra db - Manage databases
 
-    SYNOPSIS
-            astra db { cqlsh | create | create-keyspace | delete | dsbulk | get |
-                    list } [--] [ --token <AUTH_TOKEN> ]
-                    [ --config-file <CONFIG_FILE> ] [ --no-color ]
-                    [ {-v | --verbose} ] [ {-conf | --config} <CONFIG_SECTION> ]
-                    [ --log <LOG_FILE> ] [ {-o | --output} <FORMAT> ] [cmd-options]
-                    <cmd-args>
+SYNOPSIS
+        astra db { cqlsh | create | create-keyspace | delete | dsbulk | get |
+                list } [--] [ --token <AUTH_TOKEN> ]
+                [ --config-file <CONFIG_FILE> ] [ --no-color ]
+                [ {-v | --verbose} ] [ {-conf | --config} <CONFIG_SECTION> ]
+                [ --log <LOG_FILE> ] [ {-o | --output} <FORMAT> ] [cmd-options]
+                <cmd-args>
 
-            Where command-specific options [cmd-options] are:
-                cqlsh: [ --debug ] [ {-f | --file} <FILE> ] [ {-k | --keyspace} <KEYSPACE> ]
-                        [ --version ] [ {-e | --execute} <STATEMENT> ] [ --encoding <ENCODING> ]
-                create: [ {-k | --keyspace} <KEYSPACE> ] [ --if-not-exist ] [ {-r | --region} <DB_REGION> ]
-                create-keyspace: {-k | --keyspace} <KEYSPACE> [ --if-not-exist ]
-                delete:
-                dsbulk:
-                get:
-                list:
+        Where command-specific options [cmd-options] are:
+            cqlsh: [ --debug ] [ {-f | --file} <FILE> ] [ {-k | --keyspace} <KEYSPACE> ]
+                    [ --version ] [ {-e | --execute} <STATEMENT> ] [ --encoding <ENCODING> ]
+            create: [ {-k | --keyspace} <KEYSPACE> ] [ --if-not-exist ] [ {-r | --region} <DB_REGION> ]
+            create-keyspace: {-k | --keyspace} <KEYSPACE> [ --if-not-exist ]
+            delete:
+            dsbulk:
+            get:
+            list:
 
-            Where command-specific arguments <cmd-args> are:
-                cqlsh: <DB>
-                create: <DB_NAME>
-                create-keyspace: <DB>
-                delete: <DB>
-                dsbulk: [ <dsbulkArguments>... ]
-                get: <DB>
-                list:
+        Where command-specific arguments <cmd-args> are:
+            cqlsh: <DB>
+            create: <DB_NAME>
+            create-keyspace: <DB>
+            delete: <DB>
+            dsbulk: [ <dsbulkArguments>... ]
+            get: <DB>
+            list:
 
-            See 'astra help db <command>' for more information on a specific command.
-    ```
+        See 'astra help db <command>' for more information on a specific command.
+```
     
 ## 3 Working with Astra DB
 Now that we're configured with our Astra account and know how to access the list of commands, let's start using Astra DB.
@@ -192,18 +192,18 @@ To get the list of non terminated database in your oganization, use the command 
 astra db list
 ```
 
-???+ abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    +---------------------+--------------------------------------+---------------------+----------------+
-    | Name                | id                                   | Default Region      | Status         |
-    +---------------------+--------------------------------------+---------------------+----------------+
-    | mtg                 | dde308f5-a8b0-474d-afd6-81e5689e3e25 | eu-central-1        | ACTIVE         |
-    | workshops           | 3ed83de7-d97f-4fb6-bf9f-82e9f7eafa23 | eu-west-1           | ACTIVE         |
-    | sdk_tests           | 06a9675a-ca62-4cd0-9b94-aefaf395922b | us-east-1           | ACTIVE         |
-    | test                | 7677a789-bd57-455d-ab2c-a3bdfa35ba68 | eu-central-1        | ACTIVE         |
-    +---------------------+--------------------------------------+---------------------+----------------+
-    ```
+```shell
++---------------------+--------------------------------------+---------------------+----------------+
+| Name                | id                                   | Default Region      | Status         |
++---------------------+--------------------------------------+---------------------+----------------+
+| mtg                 | dde308f5-a8b0-474d-afd6-81e5689e3e25 | eu-central-1        | ACTIVE         |
+| workshops           | 3ed83de7-d97f-4fb6-bf9f-82e9f7eafa23 | eu-west-1           | ACTIVE         |
+| sdk_tests           | 06a9675a-ca62-4cd0-9b94-aefaf395922b | us-east-1           | ACTIVE         |
+| test                | 7677a789-bd57-455d-ab2c-a3bdfa35ba68 | eu-central-1        | ACTIVE         |
++---------------------+--------------------------------------+---------------------+----------------+
+```
 
 ### 3b Create Database
 
@@ -226,22 +226,22 @@ For example, if you had a database named `hemidactylus`:
 astra db resume hemidactylus
 ```
 
-??? abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    +---------------------+--------------------------------------+---------------------+----------------+
-    | Name                | id                                   | Default Region      | Status         |
-    +---------------------+--------------------------------------+---------------------+----------------+
-    | hemidactylus        | 643c6bb8-2336-4649-97d5-39c33491f5c1 | eu-central-1        | RESUMING       |
-    +---------------------+--------------------------------------+---------------------+----------------+
+```shell
++---------------------+--------------------------------------+---------------------+----------------+
+| Name                | id                                   | Default Region      | Status         |
++---------------------+--------------------------------------+---------------------+----------------+
+| hemidactylus        | 643c6bb8-2336-4649-97d5-39c33491f5c1 | eu-central-1        | RESUMING       |
++---------------------+--------------------------------------+---------------------+----------------+
 
-    And after a few minutes, the database will be **ACTIVE** again. 
-    +---------------------+--------------------------------------+---------------------+----------------+
-    | Name                | id                                   | Default Region      | Status         |
-    +---------------------+--------------------------------------+---------------------+----------------+
-    | hemidactylus        | 643c6bb8-2336-4649-97d5-39c33491f5c1 | eu-central-1        | ACTIVE         |
-    +---------------------+--------------------------------------+---------------------+----------------+
-    ```
+And after a few minutes, the database will be **ACTIVE** again. 
++---------------------+--------------------------------------+---------------------+----------------+
+| Name                | id                                   | Default Region      | Status         |
++---------------------+--------------------------------------+---------------------+----------------+
+| hemidactylus        | 643c6bb8-2336-4649-97d5-39c33491f5c1 | eu-central-1        | ACTIVE         |
++---------------------+--------------------------------------+---------------------+----------------+
+```
 
 ### 3d Get Database Details
 
@@ -253,25 +253,25 @@ astra db get demo
 
 In the output, you specifically see the list of keyspaces available and the different regions.
 
-???+ abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    +------------------------+-----------------------------------------+
-    | Attribute              | Value                                   |
-    +------------------------+-----------------------------------------+
-    | Name                   | demo                                    |
-    | id                     | 071d7059-d55b-4cdb-90c6-41c26da1a029    |
-    | Status                 | ACTIVE                                  |
-    | Default Cloud Provider | AWS                                     |
-    | Default Region         | us-east-1                               |
-    | Default Keyspace       | demo                                    |
-    | Creation Time          | 2022-07-26T15:41:18Z                    |
-    |                        |                                         |
-    | Keyspaces              | [0] demo                                |
-    |                        |                                         |
-    | Regions                | [0] us-east-1                           |
-    +------------------------+-----------------------------------------+
-    ```
+```shell
++------------------------+-----------------------------------------+
+| Attribute              | Value                                   |
++------------------------+-----------------------------------------+
+| Name                   | demo                                    |
+| id                     | 071d7059-d55b-4cdb-90c6-41c26da1a029    |
+| Status                 | ACTIVE                                  |
+| Default Cloud Provider | AWS                                     |
+| Default Region         | us-east-1                               |
+| Default Keyspace       | demo                                    |
+| Creation Time          | 2022-07-26T15:41:18Z                    |
+|                        |                                         |
+| Keyspaces              | [0] demo                                |
+|                        |                                         |
+| Regions                | [0] us-east-1                           |
++------------------------+-----------------------------------------+
+```
 
 
 ### 3e Download Secure Connect Bundle
@@ -296,15 +296,15 @@ If no options are provided,  you enter `cqlsh` interactive mode
 astra db cqlsh demo
 ```
 
-??? abstract "🖥️ Sample output" 
+**Sample Output**
 
-    ```shell
-    Cqlsh is starting please wait for connection establishment...
-    Connected to cndb at 127.0.0.1:9042.
-    [cqlsh 6.8.0 | Cassandra 4.0.0.6816 | CQL spec 3.4.5 | Native protocol v4]
-    Use HELP for help.
-    token@cqlsh>
-    ```
+```shell
+Cqlsh is starting please wait for connection establishment...
+Connected to cndb at 127.0.0.1:9042.
+[cqlsh 6.8.0 | Cassandra 4.0.0.6816 | CQL spec 3.4.5 | Native protocol v4]
+Use HELP for help.
+token@cqlsh>
+```
 
 #### Execute CQL
 
@@ -331,7 +331,7 @@ astra db delete demo
 ```
 Similar to database creation, `delete` command is a synchronous call which will wait until the database is deleted. If you would like to issue the command asynchronously, just add `--asynch`.
 
-### 4 Summary
+## 4 Summary
 
 In summary, we learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI, both in your local development environment and in your automation and CI/CD scripts. 
 

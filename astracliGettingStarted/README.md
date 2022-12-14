@@ -1,5 +1,5 @@
 # Overview
-Astra CLI is a command line interface for both Astra DB and Astra Streaming. With a focus on automation, the Astra CLI gives you a set of commands to quickly create and manage your Astra resources. The CLI enables you to work with your Astra DB resources, query data through CQLSH, load data with DSBulk, configure and manage your Astra Streaming artifacts, and define Users and Roles.
+The DataStax Astra Command Line Interface (CLI) is a tool for both Astra DB and Astra Streaming. With a focus on automation, the Astra CLI gives you a set of commands to quickly create and manage your Astra resources. The CLI enables you to work with your Astra DB resources, query data through CQLSH, load data with DSBulk, configure and manage your Astra Streaming artifacts, and define Users and Roles.
 
 **In this guide, we'll**
 - Install the Astra CLI
@@ -59,6 +59,10 @@ astra setup
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/setup.png?raw=true" width="100%" />
+
+
+<!--
 ```shell
     _____            __                
     /  _  \   _______/  |_____________   
@@ -73,7 +77,7 @@ astra setup
 
 🔑 Enter token (starting with AstraCS...):
 ```
-
+-->
 You're all set! The configuration (mainly your token) is stored in file `~/.astrarc`.
 
 ### 2b Your first commands
@@ -91,6 +95,9 @@ astra config list
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/config.png?raw=true" width="100%" />
+
+<!--
 ```shell
 +-----------------------------------------+
 | configuration                           |
@@ -99,6 +106,7 @@ astra config list
 | cedrick.lunven@datastax.com             |
 +-----------------------------------------+
 ```
+-->
 
 ### 2c Accessing Help Documentation
 
@@ -124,6 +132,9 @@ astra help
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/help.png?raw=true" width="100%" />
+
+<!--
 ```shell
 usage: astra <command> [ <args> ]
 
@@ -138,6 +149,7 @@ Commands are:
 
 See 'astra help <command>' for more information on a specific command.
 ```
+-->
 
 - Display help for the command group `astra db`
 
@@ -147,6 +159,9 @@ astra help db
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/dbhelp.png?raw=true" width="100%" />
+
+<!--
 ```shell
 NAME
         astra db - Manage databases
@@ -180,6 +195,7 @@ SYNOPSIS
 
         See 'astra help db <command>' for more information on a specific command.
 ```
+-->
     
 ## 3 Working with Astra DB
 Now that we're configured with our Astra account and know how to access the list of commands, let's start using Astra DB.
@@ -194,6 +210,9 @@ astra db list
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/dblist.png?raw=true" width="100%" />
+
+<!--
 ```shell
 +---------------------+--------------------------------------+---------------------+----------------+
 | Name                | id                                   | Default Region      | Status         |
@@ -204,6 +223,7 @@ astra db list
 | test                | 7677a789-bd57-455d-ab2c-a3bdfa35ba68 | eu-central-1        | ACTIVE         |
 +---------------------+--------------------------------------+---------------------+----------------+
 ```
+-->
 
 ### 3b Create Database
 
@@ -228,6 +248,9 @@ astra db resume hemidactylus
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/hibernate.png?raw=true" width="100%" />
+
+<!--
 ```shell
 +---------------------+--------------------------------------+---------------------+----------------+
 | Name                | id                                   | Default Region      | Status         |
@@ -242,6 +265,8 @@ And after a few minutes, the database will be **ACTIVE** again.
 | hemidactylus        | 643c6bb8-2336-4649-97d5-39c33491f5c1 | eu-central-1        | ACTIVE         |
 +---------------------+--------------------------------------+---------------------+----------------+
 ```
+-->
+
 
 ### 3d Get Database Details
 
@@ -255,6 +280,9 @@ In the output, you specifically see the list of keyspaces available and the diff
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/dbdetails.png?raw=true" width="100%" />
+
+<!--
 ```shell
 +------------------------+-----------------------------------------+
 | Attribute              | Value                                   |
@@ -272,7 +300,7 @@ In the output, you specifically see the list of keyspaces available and the diff
 | Regions                | [0] us-east-1                           |
 +------------------------+-----------------------------------------+
 ```
-
+-->
 
 ### 3e Download Secure Connect Bundle
 
@@ -298,6 +326,9 @@ astra db cqlsh demo
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/cqlsh.png?raw=true" width="100%" />
+
+<!--
 ```shell
 Cqlsh is starting please wait for connection establishment...
 Connected to cndb at 127.0.0.1:9042.
@@ -310,6 +341,7 @@ Now exit the cqlsh shell to exit interactive mode
 ```bash
 exit
 ```
+-->
 
 #### Execute CQL
 

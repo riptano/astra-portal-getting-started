@@ -45,7 +45,6 @@ curl -Ls "https://dtsx.io/get-astra-cli" | bash
 - Add `C:/Programs/astra-cli/astra.exe` to your path using [this tutorial](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)
 
 ## 2 Setup
-
 In this step, we will configure the CLI to use your Astra token and get familiar with some basic commands.
 
 ### 2a Configuring your token
@@ -109,7 +108,6 @@ astra config list
 -->
 
 ### 2c Accessing Help Documentation
-
 The CLI provides extensive documentation for every command. It also provides bash-style autocompletion, use the `TAB` key twice to get a list of commands and options.
 
 ```bash
@@ -118,9 +116,13 @@ astra <TAB> <TAB>
 
 **Sample Output**
 
+<img alt="Astra Setup" src="https://github.com/riptano/astra-portal-getting-started/blob/main/astracliGettingStarted/helptab.png?raw=true" width="100%" />
+
+<!--
 ```shell
 --no-color  config      db          help        role        setup       shell       user  
 ```
+-->
 
 The help documentation is organized by groups of commands. You can access help documentation at the top level, at the level of a specific command, or for the options within a command. 
 
@@ -129,6 +131,7 @@ The help documentation is organized by groups of commands. You can access help d
 ```bash
 astra help
 ```
+
 
 **Sample Output**
 
@@ -201,7 +204,6 @@ SYNOPSIS
 Now that we're configured with our Astra account and know how to access the list of commands, let's start using Astra DB.
 
 ### 3a List Databases
-
 To get the list of non terminated database in your oganization, use the command `list` in the group `db`. You can change the output of the database list to _csv_ by adding `-o csv` or to _json_ by adding `-o json`.
 
 ```bash
@@ -226,7 +228,6 @@ astra db list
 -->
 
 ### 3b Create Database
-
 Let's create a database using `db create`. If not specified, the region will be the default free region, and the keyspace will be the database name. You can change those settings with `-r` and `-k` respectivitely.
 
 ```bash
@@ -236,7 +237,6 @@ astra db create demo
 By default, the `create` command is a synchronous call which will wait until the database is created and active. If you would like to issue the command asynchronously, just add `--asynch`
 
 ### 3c Resume Database
-
 In the free tier, your database will be hibernated after 23 hours of inactivity. To wake up the db, use the `resume` command.
 
 For example, if you had a database named `hemidactylus`:
@@ -269,7 +269,6 @@ And after a few minutes, the database will be **ACTIVE** again.
 
 
 ### 3d Get Database Details
-
 To get general information for the database, use the `get` command. To access the values of individual attributes, use `get --key <attribute>`. This produces raw output which can be particularly useful when using the CLI in scripts.
 
 ```bash
@@ -303,7 +302,6 @@ In the output, you specifically see the list of keyspaces available and the diff
 -->
 
 ### 3e Download Secure Connect Bundle
-
 The CLI can download the Secure Connect Bundle which includes the security certificates needed to connect your application to your database. Use the `db download-scb` command to download the secure connect bundles (one per region) with the pattern `scb_${dbid}-${dbregion}.zip` in the current folder. Add `-d` to specify a different download directory and/or add `-f` to use a different file name.
 
 ```bash
@@ -314,7 +312,6 @@ ls
 ```
 
 ### 3f Querying with CQLSH
-
 CQLSH is a standalone interface to work with Astra using CQL (Cassandra Query Language). With CQLSH, you can execute any number of CQL operations on the database including creating tables, querying data, and much, much more. The Astra CLI will download, install, setup and wrap CQLSH for you so that you can more easily interact with Astra.
 
 #### Launch CQLSH
@@ -323,6 +320,8 @@ If no options are provided,  you enter `cqlsh` interactive mode
 ```bash
 astra db cqlsh demo
 ```
+
+You can use `exit` to exit out of interactive mode.
 
 **Sample Output**
 
@@ -344,7 +343,6 @@ exit
 -->
 
 #### Execute CQL
-
 To execute a CQL Statement with `cqlsh`, use the flag `-e`.
 
 ```bash
@@ -352,7 +350,6 @@ astra db cqlsh demo -e "describe keyspaces";
 ```
 
 #### Execute CQL Files
-
 To execute CQL Files with `cqlsh`, use the flag `-f`. You can also use the CQL syntax SOURCE.
 
 ```bash
@@ -361,7 +358,6 @@ astra db cqlsh demo -f sample.cql
 _Note, "sample.cql" in the above command is just an example. The command above will state that it cannot find the file if you execute it._
 
 ### 3g Delete Database
-
 To delete a db, use the `delete` command.
 
 ```bash
@@ -370,7 +366,6 @@ astra db delete demo
 Similar to database creation, `delete` command is a synchronous call which will wait until the database is deleted. If you would like to issue the command asynchronously, just add `--asynch`.
 
 ## 4 Summary
-
 In summary, we learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI, both in your local development environment and in your automation and CI/CD scripts. 
 
 If you liked this guide and want to learn more about loading data, click the **Recommended Guides** section below to start using DSBulk.

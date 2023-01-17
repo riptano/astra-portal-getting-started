@@ -51,4 +51,4 @@ Create collection instructions go here.
 
 ## [Learn more](link to public Github document goes here) about Cassandra’s NoSQL core expressed in a JSON idiom
 
-[Super Shredding](link to public Github document goes here)A Cassandra data model for storing JSON.
+## [Learn more](https://github.com/stargate/stargate-mongoose) about Stargate's variant of the Mongoose library for connecting to our JSON API

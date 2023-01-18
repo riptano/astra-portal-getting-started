@@ -15,50 +15,70 @@ What would you like to do first?
   
 Here we provide a fullstack development example of a simple to do list, using Astra DB's sandbox environment as the storage backend (this means your data will not persist beyond this browser session).
 
-![TO DO List](to-do.png)
+![TO DO List](to_do_list.png)
 
 ### See the JSON
 
+```
+{
+	"Astra todos": {
+		"Tasks": "What needs to be done?",
+		"priorities": [
+			"Walk my dog",
+			"Clean the dishes",
+			"Make dinner"
+		]
+	}
+}
+```
+
 ### See the source code
+
+```
+curl --request POST \
+  --url https://$ASTRA_DB_ID-$ASTRA_DB_REGION.apps.astra.datastax.com/api/rest/v2/namespaces/$ASTRA_DB_KEYSPACE/collections/to_do \
+  -H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"Astra todos": {
+		"Tasks": "What needs to be done?",
+		"priorities": [
+			"Walk my dog",
+			"Clean the dishes",
+			"Make dinner"
+		]
+	}
+}'
+  ```
 
 ### Quick Start
 
-[Click here]to clone the collection into the sandbox environment.
-  ![To Do List Displayed](
-  <DETAILS><SUMMARY>See the JSON for this collection</SUMMARY>
-    ```
-    {
-    }
-    ```
-  </DETAILS> 
+0. Log in to your Astra account
+1. [Click here]to clone the collection into the sandbox environment; this will:
+    * Create a namespace within the sandbox environment
+    * Generate a token for this sandbox session
+    * Create a Collection in that namespace and copy the above JSON as a Document into that Collection
+2. Make changes or additions to your JSON:
+| ----------- | ----------- |
+| JSON | Update Command |
+| code goes here | command link goes here |
+
+3. [Click here] to run the To Do application
+
+
 
 ## See an intermediate example in a sandbox environment
+
 **Example goes here**
 
-[Click here]to clone the collection into the sandbox environment.
-  ![Example Displayed](
-  <DETAILS><SUMMARY>See the JSON for this collection</SUMMARY>
-    ```
-    {
-    }
-    ```
-  </DETAILS> 
 
 ## See an advanced example in a sandbox environment
-**Example goes here**
 
-[Click here]to clone the collection into the sandbox environment.
-  ![Example Displayed](
-  <DETAILS><SUMMARY>See the JSON for this collection</SUMMARY>
-    ```
-    {
-    }
-    ```
-  </DETAILS> 
+**Example goes here**
 
 ## No example necessary; let’s create a document collection
 
-Create collection instructions go here.
+Something like [this page](https://github.com/DataStax-Examples/sample-app-template/blob/master/GETTING_STARTED.md#create-an-astra-db) should go here, but expressed only in JSON idioms, not Cassandra-isms.
 
 ## Learn more - Cassandra and JSON
 

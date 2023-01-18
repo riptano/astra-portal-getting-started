@@ -59,11 +59,26 @@ curl --request POST \
     * Generate a token for this sandbox session
     * Create a Collection in that namespace and copy the above JSON as a Document into that Collection
 2. Make changes or additions to your JSON:
-| ----------- | ----------- |
-| JSON | Update Command |
-| code goes here | command link goes here |
 
-3. [Click here] to run the To Do application
+```
+{
+	"Astra todos": {
+		"Tasks": "What needs to be done?",
+		"priorities": [
+			"Walk my dog",
+			"Clean the dishes",
+			"Make dinner"
+		]
+	}
+}
+```
+3. Then [Click here] to run the update command
+<details>
+	<summary>Show command syntax</summary>
+	let doc = await Sandbox.namespace.collection.document.findOneAndUpdate(filter, update, {new: true});
+</details>
+
+4. [Click here] to run the To Do application
 
 
 

@@ -12,8 +12,7 @@ Let's get started!
 None
 
 ## 1 Introduction to Astra Block
-
-With Astra Block, you can stream real-time blockchain data directly to your Astra database.
+With Astra Block, you can stream real-time blockchain data directly to your Astra database. Simply enable the feature within Astra, create a blockchain database and start receiving data.
 
 ## 2 Example Queries
 
@@ -25,7 +24,6 @@ Get contracts by address and block number:
 
 Get logs for a transaction:
 `SELECT * FROM logs WHERE transaction_hash = '0xd81829eef1642054fad5077a3ca234654771187af5c6dc3b8bd6a9d2ddc7078a' and block_number = 15832763 and log_index = 44;`
-
 
 ## 3 Request Access to Astra Block
 You're now ready to give Astra Block a try! Request access by clicking the button below:

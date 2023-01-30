@@ -1,20 +1,21 @@
 # Overview
-In this guide, you'll get an introduction to Astra Block, and launch a block explorer application using real Ethereum data.
+Stream real-time, human-readable blockchain data to your app with Astra Block.
 
 **In this guide, we'll**
+- Introduction to Astra Block
+- Example Queries
 - Request Access to Astra Block
-- Create a database to store our Ethereum data
-- Enable the Astra Block feed
-- Launch a Block Explorer using real Ethereum data
+
+Let's get started!
 
 # Prerequisites
 None
 
-## 1 Request Access
-The Astra CLI is available on **Windows**, **MacOS** and **Linux** environments.
+## 1 Introduction to Astra Block
 
-## 2 Create a Database
+## 2 Example Queries
 
-## 3 Enable the Astra Block feed
+## 3 Request Access to Astra Block
+You're now ready to give Astra Block a try! Request access by clicking the button below:
 
-## 4 Launch a Block Explorer
+<<launchRequestAstraBlock>>

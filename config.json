@@ -122,6 +122,23 @@
       ],
       "contentSrc": "astraPortalGuideTemplate/README.md",
       "stepCount": 6
+    },
+
+    "gettingStartedWithAstraBlock": {
+      "locale": "en-us",
+      "title": "Getting Started with Astra Block",
+      "description": "Get an overview of how to get started with Astra Block",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastax/block-explorer",
+        "text": "Block Explorer Sample App"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "gettingStartedWithAstraBlock/README.md",
+      "stepCount": 3
     }
 
   }

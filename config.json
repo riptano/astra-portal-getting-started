@@ -43,7 +43,7 @@
 
     "astraDBApplicationQuickstartPython": {
       "locale": "en-us",
-      "title": "How to get started with your Python application and Astra DB 🚀",
+      "title": "How to get started with your Python application and Astra DB 🐍",
       "description": "Starting with a sample app, this hands-on guide walks you through connecting Astra DB using Python.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
@@ -139,6 +139,23 @@
       ],
       "contentSrc": "gettingStartedWithAstraBlock/README.md",
       "stepCount": 3
+    },
+
+    "astraKaskadaGettingStarted": {
+      "locale": "en-us",
+      "title": "Getting Started with AI/ML in Astra 🔮",
+      "description": "Get an overview of Kaskada",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastax/block-explorer",
+        "text": "Block Explorer Sample App"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "astraKaskadaGettingStarted/README.md",
+      "stepCount": 6
     }
 
   }

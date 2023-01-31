@@ -2,11 +2,11 @@
 
 Our **JSON API** is an HTTP API and part of the [Stargate](https://stargate.io) open source project. The idea is to provide an abstraction on top of Apache Cassandra™ to allow document-oriented data access patterns. Any application code that can call an HTTP end point can interact with our JSON API.
 
-![JSON API architecture](JSON_API_arch.png)
+<img alt="JSON API architecturet" src="https://github.com/riptano/astra-portal-getting-started/blob/main/gettingStartedWithJSON/JSON_API_arch.png?raw=true" width="100%" />
 
 Our JSON API works best with the associated Mongoose for Astra client library. Now you can run your Mongoose applications on Astra with only a configuration change. Download Mongoose for Astra from [Github](https://github.com/stargate/stargate-mongoose).
 
-![JSON API architecture with Mongoose](JSON_API_mongoose.png)
+<img alt="JSON API architecture with Mongoose" src="https://github.com/riptano/astra-portal-getting-started/blob/main/gettingStartedWithJSON/JSON_API_mongoose.png?raw=true" width="100%" />
 
 What would you like to do first?
 
@@ -15,7 +15,7 @@ What would you like to do first?
   
 Here we provide a fullstack development example of a simple to do list, using Astra DB's sandbox environment as the storage backend (this means your data will not persist beyond this browser session).
 
-![TO DO List](to_do_list.png)
+<img alt="TO DO List" src="https://github.com/riptano/astra-portal-getting-started/blob/main/gettingStartedWithJSON/to_do_list.png?raw=true" width="100%" />
 
 ### See the JSON
 

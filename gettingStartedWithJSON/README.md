@@ -19,7 +19,7 @@ Here we provide a fullstack development example of a simple to do list, using As
 
 ### See the JSON
 
-```
+```json
 {
 	"Astra todos": {
 		"Tasks": "What needs to be done?",
@@ -34,7 +34,7 @@ Here we provide a fullstack development example of a simple to do list, using As
 
 ### See the source code
 
-```
+```bash
 curl --request POST \
   --url https://$ASTRA_DB_ID-$ASTRA_DB_REGION.apps.astra.datastax.com/api/rest/v2/namespaces/$ASTRA_DB_KEYSPACE/collections/to_do \
   -H "X-Cassandra-Token: $ASTRA_DB_APPLICATION_TOKEN" \
@@ -60,7 +60,7 @@ curl --request POST \
     * Create a Collection in that namespace and copy the above JSON as a Document into that Collection
 2. Make changes or additions to your JSON:
 
-```
+```json
 {
 	"Astra todos": {
 		"Tasks": "What needs to be done?",

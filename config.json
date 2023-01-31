@@ -156,6 +156,23 @@
       ],
       "contentSrc": "astraKaskadaGettingStarted/README.md",
       "stepCount": 6
+    },
+
+    "gettingStartedWithJSON": {
+      "locale": "en-us",
+      "title": "Using JSON natively in Astra with Mongoose 😻",
+      "description": "Configure your app to use JSON natively with Astra",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/stargate/stargate-mongoose",
+        "text": "Using Mongoose"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "gettingStartedWithJSON/README.md",
+      "stepCount": 4
     }
 
   }

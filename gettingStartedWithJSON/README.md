@@ -1,4 +1,4 @@
-## Introduction
+# Overview
 
 Our **JSON API** is an HTTP API and part of the [Stargate](https://stargate.io) open source project. The idea is to provide an abstraction on top of Apache Cassandra™ to allow document-oriented data access patterns. Any application code that can call an HTTP end point can interact with our JSON API.
 
@@ -10,14 +10,14 @@ Our JSON API works best with the associated Mongoose for Astra client library. N
 
 What would you like to do first?
 
-## See a beginning example in a sandbox environment
+## 1 See a beginning example in a sandbox environment
 **To Do List Application**
   
 Here we provide a fullstack development example of a simple to do list, using Astra DB's sandbox environment as the storage backend (this means your data will not persist beyond this browser session).
 
 ![TO DO List](to_do_list.png)
 
-### See the JSON
+## 2 See the JSON
 
 ```json
 {
@@ -32,7 +32,7 @@ Here we provide a fullstack development example of a simple to do list, using As
 }
 ```
 
-### See the source code
+## 3 See the source code
 
 ```bash
 curl --request POST \
@@ -51,7 +51,7 @@ curl --request POST \
 }'
   ```
 
-### Quick Start
+## 4 Quick Start
 
 0. Log in to your Astra account
 1. [Click here]to clone the collection into the sandbox environment; this will:
@@ -82,23 +82,23 @@ curl --request POST \
 
 
 
-## See an intermediate example in a sandbox environment
+### See an intermediate example in a sandbox environment
 
 **Example goes here**
 
 
-## See an advanced example in a sandbox environment
+### See an advanced example in a sandbox environment
 
 **Example goes here**
 
-## No example necessary; let’s create a document collection
+### No example necessary; let’s create a document collection
 
 Something like [this page](https://github.com/DataStax-Examples/sample-app-template/blob/master/GETTING_STARTED.md#create-an-astra-db) should go here, but expressed only in JSON idioms, not Cassandra-isms.
 
-## Learn more - Cassandra and JSON
+### Learn more - Cassandra and JSON
 
 [Learn more](link to public Github document goes here) about Cassandra’s NoSQL core expressed in a JSON idiom
 
-## Learn more - Stargate and Mongoose
+### Learn more - Stargate and Mongoose
 
 [Learn more](https://github.com/stargate/stargate-mongoose) about Stargate's variant of the Mongoose library for connecting to our JSON API

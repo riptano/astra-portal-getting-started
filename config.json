@@ -126,8 +126,8 @@
 
     "gettingStartedWithAstraBlock": {
       "locale": "en-us",
-      "title": "Getting Started with Astra Block",
-      "description": "Get an overview of Astra Block",
+      "title": "Build Web3 Apps with Astra Block ⚡️",
+      "description": "Learn how to stream real-time, human-readable blockchain data to your Astra database.",
       "skillLevel": "Beginner",
       "timeToComplete": "10 minutes",
       "recommendedLinks": [{

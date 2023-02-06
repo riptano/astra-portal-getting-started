@@ -26,6 +26,9 @@ We currently support the following data models:
 - Traces
 - Logs
 - Dashboard Analytics
+- Block numbers by date
+- Event signatures
+- Assets
 
 Interested in support for other data? [Let us know](mailto:blockchain@datastax.com).
 

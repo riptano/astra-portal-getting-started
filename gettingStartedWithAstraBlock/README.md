@@ -12,7 +12,9 @@ Let's get started!
 None
 
 ## 1 Introduction to Astra Block
-With Astra Block, you can stream real-time blockchain data directly to your Astra database. Simply enable the feature within Astra, create a blockchain database and start receiving data.
+With Astra Block, you can stream real-time blockchain data directly to your Astra database. Simply enable the feature within Astra, create a blockchain database and start receiving real-time blockchain data.
+
+We currently support Ethereum Mainnet and testnets, with Polygon and Bitcoin coming soon. Interested in support for other chains? [Let us know](mailto:blockchain@datastax.com).
 
 ## 2 Example Queries
 

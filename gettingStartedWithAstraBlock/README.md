@@ -14,7 +14,7 @@ None
 ## 1 Introduction to Astra Block
 With Astra Block, you can stream real-time blockchain data directly to your Astra database. Simply request access to the feature within Astra (we'll enable it for your account within 24 hours) and you can instantly create a blockchain database that auto updates as new blocks are mined.
 
-We currently support Ethereum Mainnet and testnets, with Polygon and Bitcoin coming soon. Interested in support for other chains? [Let us know](mailto:blockchain@datastax.com).
+We currently support Ethereum, with Polygon and Bitcoin coming soon. Interested in support for other chains? [Let us know](mailto:blockchain@datastax.com).
 
 We currently support the following data models:
 - Blocks

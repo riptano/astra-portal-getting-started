@@ -32,8 +32,6 @@ We currently support the following data models:
 
 Interested in support for other data? [Let us know](mailto:blockchain@datastax.com).
 
-Full schema can be viewed in [our docs](https://docs.datastax.com/en/astra-serverless/docs/block/overview.html).
-
 ## 2 Example Queries
 Once you've created your database, navigate to the CQL console and try the queries below:
 

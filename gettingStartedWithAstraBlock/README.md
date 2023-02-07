@@ -60,12 +60,12 @@ Search by contract_address and token_id:
 SELECT * FROM nfts WHERE contract_address='0x7A8cE4BeFfE38f431A2f12e1a8B7d7dAE62DF359' AND token_id='100';
 ```
 
-Search by block_number and address
+Search by block_number and address:
 ```SQL
 SELECT * FROM tokens WHERE block_number=12613232 AND address='0x17c5134461f501b4c00ac8082d2d5a3ff0ba2d3e';
 ```
 
-Search by transaction_hash, block_number, and log_index
+Search by transaction_hash, block_number, and log_index:
 ```SQL
 SELECT * FROM token_transfers WHERE transaction_hash='0x463396d2690820c2895df4838445d0dc009aa7f61ca09ba09298377d4da041b2' AND block_number=4967992 AND log_index=123;
 ```

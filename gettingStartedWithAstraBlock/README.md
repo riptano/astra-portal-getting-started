@@ -35,20 +35,49 @@ Interested in support for other data? [Let us know](mailto:blockchain@datastax.c
 ## 2 Example Queries
 Once you've created your database, navigate to the CQL console and try the queries below:
 
-Get an NFT by contract address and token id:
+Search 5 entries from Block Group 134:
 ```SQL
-SELECT * FROM nfts WHERE contract_address='0x7A8cE4BeFfE38f431A2f12e1a8B7d7dAE62DF359' AND token_id='100';
+SELECT * FROM eth_blocks WHERE blocks_group=134 LIMIT 5;
 ```
 
-Get contracts by address and block number:
+Search by block number:
+```SQL
+SELECT * FROM eth_blocks WHERE blocks_group=154 AND number=15399999 AND hash='0x25201aacfffd0ffd04e63e02ef82b2e15149f1c5b2430e338c32bb8520d107d9';
+```
 
+Search by Address and Block_Number:
 ```SQL
 SELECT * FROM contracts WHERE address='0xfdeed771e8b00eb1e72243acbd309ed83ad45f6e' AND block_number=9578734;
 ```
 
-Get logs for a transaction:
+Search by Block Hash, Transaction Index, and Hash:
+```SQL
+SELECT * FROM transactions WHERE block_hash='0x57d1ad19c25804ab3941baccaa588a4ea0e6cd44b965a6ec4204c60b9e7ce34f' AND transaction_index=4 AND hash='0x1ffc4aff0d7b32694bd3e430f2a6b02621c3f9662f70b0b88afe558358fa0ee4';
+```
+
+Search by contract_address and token_id:
+```SQL
+SELECT * FROM nfts WHERE contract_address='0x7A8cE4BeFfE38f431A2f12e1a8B7d7dAE62DF359' AND token_id='100';
+```
+
+Search by block_number and address
+```SQL
+SELECT * FROM tokens WHERE block_number=12613232 AND address='0x17c5134461f501b4c00ac8082d2d5a3ff0ba2d3e';
+```
+
+Search by transaction_hash, block_number, and log_index
+```SQL
+SELECT * FROM token_transfers WHERE transaction_hash='0x463396d2690820c2895df4838445d0dc009aa7f61ca09ba09298377d4da041b2' AND block_number=4967992 AND log_index=123;
+```
+
+Search by block_number, transaction_hash, and log_index:
 ```SQL
 SELECT * FROM logs WHERE transaction_hash = '0xd81829eef1642054fad5077a3ca234654771187af5c6dc3b8bd6a9d2ddc7078a' and block_number = 15832763 and log_index = 44;
+```
+
+Search for decoded data by block_number, transaction_hash, and log_index:
+```SQL
+SELECT decoded_data FROM logs WHERE transaction_hash = '0xd81829eef1642054fad5077a3ca234654771187af5c6dc3b8bd6a9d2ddc7078a' and block_number = 15832763 and log_index = 44;
 ```
 
 ## 3 Request Access to Astra Block

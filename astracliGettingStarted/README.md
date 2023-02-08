@@ -50,7 +50,7 @@ In this step, we will configure the CLI to use your Astra token and get familiar
 ### 2a Configuring your token
 Before issuing commands, you will need to initialize the configuration file `~/.astrarc`. 
 
-To to so run the following command. During setup, you will be asked to provide your token (AstraCS:...).
+To run the following command during setup, you will be asked to provide your token (AstraCS:...).
 
 ```shell
 astra setup

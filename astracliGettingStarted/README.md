@@ -40,9 +40,9 @@ curl -Ls "https://dtsx.io/get-astra-cli" | bash
 ### Install on Windows
 - Download the Windows archive [astra-cli-${version}-windows.zip](https://github.com/datastax/astra-cli/releases/download/0.2/astra-cli-0.2-windows.zip)
 
-- Unzip the archive in a folder or your choice, for example `C:/Programs/astra-cli`
+- Unzip the archive in a folder or your choice, for example `C:\Programs\astra-cli`
 
-- Add `C:/Programs/astra-cli/astra.exe` to your path using [this tutorial](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)
+- Add `C:\Programs\astra-cli\astra.exe` to your path using [this tutorial](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)
 
 ## 2 Setup
 In this step, we will configure the CLI to use your Astra token and get familiar with some basic commands.

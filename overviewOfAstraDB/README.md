@@ -45,15 +45,19 @@ If you're new to Apache Cassandra and Astra, or looking for other options you ha
 
 #### Stargate APIs
 The Stargate APIs consist of [REST, GraphQL, Document, and gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html). These are all "driverless" methods of connecting to Astra. All are provided by Astra.
-- [REST API](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-rest.html) - Pretty much the standard way to handle HTTP based application communications
+- [REST API](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-rest.html) - The standard way to handle HTTP based application communications
 - [GraphQL API](https://docs.datastax.com/en/astra-serverless/docs/develop/graphql.html) - Extremely flexible table and payload definitions. Originally developed for mobile communications to keep payload sizes down. Allows chaining of multiple queries into a single result payload (think about having control you wish you had with REST). 
 - [Document API](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-doc.html) - Native storage, retrieval, and manipulation of JSON documents
 - [gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html) - A cloud native "lightweight" and fast client that allows direct CQL calls (on par performance with native drivers)
 
 ## 4 How to Create an Astra database with the UI 🔥
-Now that you have a better idea of what to consider when using Astra, let's get you started by creating an Astra database.
+Now that you have a better idea of what to consider when using Astra, let's get started by creating an Astra database.
 
-You'll be presented with four options
+Click the button below to create a database.
+
+<<createDatabase>>
+
+You'll be presented with a form to complete the following four options:
 
 ### Database name
 The name you assign to your database. This is the name displayed within the Astra console.
@@ -73,16 +77,13 @@ The geographic region within the chosen cloud provider. Just pick one close to y
 
 _No cloud provider accounts are needed for any of the options presented. Astra handles all cloud provider deployments and details._
 
-Click the button below to create a database.
-
-<<createDatabase>>
 
 ## 5 Summary
-Ok, great! You have a database and you know a bit more about Astra DB. Now it's time to start working with some data, and hook up your app.
+Ok, great! You have a database and you know more about Astra DB. Now it's time to start working with some data and connect your app.
 
 Feel free to explore **_CRUD operations_** in the recommended guide below, or check out our list of **_integrations_** and **_sample apps_** in the navigation to the left.
 
-All are designed to help connect your app quickly and easily, so you can focus on building something awesome. We'll handle the data.
+All are designed to help connect your app quickly and easily so you can focus on building something awesome. We'll handle the data.
 
 Happy building! 🚀
 

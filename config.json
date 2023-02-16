@@ -32,7 +32,7 @@
         "text": "Astra CLI GitHub Repository"
         }, {
         "url": "https://awesome-astra.github.io/docs/pages/astra/astra-cli/",
-        "text": "Documenation and additional examples using the Astra CLI"
+        "text": "Documentation and additional examples using the Astra CLI"
       }],
       "recommendedGuides": [
         "loadDataIntoAstraDB"

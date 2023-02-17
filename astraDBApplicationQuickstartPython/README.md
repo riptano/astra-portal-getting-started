@@ -1,23 +1,23 @@
 # Overview
 Learn how to connect your app to Astra using Python.
 
-**In this guide, we'll learn how to**
+**In this guide, you'll learn how to**
 - Set up our Python development environment
 - Connect to Astra DB and execute a static query
 - Execute a query using a prepared statement
 
 # Prerequisites
-- You also should have a recent version of Python 3 installed.
+- You also should have a recent version of Python 3.
 
 ## 1 Create a database
-If you haven't already, go ahead and create a new Astra DB database. 
+If you haven't already done so, create a new Astra DB database. 
 
-_This should only take a couple of minutes. Feel free to move on while it's being created._
+_Creating a database only takes a couple of minutes. Feel free to move on while it's being created._
 
 <<createDatabase>>
 
 ## 2 Build and verify your local Python development environment
-You will need both a local installation of Python 3 and the DataStax Python Driver for Apache Cassandra. To verify your Python installation, run the following command:
+You need both a local installation of Python 3 and the DataStax Python Driver for Apache Cassandra. To verify your Python installation, run the following command:
 
 📘 **Command to execute**
 
@@ -56,13 +56,13 @@ cassandra driver version = 3.25.0
 ```
 
 ## 3 Set your Astra DB environment variables
-In this section, you will need to have an Astra DB Token ready. If you need to create one, you can do that here: 
+In this section, have an Astra DB Token ready. If you need to create one, you can do that here: 
 
 Recommended **role:** "Database Administrator"
 
 <<createToken>>
 
-For our new Python project, we're going to use two environment variables: **ASTRA_DB_TOKEN** and **ASTRA_DB_SECURE_BUNDLE_LOCATION**. Copy the token and run the below command to set it as an environment variable.
+For our new Python project, use two environment variables: **ASTRA_DB_TOKEN** and **ASTRA_DB_SECURE_BUNDLE_LOCATION**. Copy the token and run the below command to set it as an environment variable.
 
 📘 **Command to execute**
 
@@ -70,11 +70,11 @@ For our new Python project, we're going to use two environment variables: **ASTR
 export ASTRA_DB_TOKEN="AstraCS:qFDPGYOURASTRADBTOKENf15fc"
 ```
 
-You will also need to create an environment variable containing the location of your (downloaded) secure bundle.  If you have not downloaded your secure bundle yet, you can do that here:
+Create an environment variable containing the location of your (downloaded) secure bundle.  If you have not downloaded your secure bundle, you can do that here:
 
 <<downloadSCB>>
 
-This should download it to your **~/Downloads** directory.  Feel free to copy it somewhere else if you like, but just make sure to refer to its location as shown here:
+Download it to your **~/Downloads** directory.  Feel free to copy it somewhere else if you like, but just make sure to refer to its location as shown here:
 
 📘 **Command to execute**
 
@@ -91,7 +91,7 @@ env | grep ASTRA
 ```
 
 ## 4 Create a new project and connect to Astra DB
-Let's start by creating a new Python program to connect to Astra DB.  Open your favorite IDE and create a new file called **testAstraDB.py**.  We will start by adding three imports:
+Start by creating a new Python program to connect to Astra DB.  Open your favorite IDE and create a new file called **testAstraDB.py**. Add the following three imports:
 
 ```python
 from cassandra.cluster import Cluster
@@ -99,9 +99,9 @@ from cassandra.auth import PlainTextAuthProvider
 import os
 ```
 
-This makes it possible for you to establish a secure connection (**PlainTextAuthProvider**) to your Astra DB cluster (**Cluster**).  We'll also need **os** to access the environment variables.
+This makes it possible for you to establish a secure connection (**PlainTextAuthProvider**) to your Astra DB cluster (**Cluster**).  You'll also need **os** to access the environment variables.
 
-Next, we'll create three variables in our Python code:
+Next, create three variables in our Python code:
 
 ```python
 username = "token"
@@ -111,7 +111,7 @@ secureBundleLocation = os.environ['ASTRA_DB_SECURE_BUNDLE_LOCATION']
 
 This defines the string "token" as our **username**, the **token** variable to our **ASTRA_DB_TOKEN** env var, and **secureBundleLocation** to our **ASTRA_DB_SECURE_BUNDLE_LOCATION** env var.
 
-Next, we'll define and configure our cluster:
+Define and configure our cluster:
 
 ```python
 cloud_config= {
@@ -121,9 +121,9 @@ auth_provider = PlainTextAuthProvider(username, token)
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 ```
 
-Here, we're using our **secureBundleLocation** to set up our cloud configuration.  We're also initializing the **PlainTextAuthProvider**, and using both of these to configure our cluster object.
+Here, use you **secureBundleLocation** to set up your cloud configuration.  You're also initializing the **PlainTextAuthProvider**, and using both of these to configure our cluster object.
 
-To finish up, we'll connect to our cluster and query the **local** table from the **system** keyspace to get the **cluster_name**.
+To finish, connect to your cluster and query the **local** table from the **system** keyspace to get the **cluster_name**.
 
 ```python
 session = cluster.connect()
@@ -142,22 +142,22 @@ cluster name = cndb
 ```
 
 ## 5 Using a prepared statement
-Now that we've shown how to connect and run a static query, let's use a prepared statement.  Prepared statements are good for queries that we plan on running several times for different key values.
+Now that you know how to connect and run a static query, use a prepared statement. Prepared statements are good for queries that you plan on running several times for different key values.
 
-Let's start by adding another import to our code.  For this exercise, we'll send in variables as arguments on the command line.  To read those arguments, we'll need to import the **sys** module.
+Start by adding another import to your code. For this exercise, send in variables as arguments on the command line. To read those arguments, import the **sys** module.
 
 ```python
 import sys
 ```
 
-For our use case, we'll read in a keyspace and table name, and then display the columns present in that table.  Let's create variables in our code to read those arguments from the command line:
+For this use case, read in a keyspace and table name, and then display the columns present in that table. Create variables in your code to read those arguments from the command line:
 
 ```python
 keyspace = sys.argv[1]
 table = sys.argv[2]
 ```
 
-Next, we'll create our query string and prepare it.  Preparing our query string adds it to the prepared statement cache of our Astra DB cluster, preventing it from needing to be parsed before each use.
+Next, create your query string and prepare it. Preparing your query string adds it to the prepared statement cache of your Astra DB cluster, preventing the need to parse it before each use.
 
 ```python
 pStatement = session.prepare("""
@@ -165,7 +165,7 @@ pStatement = session.prepare("""
 """)
 ```
 
-Now, we'll execute the prepared statement while passing the **keyspace** and **table** variables.  Then, we will process and display the results.
+Now, execute the prepared statement while passing the **keyspace** and **table** variables.  Then, process and display the results.
 
 ```python
 rows = session.execute(pStatement,[keyspace,table])
@@ -182,7 +182,7 @@ When you run the code, be sure to pass the names of an existing **keyspace** and
 python testAstraDB.py system local
 ```
 
-_For this example, we're just using "**system**" (keyspace) and "**local**" (table name) to ensure you get some output. You could use whatever keyspace and table names you have access to in the database you are using._
+_For this example, just use "**system**" (keyspace) and "**local**" (table name) to ensure you get some output. You could use whatever keyspace and table names you have access to in the database you are using._
 
 <!-- The column names from the product table in the ecommerce keyspace (used in [DataStax's E-commerce Workshop](https://github.com/datastaxdevs/workshop-ecommerce-app#3-create-your-schema)) are shown.  Using another keyspace and table should produce results similar to this: -->
 
@@ -201,7 +201,7 @@ host_id
 ```
 
 ## 6 Summary
-In summary, you learned to configure your local Python development environment. We've learned to use environment variables for referencing our Astra DB credentials and secure connect bundle. Finally, we've learned how to run a simple, static query – including how to query results with a prepared statement. This should provide a solid foundation for building more complex Python applications.
+In summary, you learned to configure your local Python development environment. We've learned to use environment variables for referencing our Astra DB credentials and secure connect bundle. Finally, you've learned how to run a simple, static query – including how to query results with a prepared statement. This should provide a solid foundation for building more complex Python applications.
 
 Note, that the complete code for [testAstraDB.py](https://github.com/riptano/astra-portal-getting-started/blob/main/astraDBApplicationQuickstartPython/testAstraDB.py) can be found in this repo.
 

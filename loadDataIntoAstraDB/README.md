@@ -236,10 +236,8 @@ Now, let's load some data into our new **socialMedia** table using **DSBulk**. _
 
 📘 **Command to execute**
 ```shell
-astra db dsbulk workshops \
-  load \
+astra db load workshops \
   -url https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/socialMedia.csv \
-  -c csv \
   -delim ',' \
   -m "status_id,social_type,num_reactions,num_comments,num_shares,num_likes,num_loves,num_wows,num_hahas,num_sads,num_angrys" \
   -header true \

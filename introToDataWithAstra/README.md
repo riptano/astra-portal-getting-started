@@ -21,7 +21,7 @@ workshops
 chatsandra
 ```
 
-This will only take a couple minutes. Once your database is **_ACTIVE_**, continue on to the next section.
+This only takes a couple minutes. Once your database is **_ACTIVE_**, continue on to the next section.
 
 ## 2 Create tables
 The next step is to create tables. 

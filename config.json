@@ -20,6 +20,43 @@
       "contentSrc": "overviewOfAstraDB/README.md",
       "stepCount": 5
     },
+    
+    "introToDataWithAstraDB": {
+      "locale": "en-us",
+      "title": "Intro to data with Astra 🔌",
+      "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
+        "text": "Intro to Apache Cassandra for Developers"
+      }, {
+        "url": "https://docs.datastax.com/en/astra-cql/doc/cql/cqlQuickReference.html",
+        "text": "CQL quick reference"
+      }],
+      "recommendedGuides": [
+        "loadDataIntoAstraDB", "astraDBApplicationQuickstartPython"
+      ],
+      "contentSrc": "introToDataWithAstra/README.md",
+      "stepCount": 4
+    },
+    
+    "gettingStartedWithAstraBlock": {
+      "locale": "en-us",
+      "title": "Build Web3 Apps with Astra Block ⚡️",
+      "description": "Learn how to stream real-time, human-readable blockchain data to your Astra database.",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastax/block-explorer",
+        "text": "Block Explorer Sample App"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "gettingStartedWithAstraBlock/README.md",
+      "stepCount": 3
+    },
 
     "astracliGettingStarted": {
       "locale": "en-us",
@@ -56,26 +93,6 @@
       ],
       "contentSrc": "astraDBApplicationQuickstartPython/README.md",
       "stepCount": 5
-    },
-
-    "introToDataWithAstraDB": {
-      "locale": "en-us",
-      "title": "Intro to data with Astra 🔌",
-      "description": "Get an overview of how to execute basic CRUD (Create, Read, Update, Delete) commands in Astra using CQL.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "15 minutes",
-      "recommendedLinks": [{
-        "url": "https://github.com/datastaxdevs/workshop-intro-to-cassandra",
-        "text": "Intro to Apache Cassandra for Developers"
-      }, {
-        "url": "https://docs.datastax.com/en/astra-cql/doc/cql/cqlQuickReference.html",
-        "text": "CQL quick reference"
-      }],
-      "recommendedGuides": [
-        "loadDataIntoAstraDB", "astraDBApplicationQuickstartPython"
-      ],
-      "contentSrc": "introToDataWithAstra/README.md",
-      "stepCount": 4
     },
 
     "loadDataIntoAstraDB": {
@@ -122,23 +139,6 @@
       ],
       "contentSrc": "astraPortalGuideTemplate/README.md",
       "stepCount": 6
-    },
-
-    "gettingStartedWithAstraBlock": {
-      "locale": "en-us",
-      "title": "Build Web3 Apps with Astra Block ⚡️",
-      "description": "Learn how to stream real-time, human-readable blockchain data to your Astra database.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://github.com/datastax/block-explorer",
-        "text": "Block Explorer Sample App"
-      }],
-      "recommendedGuides": [
-        "overviewOfAstraDB", "introToDataWithAstraDB"
-      ],
-      "contentSrc": "gettingStartedWithAstraBlock/README.md",
-      "stepCount": 3
     },
 
     "astraKaskadaGettingStarted": {

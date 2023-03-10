@@ -7,7 +7,7 @@ The DataStax Astra Command Line Interface (CLI) is a tool for both Astra DB and 
 - Use the CLI to connect to and manage Astra DB
 
 # Prerequisites
-To use the Astra CLI, you need to create a token with the **Organization Administrator** role.
+To use the Astra CLI, you need to create a token with the _"Organization Administrator"_ role.
 
 <<createToken>>
 
@@ -45,12 +45,12 @@ curl -Ls "https://dtsx.io/get-astra-cli" | bash
 - Add `C:\Programs\astra-cli\astra.exe` to your path using [this tutorial](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)
 
 ## 2 Setup
-In this step, you will configure the CLI to use your Astra token and get familiar with some basic commands.
+In this step, configure the CLI to use your Astra token and get familiar with some basic commands.
 
 ### 2a Configuring your token
-Before issuing commands, you need to initialize the configuration file `~/.astrarc`. 
+Before issuing commands, initialize the configuration file `~/.astrarc`. 
 
-To run the following command during setup, you will be asked to provide your token (AstraCS:...).
+To run the following command during setup, provide your token (AstraCS:...).
 
 ```shell
 astra setup
@@ -367,7 +367,7 @@ astra db delete demo
 Similar to database creation, `delete` command is a synchronous call which will wait until the database is deleted. If you would like to issue the command asynchronously, just add `--asynch`.
 
 ## 4 Summary
-In summary, we learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI, both in your local development environment and in your automation and CI/CD scripts. 
+In summary, you learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI, both in your local development environment and in your automation and CI/CD scripts. 
 
 If you liked this guide and want to learn more about loading data, review the **Recommended Guides** section below to start using DSBulk.
 

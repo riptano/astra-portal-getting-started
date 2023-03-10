@@ -1,10 +1,10 @@
 # Overview
-Stream real-time, human-readable blockchain data to your app with Astra Block. Simply request access to the feature within Astra (we'll enable it for your account within 24 hours) and you can instantly create a blockchain database that auto updates as new blocks are mined.
+Stream real-time, human-readable blockchain data to your app with Astra Block. Simply request access to the feature within Astra (we'll enable it for your account within 24 hours) and you can create a blockchain database that auto updates as new blocks are mined.
 
 **In this guide, we'll**
-- Introduction to Astra Block
-- Example Queries
-- Request Access to Astra Block
+- Explore how to stream real-time blockchain data into your Astra database
+- Practice this new feature with example queries
+- Request access to try Astra Block
 
 Let's get started!
 
@@ -14,18 +14,18 @@ With Astra Block, you can stream real-time blockchain data directly to your Astr
 We currently support Ethereum, with Polygon and Bitcoin coming soon. Interested in support for other chains? [Let us know](mailto:blockchain@datastax.com).
 
 We also support the following data models:
+- Assets
 - Blocks
+- Block numbers by date
 - Contracts
-- Transactions
+- Dashboard Analytics
+- Event signatures
+- Logs
 - NFTs
 - Tokens
 - Token Transfers
 - Traces
-- Logs
-- Dashboard Analytics
-- Block numbers by date
-- Event signatures
-- Assets
+- Transactions
 
 Interested in support for other data? [Let us know](mailto:blockchain@datastax.com).
 

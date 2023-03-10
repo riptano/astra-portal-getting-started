@@ -2,12 +2,12 @@
 Learn how to connect your app to Astra using Python.
 
 **In this guide, you'll learn how to**
-- Set up our Python development environment
+- Set up your Python development environment
 - Connect to Astra DB and execute a static query
 - Execute a query using a prepared statement
 
 # Prerequisites
-- You also should have a recent version of Python 3.
+- You must have installed a recent version of Python 3.
 
 ## 1 Create a database
 If you haven't already done so, create a new Astra DB database. 
@@ -121,7 +121,7 @@ auth_provider = PlainTextAuthProvider(username, token)
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 ```
 
-Here, use you **secureBundleLocation** to set up your cloud configuration.  You're also initializing the **PlainTextAuthProvider**, and using both of these to configure our cluster object.
+Here, use your **secureBundleLocation** to set up your cloud configuration.  You're also initializing the **PlainTextAuthProvider**, and using both of these to configure our cluster object.
 
 To finish, connect to your cluster and query the **local** table from the **system** keyspace to get the **cluster_name**.
 
@@ -165,7 +165,7 @@ pStatement = session.prepare("""
 """)
 ```
 
-Now, execute the prepared statement while passing the **keyspace** and **table** variables.  Then, process and display the results.
+Execute the prepared statement while passing the **keyspace** and **table** variables.  Then, process and display the results.
 
 ```python
 rows = session.execute(pStatement,[keyspace,table])
@@ -182,7 +182,7 @@ When you run the code, be sure to pass the names of an existing **keyspace** and
 python testAstraDB.py system local
 ```
 
-_For this example, just use "**system**" (keyspace) and "**local**" (table name) to ensure you get some output. You could use whatever keyspace and table names you have access to in the database you are using._
+_For this example, use "**system**" (keyspace) and "**local**" (table name) to ensure you get some output. You can use whatever keyspace and table names you have access to in the database you are using._
 
 <!-- The column names from the product table in the ecommerce keyspace (used in [DataStax's E-commerce Workshop](https://github.com/datastaxdevs/workshop-ecommerce-app#3-create-your-schema)) are shown.  Using another keyspace and table should produce results similar to this: -->
 
@@ -203,7 +203,8 @@ host_id
 ## 6 Summary
 In summary, you learned to configure your local Python development environment. We've learned to use environment variables for referencing our Astra DB credentials and secure connect bundle. Finally, you've learned how to run a simple, static query – including how to query results with a prepared statement. This should provide a solid foundation for building more complex Python applications.
 
-Note, that the complete code for [testAstraDB.py](https://github.com/riptano/astra-portal-getting-started/blob/main/astraDBApplicationQuickstartPython/testAstraDB.py) can be found in this repo.
+**Note**
+The complete code for [testAstraDB.py](https://github.com/riptano/astra-portal-getting-started/blob/main/astraDBApplicationQuickstartPython/testAstraDB.py) can be found in this repo.
 
 Here is the complete code block.
 ```python

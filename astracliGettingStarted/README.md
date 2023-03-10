@@ -7,7 +7,7 @@ The DataStax Astra Command Line Interface (CLI) is a tool for both Astra DB and 
 - Use the CLI to connect to and manage Astra DB
 
 # Prerequisites
-To use the Astra CLI, you need to create a token with the _"Organization Administrator"_ role.
+To use the Astra CLI, you need to create a token with the **Organization Administrator** role.
 
 <<createToken>>
 
@@ -23,7 +23,7 @@ You can install the Astra CLI on macOS by updating your brew repository informat
 brew install datastax/astra-cli/astra-cli
 ```
 
-The Homebrew formula of Astra CLI installs a completion file named astra in the Homebrew-managed completions directory (the default location is /usr/local/etc/bash_completion.d/). To enable completion, please follow Homebrew's instructions [here](https://docs.brew.sh/Shell-Completion).
+The Homebrew formula of Astra CLI installs a completion file named astra in the Homebrew-managed completions directory (the default location is /usr/local/etc/bash_completion.d/). To enable completion, follow Homebrew's instructions [here](https://docs.brew.sh/Shell-Completion).
 
 ### Install on Linux
 To install (or reinstall) the CLI use the following command in a terminal:
@@ -45,10 +45,10 @@ curl -Ls "https://dtsx.io/get-astra-cli" | bash
 - Add `C:\Programs\astra-cli\astra.exe` to your path using [this tutorial](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)
 
 ## 2 Setup
-In this step, we will configure the CLI to use your Astra token and get familiar with some basic commands.
+In this step, you will configure the CLI to use your Astra token and get familiar with some basic commands.
 
 ### 2a Configuring your token
-Before issuing commands, you will need to initialize the configuration file `~/.astrarc`. 
+Before issuing commands, you need to initialize the configuration file `~/.astrarc`. 
 
 To run the following command during setup, you will be asked to provide your token (AstraCS:...).
 
@@ -77,6 +77,7 @@ astra setup
 🔑 Enter token (starting with AstraCS...):
 ```
 -->
+
 You're all set! The configuration (mainly your token) is stored in file `~/.astrarc`.
 
 ### 2b Your first commands
@@ -201,7 +202,7 @@ SYNOPSIS
 -->
     
 ## 3 Working with Astra DB
-Now that we're configured with our Astra account and know how to access the list of commands, let's start using Astra DB.
+Now that you're configured with your Astra account and know how to access the list of commands, let's start using Astra DB.
 
 ### 3a List Databases
 To get the list of non terminated database in your oganization, use the command `list` in the group `db`. You can change the output of the database list to _csv_ by adding `-o csv` or to _json_ by adding `-o json`.
@@ -228,7 +229,7 @@ astra db list
 -->
 
 ### 3b Create Database
-Let's create a database using `db create`. If not specified, the region will be the default free region, and the keyspace will be the database name. You can change those settings with `-r` and `-k` respectivitely.
+Create a database using the `db create` command. If not specified, the region becomes the default free region, and the keyspace becomes the database name. You can change those settings with `-r` and `-k` respectivitely.
 
 ```bash
 astra db create demo
@@ -237,7 +238,7 @@ astra db create demo
 By default, the `create` command is a synchronous call which will wait until the database is created and active. If you would like to issue the command asynchronously, just add `--asynch`
 
 ### 3c Resume Database
-In the free tier, your database will be hibernated after 23 hours of inactivity. To wake up the db, use the `resume` command.
+In the free tier, your database will be hibernated after 23 hours of inactivity. To wake up the database, use the `resume` command.
 
 For example, if you had a database named `hemidactylus`:
 
@@ -358,7 +359,7 @@ astra db cqlsh demo -f sample.cql
 _Note, "sample.cql" in the above command is just an example. The command above will state that it cannot find the file if you execute it._
 
 ### 3g Delete Database
-To delete a db, use the `delete` command.
+To delete a database, use the `delete` command.
 
 ```bash
 astra db delete demo
@@ -368,8 +369,8 @@ Similar to database creation, `delete` command is a synchronous call which will 
 ## 4 Summary
 In summary, we learned how to install the Astra CLI, access the integrated documentation, work with databases, and run a simple query with CQLSH. This just scratches the surface of what you can do with the CLI, both in your local development environment and in your automation and CI/CD scripts. 
 
-If you liked this guide and want to learn more about loading data, click the **Recommended Guides** section below to start using DSBulk.
+If you liked this guide and want to learn more about loading data, review the **Recommended Guides** section below to start using DSBulk.
 
-Also, check out the **Recommended Links** for additonal examples on working with Astra Streaming and the pulsar-shell, user and role management, and more querying and data loading scenarios.
+Take a look at the **Recommended Links** for additonal examples on working with Astra Streaming and the pulsar-shell, user and role management, and more querying and data loading scenarios.
 
 Happy scripting! 🚀

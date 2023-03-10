@@ -13,9 +13,9 @@ While not required for _all_ the following sections, you'll want to have:
 - Java 8 or higher
 
 ## 1 Create a database to explore data loading
-While you don't _have_ to use the following database and keyspace name, it would be best if you do to follow the examples below. If not, you'll have to replace them with your own values.
+You don't _have_ to use the following database and keyspace name; it is best to follow the examples below. If not, you have to replace them with your own values.
 
-First, create a database with the following database and keyspace name with the button below.  It only take a couple minutes for your database to become `ACTIVE`. 
+First, create a database with the following database and keyspace name with the button below.  It only takes a couple minutes for your database to become `ACTIVE`. 
 
 <<createDatabase>>
 
@@ -29,7 +29,7 @@ workshops
 machine_learning
 ```
 
-When your database becomes active, you’ll see its information appear above. Once complete, continue in the next section.
+When your database becomes active, its information appears above. Once complete, continue in the next section.
 
 ## 2 Use the Astra data loader to upload your own dataset
 The Astra data loader is good for smaller sets of data (under 40MB), or data used for experimenting and testing. 
@@ -37,9 +37,10 @@ The Astra data loader is good for smaller sets of data (under 40MB), or data use
 ### 2a Prepare a CSV file
 You'll need a **CSV** file. We've created one for you to use as an example.
 
-[DOWNLOAD movies.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/movies.csv) <-- _right click on the `DOWNLOAD` link and choose **Save Link As**_
+[DOWNLOAD movies.csv](https://raw.githubusercontent.com/riptano/astra-portal-getting-started/main/loadDataIntoAstraDB/movies.csv) <-- _right click on the `DOWNLOAD` link and select **Save Link As**_
 
-_**NOTE:** Mac users need to explicitly set the movies file extension to .csv; otherwise it will try and download the file with *.txt._
+_**NOTE:**_
+_Mac users need to explicitly set the movies' file extension to .csv to avoid downloading the file with *.txt._
 
 ### 2b Open the Data Loader
 Launch the data loader using the link below. This opens the loader in a separate tab. 
@@ -54,7 +55,7 @@ Now follow the instructions for the **"Upload your own dataset"** section at the
 Once the upload is complete, click the **"Next"** button that appears to move on.
 
 ### 2d Preview data and set the partition key
-The **"Data Preview and Types"** section with the field **"Table Name"**, a preview of the dataset, and the field **"Partition keys"**. Ensure each field has the following values.
+The **"Data Preview and Types"** section now appears with the field **"Table Name"**, a preview of the dataset, and the field **"Partition keys"**. Ensure each field has the following values.
 
 **Table Name** _should already contain_
 ```shell
@@ -91,17 +92,17 @@ Select **"machine_learning"** from the **"Target Keyspace"** field.
 Once all values are selected click **"Finish"**. 
 
 ### 2f Load data in background
-At this point the dataset is loaded in the background and you receive both an email when the process starts and when the data is loaded. This should only take a couple of minutes; move on to section 3 below. Come back and verify the data later.
+Now, the dataset is loaded in the background and you receive both an email when the process starts and when the data is loaded. This only takes a couple of minutes; move on to section 3 below. Come back and verify the data later.
 
 ## 3 Use DSBulk Loader with the Astra CLI
 The [Astra CLI](https://awesome-astra.github.io/docs/pages/astra/astra-cli/) is a command line tool that includes commands for databases, streams, a CQL console, and data loading with DSBulk amongst other things.
 
 The [DSBulk Loader](https://docs.datastax.com/en/dsbulk/docs/dsbulkAbout.html) can be used for small or large amounts of data, has full error reporting and logging, can load and un-load data, and can reliably count database records. This is a command line tool and can be used in automated processes.
 
-While DSBulk is pretty easy to use on its own, the Astra CLI makes using it a little simpler and provides a whole set of other options we'll explore below.
+While DSBulk is easy to use on its own, the Astra CLI makes using it a little simpler and provides a whole set of other options we'll explore below.
 
 ### 3a Install Astra CLI
-The first thing you'll need to do is install the Astra CLI. Execute the following command in a local terminal.
+First, install the Astra CLI. Execute the following command in a local terminal.
 
 📘 **Command to execute**
 ```shell
@@ -111,13 +112,13 @@ curl -Ls https://dtsx.io/get-astra-cli | bash
 ### 3b Generate a token for access _(you can use an existing token if you have one)_
 Now, setup the CLI. Get an Astra token ready for this step. Tokens are used to securely authenticate and issue commands.
 
-After passing the token to Astra CLI, Astra handles everything else for you. Use the following action to create a token if you don't already have one.
+Use the following action to create a token if you don't already have one.
 
 **Recommended role:** _"Organization Administrator"_
 
 <<createToken>>
 
-Use the setup command. Pass in your token when asked and load some data!
+Use the setup command. Pass in your token when prompted and load some data!
 
 📘 **Command to execute**
 

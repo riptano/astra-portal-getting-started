@@ -21,7 +21,7 @@ workshops
 chatsandra
 ```
 
-This will only take a couple minutes. Once your database is **_ACTIVE_**, continue on to the next section.
+This only takes a couple minutes. Once your database is **_ACTIVE_**, continue on to the next section.
 
 ## 2 Create tables
 The next step is to create tables. 
@@ -37,7 +37,7 @@ _You may want to put the console and this guide side by side for easy copying._
 ### 2b Describe keyspaces and set keypsace context to **chatsandra**
 Now you're ready to rock. Creating tables is easy, but before we create one, we need to tell the database which keyspace to use.
 
-First, **_DESCRIBE_** all the keyspaces in the database. This will give you a list of the available keyspaces.
+First, **_DESCRIBE_** all the keyspaces in the database. This gives you a list of the available keyspaces.
 
 📘 **Command to execute**
 ```sql
@@ -59,7 +59,7 @@ USE chatsandra;
 Notice how the prompt displays **_<...@cqlsh:chatsandra>_**, informing us we are **_using_** the **_chatsandra_** keyspace. Now we are ready to create our table.
 
 ### 2c Create the **_users_** table
-You can now execute a command to create a new table. This table will contain user information. Copy/paste the following command into your CQL console and press **_enter_**.
+You can now execute a command to create a new table. This table contains user information. Copy and paste the following command into your CQL console and press **_enter_**.
 
 📘 **Command to execute**
 
@@ -87,7 +87,7 @@ Now you can start working with data.
 CRUD stands for "**create, read, update, and delete**". They are the basic types of commands you need to work with ANY database to maintain data for your applications.
 
 ### 3a **(C)RUD** = create = insert data
-We created the **_users_** table in the step above. Add data to this table with the **INSERT** statement. You'll begin by inserting three rows into the **_users_** table.
+We created the **_users_** table in the step above. Add data to this table with the **INSERT** statement. Begin by inserting three rows into the **_users_** table.
 
 Copy and paste the following in your CQL Console:
 _(We provided a few variations to get a feel for the syntax needed.)_
@@ -151,7 +151,7 @@ The final operation from our **CRUD** acronym is **DELETE**. Use this operation 
 
 In Apache Cassandra, you can **_DELETE_** from the cell level all the way up to the partition using the same **_DELETE_** command. This means you can remove a single column in a single row or you can remove a whole partition. 
 
-_Generally speaking, it's best to perform as few delete operations as possible on the largest amount of data. To delete ALL data in a table, don't delete each individual cell, just **TRUNCATE** the table. To delete all the rows in a partition, don't delete each row, **DELETE** the partition, and so on._
+_Generally speaking, it's best to perform as few delete operations as possible on the largest amount of data. For example to delete ALL data in a table, **TRUNCATE** the table instead of deleting each individual cell. To delete all the rows in a partition, **DELETE** the partition instead of deleting each row._
 
 📘 **Commands to execute**
 

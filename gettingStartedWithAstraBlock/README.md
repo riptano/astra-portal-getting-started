@@ -8,9 +8,6 @@ Stream real-time, human-readable blockchain data to your app with Astra Block. S
 
 Let's get started!
 
-# Prerequisites
-None
-
 ## 1 Introduction to Astra Block
 With Astra Block, you can stream real-time blockchain data directly to your Astra database. 
 

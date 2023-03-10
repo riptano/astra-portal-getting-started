@@ -10,7 +10,7 @@ You can use the Astra DB console and [APIs (REST, GraphQL, Document, gRPC)](http
 - How to Create an Astra database with the UI 🔥
 
 ## 1  What do I get with Astra DB?
-DataStax [Astra DB](https://docs.datastax.com/en/astra-serverless/docs/) is built on Apache Cassandra, the most reliable and scalable database in the world. Astra DB removes the pain of implementing and managing your own Apache Cassandra database. In addition of removing that complexity, we’ve also built a whole set of Drivers, APIs, and Integrations that will help you easily connect to your application.
+DataStax [Astra DB](https://docs.datastax.com/en/astra-serverless/docs/) is built on Apache Cassandra, the most reliable and scalable database in the world. Astra DB removes the pain of implementing and managing your own Apache Cassandra database. In addition of removing that complexity, we’ve also built a whole set of Drivers, APIs, and Integrations to help you easily connect to your application.
 
 ### Under the hood
 Creating a database within Astra provides you with a **[serverless](https://docs.datastax.com/en/astra-serverless/docs/plan/planning.html#_serverless_databases)** database cluster built on Apache Cassandra and starts using a replication factor of 3.
@@ -38,10 +38,10 @@ That depends on whether you are a first time user to Apache Cassandra and Astra,
 If you have an existing application using the DataStax drivers connected to an open source Apache Cassandra cluster you'll need to ensure you are using an Astra compatible driver. Follow the instructions [here for information on each supported language](https://docs.datastax.com/en/astra-serverless/docs/connect/drivers/migrating-datastax-drivers-to-connect-to-astra-databases.html). Changes are usually often minimal and once in place will usually switch from providing your username, password, and a set of seed nodes to providing a secure connect bundle that contains everything needed to securely connect to Astra.
 
 ### First time Apache Cassandra/Astra user or looking for options other than drivers
-If you're new to Apache Cassandra and Astra, or looking for other options you have multiple choices.
+If you're new to Apache Cassandra and Astra or looking for other options, you have multiple choices.
 
 #### Drivers
-[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) have the best performance and configuration options. But with that comes more complexity and the need to maintain driver versions in application code. If you are looking for a performant and "lightweight" HTTP based alternative to drivers, [gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html) is a good option.
+[Astra drivers](https://docs.datastax.com/en/astra-serverless/docs/getting-started/gs-drivers.html) have the best performance and configuration options, but also more complexity and maintenance for driver versions in the application code. If you are looking for a performant and "lightweight" HTTP based alternative to drivers, [gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/dev-with-grpc.html) is a good option.
 
 #### Stargate APIs
 The Stargate APIs consist of [REST, GraphQL, Document, and gRPC](https://docs.datastax.com/en/astra-serverless/docs/develop/developing.html). These are all "driverless" methods of connecting to Astra. All are provided by Astra.

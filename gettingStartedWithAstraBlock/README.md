@@ -121,3 +121,4 @@ SELECT * FROM event_signatures WHERE event_hex='0xddf252ad1be2c89b69c2b068fc378d
 You're now ready to give Astra Block a try! Request access by clicking the button below:
 
 <<launchRequestAstraBlock>>
+

@@ -47,26 +47,26 @@ CREATE TABLE vector_example.products (
 );
 ```
 ```sql
-CREATE CUSTOM INDEX item_ann_index ON vector_example.products(item_vector) USING 'VectorMemtableIndex';
+CREATE CUSTOM INDEX item_ann_index ON vector_example.products(item_vector) USING 'VectorMemtableIndex'; ?????
 ```
 ```sql
-CREATE CUSTOM INDEX ann_index on vector_example.foo(j) using 'StorageAttachedIndex'
+CREATE CUSTOM INDEX ann_index on vector_example.foo(j) using 'StorageAttachedIndex' ?????
 ```
 
 ## 3 Load vector data with CQL
 We created the products table in the step above with a VECTOR type. Now we’ll insert some data into the table using the new type.
 
 ```sql
-insert into {KEYSPACE_NAME}.foo (i, j) values (1, [8, 2.3, 58])
-insert into {KEYSPACE_NAME}.foo (i, j) values (2, [1.2, 3.4, 5.6])
-insert into {KEYSPACE_NAME}.foo (i, j) values (5, [23, 18, 3.9])
+insert into vector_example.foo (i, j) values (1, [8, 2.3, 58])
+insert into vector_example.foo (i, j) values (2, [1.2, 3.4, 5.6])
+insert into vector_example.foo (i, j) values (5, [23, 18, 3.9])
 ```
 
 ## 4 Read vector data with CQL
 Now take a look at how to read the data with a SELECT statement.
 
 ```sql
-SELECT * FROM product WHERE item_vector ANN OF [3.4, 7.8, 9.1];
+SELECT * FROM vector_example.products WHERE item_vector ANN OF [3.4, 7.8, 9.1];
 ```
 
 ## 5 Read vector data with python

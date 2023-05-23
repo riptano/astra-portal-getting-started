@@ -88,7 +88,7 @@ In order to connect the example application to your vector search enabled databa
 
 In this section, have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
 
-You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token.
+_You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token._
 
 Recommended role: "Database Administrator"
 

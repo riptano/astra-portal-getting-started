@@ -173,6 +173,23 @@
       ],
       "contentSrc": "gettingStartedWithJSON/README.md",
       "stepCount": 4
+    },
+
+    "gettingStartedWithVSS": {
+      "locale": "en-us",
+      "title": "Getting Started with Vector Similarity Search in Astra",
+      "description": "Learn the ropes of VSS using Astra and Python",
+      "skillLevel": "Beginner",
+      "timeToComplete": "10 minutes",
+      "recommendedLinks": [{
+        "url": "https://github.com/datastax/block-explorer",
+        "text": "CASSIO????"
+      }],
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "gettingStartedWithVSS/README.md",
+      "stepCount": 7
     }
 
   }

@@ -51,9 +51,12 @@ CREATE TABLE vector_example.products (
   item_vector VECTOR<float, 3>
 );
 ```
+
+**TODO: Determine which syntax to use :ODOT**
 ```sql
 CREATE CUSTOM INDEX item_ann_index ON vector_example.products(item_vector) USING 'VectorMemtableIndex'; ?????
 ```
+OR
 ```sql
 CREATE CUSTOM INDEX ann_index on vector_example.foo(j) using 'StorageAttachedIndex' ?????
 ```
@@ -62,10 +65,18 @@ CREATE CUSTOM INDEX ann_index on vector_example.foo(j) using 'StorageAttachedInd
 We created the products table in the step above with a VECTOR type. Now we’ll insert some data into the table using the new type.
 
 ```sql
-insert into vector_example.foo (i, j) values (1, [8, 2.3, 58])
-insert into vector_example.foo (i, j) values (2, [1.2, 3.4, 5.6])
-insert into vector_example.foo (i, j) values (5, [23, 18, 3.9])
+insert into vector_example.products (i, j) values (1, [8, 2.3, 58])
+insert into vector_example.products (i, j) values (2, [1.2, 3.4, 5.6])
+insert into vector_example.products (i, j) values (5, [23, 18, 3.9])
 ```
+
+In the context of Vector Similarity Search (VSS), a vector is an array of numbers (floats) that represents a specific object or entity. The numbers in the vector are features that describe the object or entity.
+
+In the examples given, j is a VECTOR type. Each array that you're inserting into j ([8, 2.3, 58], [1.2, 3.4, 5.6], [23, 18, 3.9]) is a vector. These vectors might represent anything from an image to a document or even a user's behavior. The specific meaning of the numbers in each vector depends on the context in which they're used.
+
+For instance, if you were using vectors to represent products in an ecommerce application, the numbers in the vector could represent various characteristics of each product - things like its price, weight, or number of reviews. If the vectors represented user behavior, they might include things like the number of times a user visited a certain page, the number of items they purchased, etc.
+
+In summary, these numbers are a compact way to represent complex data in a way that makes it easy to compare and contrast different entities (like products or user behaviors) in a vector space. That's what makes Vector Similarity Search a powerful tool for tasks like recommendation systems, image retrieval, and many others.
 
 ## 5 Read vector data with CQL
 Now take a look at how to read the data with a SELECT statement.

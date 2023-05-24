@@ -180,13 +180,13 @@
       "title": "Getting Started with Vector Similarity Search in Astra",
       "description": "Learn the ropes of VSS using Astra and Python",
       "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
+      "timeToComplete": "15 minutes",
       "recommendedLinks": [{
-        "url": "https://github.com/datastax/block-explorer",
-        "text": "CASSIO????"
+        "url": "https://cassioml.netlify.app/",
+        "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
       }],
       "recommendedGuides": [
-        "overviewOfAstraDB", "introToDataWithAstraDB"
+        "overviewOfAstraDB", "astraDBApplicationQuickstartPython"
       ],
       "contentSrc": "gettingStartedWithVSS/README.md",
       "stepCount": 7

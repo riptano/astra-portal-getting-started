@@ -1,9 +1,9 @@
 import os
 
 # Replace these values with the path to your secure connect bundle and the database credentials
-SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), 'secure-connect-for-python.zip')
-ASTRA_CLIENT_ID = 'cSgtXxSoQFwroHlfFISlNpsY'
-ASTRA_CLIENT_SECRET = 'h8Zc-rGZHpG5FKf17CPvuAJGsvZhz759rZ5DgHAWI,NAD-MYZfzDzphKi,MLZ+NTMfecdeDEx_Z1O+u2XKyl-Bu,lO1y8FgEEmAePrdezt-nGC3tbz5Uj8FFanAaqGjq'
+SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR_SECURE_BUNDLE>>')
+ASTRA_CLIENT_ID = '<<CLIENT_ID>>'
+ASTRA_CLIENT_SECRET = '<<CLIENT_SECRET>>'
 KEYSPACE_NAME = 'vector_example'
 TABLE_NAME = 'products'
 

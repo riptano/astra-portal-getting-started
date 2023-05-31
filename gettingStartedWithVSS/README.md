@@ -26,7 +26,7 @@ vss_db
 vector_example
 ```
 
-<<createDatabase>>
+<<createVectorDatabase>>
   
 _This only takes a couple minutes. Once your database is ACTIVE, continue on to the next section._
   

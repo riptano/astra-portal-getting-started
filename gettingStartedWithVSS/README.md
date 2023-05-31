@@ -101,10 +101,12 @@ In order to connect the example application to your vector search enabled databa
 - Have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
    - You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token.
    - Recommended role: "Database Administrator"
-   <<createToken>>
+
+<<createToken>>
 
 - Now, download the secure connect bundle for this database.
-   <<secureBundle>>
+
+<<secureBundle>>
 
 Copy the following code into a file called ‘vector_example.py’ and paste in the SECURE_CONNECT_BUNDLE_PATH, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
 

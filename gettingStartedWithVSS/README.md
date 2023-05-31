@@ -1,7 +1,7 @@
 # Overview
 Discover how to set up a schema and load vector data with CQL, along with reading vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
 
-**In this guide, we will**
+**In this guide, you will**
 - Learn about VSS
 - Create a VSS enabled database
 - Create a schema
@@ -52,17 +52,12 @@ CREATE TABLE vector_example.products (
 );
 ```
 
-**TODO: Determine which syntax to use :ODOT**
-```sql
-CREATE CUSTOM INDEX item_ann_index ON vector_example.products(item_vector) USING 'VectorMemtableIndex'; ?????
-```
-OR
 ```sql
 CREATE CUSTOM INDEX ann_index on vector_example.foo(j) using 'StorageAttachedIndex' ?????
 ```
 
 ## 4 Load vector data with CQL
-We created the products table in the step above with a VECTOR type. Now we’ll insert some data into the table using the new type.
+You created the _products_ table in the step above with a VECTOR type. Now insert the following data into the table using the new type.
 
 ```sql
 insert into vector_example.products (i, j) values (1, [8, 2.3, 58])
@@ -70,13 +65,13 @@ insert into vector_example.products (i, j) values (2, [1.2, 3.4, 5.6])
 insert into vector_example.products (i, j) values (5, [23, 18, 3.9])
 ```
 
-In the context of Vector Similarity Search (VSS), a vector is an array of numbers (floats) that represents a specific object or entity. The numbers in the vector are features that describe the object or entity.
+In the context of Vector Search, a vector is an array of numbers (floats) that represents a specific object or entity. The numbers in the vector are features that describe the object or entity.
 
 In the examples given, j is a VECTOR type. Each array that you're inserting into j ([8, 2.3, 58], [1.2, 3.4, 5.6], [23, 18, 3.9]) is a vector. These vectors might represent anything from an image to a document or even a user's behavior. The specific meaning of the numbers in each vector depends on the context in which they're used.
 
 For instance, if you were using vectors to represent products in an ecommerce application, the numbers in the vector could represent various characteristics of each product - things like its price, weight, or number of reviews. If the vectors represented user behavior, they might include things like the number of times a user visited a certain page, the number of items they purchased, etc.
 
-In summary, these numbers are a compact way to represent complex data in a way that makes it easy to compare and contrast different entities (like products or user behaviors) in a vector space. That's what makes Vector Similarity Search a powerful tool for tasks like recommendation systems, image retrieval, and many others.
+These numbers are a compact way to represent complex data in a way that makes it easy to compare and contrast different entities (like products or user behaviors) in a vector space. That's what makes Vector Similarity Search a powerful tool for tasks like recommendation systems, image retrieval, and many others.
 
 ## 5 Read vector data with CQL
 Now take a look at how to read the data with a SELECT statement.
@@ -86,35 +81,32 @@ SELECT * FROM vector_example.products WHERE item_vector ANN OF [3.4, 7.8, 9.1];
 ```
 
 ## 6 Read vector data with python
-Now that you’ve executed some basic CQL commands using VECTOR, take this to the next step and experiment with some python code. 
-You’ll need to do this next part on your local machine. Ensure you have at least python version 3.10 installed and ready to go.
+Now that you’ve executed some basic CQL commands using the new vector data type, take this to the next level and experiment with some python code.
+
+You’ll need to do this next part on your _localhost_. Ensure you have at least Python 3.8 installed and ready to go.
   
 ### 6a Install python dependencies
-First thing, install the cassandra driver and the os library.
+First, install the Cassandra Python driver with the following command on your _localhost_.
 
 ```python
-pip install cassandra-driver
+pip install git+https://github.com/datastax/python-driver.git@cep-vsearch#egg=cassandra-driver
 ```
 ```python
 pip install os
 ```
   
 ### 6b Copy and configure example python code
-In order to connect the example application to your vector search enabled database, you’ll need a couple items first.
+In order to connect the example application to your vector search enabled database, you’ll need a couple items first:
 
-In this section, have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
+- Have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
+   - You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token.
+   - Recommended role: "Database Administrator"
+   - <<createToken>>
 
-_You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token._
+- Now, download the secure connect bundle for this database.
+   - <<secureBundle>>
 
-Recommended role: "Database Administrator"
-
-<<createToken>>
-
-Now, download the secure connect bundle for this database.
-
-<<secureBundle>>
-
-Copy the following code into a file called ‘vector_example.py’ and paste in the SECURE_CONNECT_BUNDLE_PATH, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET variables from the information provided a moment ago.
+Copy the following code into a file called ‘vector_example.py’ and paste in the SECURE_CONNECT_BUNDLE_PATH, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
 
 ```python
 import os
@@ -156,5 +148,6 @@ python vector_example.py
 ```
   
 # 7 Summarize what you learned
-Wrapping up, this guide has empowered you with Vector Similarity Search (VSS) basics. You've built a VSS-enabled Astra database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.
+Wrapping up, this guide has empowered you with Vector Search basics. You've built a VSS-enabled Astra database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.
 
+Happy searching.

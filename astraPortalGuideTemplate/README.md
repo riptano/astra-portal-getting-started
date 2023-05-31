@@ -141,6 +141,10 @@ _**Note:** **Actions** will potentially bring users into a new flow to complete 
 
 <<createDatabase>>
 
+```<<createVectorDatabase>>```
+
+<<createVectorDatabase>>
+
 ```<<createToken>>```
 
 <<createToken>>

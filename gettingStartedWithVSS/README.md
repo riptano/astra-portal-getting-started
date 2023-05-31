@@ -2,18 +2,18 @@
 Discover how to set up a schema and load vector data with CQL, along with reading vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
 
 **In this guide, you will**
-- Learn about VSS
-- Create a VSS enabled database
+- Learn about vector Search
+- Create a Vector Search enabled database
 - Create a schema
 - Load vector data with CQL
 - Read vector data with CQL
 - Read vector data with python
 - Summarize what you learned
 
-## 1 Learn about VSS
-Vector Similarity Search (VSS) is a method of searching for similar vectors in a vector space. A vector is an array of numbers (floats) that represents a specific object or entity. In the context of databases, a vector could represent anything from an image to a document or even a user's behavior. VSS can be extremely useful in machine learning models, for instance in recommendation systems or image retrieval tasks where we want to find the most similar items to a given item.
+## 1 Learn about Vector Seach
+Vector Search is a method of searching for similar vectors in a vector space. A vector is an array of numbers (floats) that represents a specific object or entity. In the context of databases, a vector could represent anything from an image to a document or even a user's behavior. Vector Search can be extremely useful in machine learning models, for instance in recommendation systems or image retrieval tasks where we want to find the most similar items to a given item.
 
-## 2 Create a VSS enabled database
+## 2 Create a Vector Search enabled database
 First, create a vector search enabled database with the following database and keyspace name with the button below.
 
 **Database Name:** 
@@ -101,10 +101,10 @@ In order to connect the example application to your vector search enabled databa
 - Have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
    - You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token.
    - Recommended role: "Database Administrator"
-   - <<createToken>>
+   <<createToken>>
 
 - Now, download the secure connect bundle for this database.
-   - <<secureBundle>>
+   <<secureBundle>>
 
 Copy the following code into a file called ‘vector_example.py’ and paste in the SECURE_CONNECT_BUNDLE_PATH, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
 
@@ -147,7 +147,7 @@ cluster.shutdown()
 python vector_example.py
 ```
   
-# 7 Summarize what you learned
+## 7 Summarize what you learned
 Wrapping up, this guide has empowered you with Vector Search basics. You've built a VSS-enabled Astra database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.
 
 Happy searching.

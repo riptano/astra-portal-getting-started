@@ -1,7 +1,7 @@
 import os
 
 # Replace these values with the path to your secure connect bundle and the database credentials
-SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_SECURE_BUNDLE>>')
+SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR_SECURE_BUNDLE>>')
 ASTRA_CLIENT_ID = '<<CLIENT_ID>>'
 ASTRA_CLIENT_SECRET = '<<CLIENT_SECRET>>'
 KEYSPACE_NAME = 'vector_example'

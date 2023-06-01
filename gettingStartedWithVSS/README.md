@@ -1,5 +1,5 @@
 # Overview
-Discover how to set up a schema and load vector data with CQL, along with reading vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
+Discover how to set up a schema and load vector data with CQL, along with reading that vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
 
 **In this guide, you will**
 - Learn about vector Search
@@ -18,12 +18,12 @@ First, create a vector search enabled database with the following database and k
 
 **Database Name:** 
 ```shell 
-vss_db
+vector_search_db
 ```
 
 **Keyspace Name:** 
 ```shell 
-vector_example
+vsearch
 ```
 
 <<createVectorDatabase>>
@@ -44,30 +44,38 @@ _You may want to put the console and this guide side by side for easy copying._
 This table contains a VECTOR type example. Copy and paste the following command into your CQL console and press enter.
   
 ```sql
-CREATE TABLE vector_example.products (
-  id UUID PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS vsearch.products (
+  id int PRIMARY KEY,
   name varchar,
   description varchar,
-  item_vector VECTOR<float, 3>
+  item_vector VECTOR<float, 3> //create a vector with 3 values
 );
 ```
 
 ```sql
-CREATE CUSTOM INDEX ann_index on vector_example.foo(j) using 'StorageAttachedIndex' ?????
+CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON vsearch.products(item_vector) USING 'StorageAttachedIndex';
 ```
 
 ## 4 Load vector data with CQL
 You created the _products_ table in the step above with a VECTOR type. Now insert the following data into the table using the new type.
 
 ```sql
-insert into vector_example.products (i, j) values (1, [8, 2.3, 58])
-insert into vector_example.products (i, j) values (2, [1.2, 3.4, 5.6])
-insert into vector_example.products (i, j) values (5, [23, 18, 3.9])
+INSERT INTO vsearch.products (id, name, description, item_vector) 
+VALUES (
+   1, //id
+   'Coded Cleats', //name
+   'ChatGPT integrated sneakers that talk to you', //description
+   [8, 2.3, 58] //price, weight, numReviews
+);
+INSERT INTO vsearch.products (id, name, description, item_vector) 
+   VALUES (2, 'Logic Layers', 'An AI quilt to help you sleep forever', [1.2, 3.4, 5.6]);
+INSERT INTO vsearch.products (id, name, description, item_vector) 
+   VALUES (5, 'Vision Vector Frame', 'A deep learning display that controls your mood', [23, 18, 3.9]);
 ```
 
 In the context of Vector Search, a vector is an array of numbers (floats) that represents a specific object or entity. The numbers in the vector are features that describe the object or entity.
 
-In the examples given, j is a VECTOR type. Each array that you're inserting into j ([8, 2.3, 58], [1.2, 3.4, 5.6], [23, 18, 3.9]) is a vector. These vectors might represent anything from an image to a document or even a user's behavior. The specific meaning of the numbers in each vector depends on the context in which they're used.
+In the examples given, _item_vector_ is a VECTOR type. Each array that you're inserting into _item_vector_ ([8, 2.3, 58], [1.2, 3.4, 5.6], [23, 18, 3.9]) is a vector. These vectors might represent anything from an image to a document or even a user's behavior. The specific meaning of the numbers in each vector depends on the context in which they're used.
 
 For instance, if you were using vectors to represent products in an ecommerce application, the numbers in the vector could represent various characteristics of each product - things like its price, weight, or number of reviews. If the vectors represented user behavior, they might include things like the number of times a user visited a certain page, the number of items they purchased, etc.
 
@@ -77,8 +85,12 @@ These numbers are a compact way to represent complex data in a way that makes it
 Now take a look at how to read the data with a SELECT statement.
 
 ```sql
-SELECT * FROM vector_example.products WHERE item_vector ANN OF [3.4, 7.8, 9.1];
+SELECT * FROM vsearch.products WHERE item_vector ANN OF [3.4, 7.8, 9.1] LIMIT 1;
 ```
+
+Given the explanation above, this query is asking "give me the item most similar in price (3.4), weight (7.8), and number of reviews (9.1)" compared to the other products in the table.
+
+_The vector values themselves are arbitrary and based on the dataset and embeddings used. They could be just about any range of floats._
 
 ## 6 Read vector data with python
 Now that you’ve executed some basic CQL commands using the new vector data type, take this to the next level and experiment with some python code.
@@ -106,7 +118,7 @@ In order to connect the example application to your vector search enabled databa
 
 - Now, download the secure connect bundle for this database.
 
-<<secureBundle>>
+<<downloadSCB>>
 
 Copy the following code into a file called ‘vector_example.py’ and paste in the SECURE_CONNECT_BUNDLE_PATH, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
 
@@ -117,7 +129,7 @@ import os
 SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR SECURE_BUNDLE>>')
 ASTRA_CLIENT_ID = '<<YOUR_CLIENT_ID>>'
 ASTRA_CLIENT_SECRET = '<<YOUR_CLIENT_SECRET>>'
-KEYSPACE_NAME = 'vector_example'
+KEYSPACE_NAME = 'vsearch'
 
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider

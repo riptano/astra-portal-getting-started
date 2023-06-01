@@ -182,7 +182,7 @@
       "skillLevel": "Beginner",
       "timeToComplete": "15 minutes",
       "recommendedLinks": [{
-        "url": "https://cassioml.netlify.app/",
+        "url": "https://cassio.org/",
         "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
       }],
       "recommendedGuides": [

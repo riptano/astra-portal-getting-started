@@ -13,6 +13,14 @@ Discover how to set up a schema and load vector data with CQL, along with readin
 ## 1 Learn about Vector Seach
 Vector Search is a method of searching for similar vectors in a vector space. A vector is an array of numbers (floats) that represents a specific object or entity. In the context of databases, a vector could represent anything from an image to a document or even a user's behavior. Vector Search can be extremely useful in machine learning models, for instance in recommendation systems or image retrieval tasks where we want to find the most similar items to a given item.
 
+_What's in a Vector?_
+
+_It's certainly not intuitively clear what exactly the data in a vector is there to represent. How does a piece of data get converted into a vector, and why do we want that in the first place? Well, the second question is answered by this guide. When we have data in the form of a vector, it's computationally simple to compare two pieces of data for similarity by measuring how close vectors are to each other. Which means that if we know how to represent a particular piece of data as a vector, then we have a way to find similar data based on the vector proximity. So, the utility is pretty apparent, but we still haven't answered "how"._
+
+_The process by which data is converted into a vector is called "embedding". There are various embedding libraries for all kinds of different data types and purposes. An embedding library analyzes a datum in the context of the data type that it was created for, and outputs a vector representation. Input that is substantially similar will produce output vectors that are geometrically close, and inputs that bear no similarity will be geometrically far apart._ 
+
+Now that you have a better understanding of what a vector is and how it’s used, let’s create a vector search enabled database and explore a bit.
+
 ## 2 Create a Vector Search enabled database
 First, create a vector search enabled database with the following database and keyspace name with the button below.
 
@@ -26,7 +34,7 @@ vector_search_db
 vsearch
 ```
 
-<<createDatabase>>
+<<createVectorDatabase>>
   
 _This only takes a couple minutes. Once your database is ACTIVE, continue on to the next section._
   
@@ -36,7 +44,7 @@ The next step is to create tables.
 ### 3a Launch the CQL Console and login to the database
 Open the CQL Console using the button below.
   
-_You may want to put the console and this guide side by side for easy copying._
+_We recommend opening the console and this guide simultaneously for easy copying._
   
 <<launchCQLConsole>>
   
@@ -85,7 +93,7 @@ These numbers are a compact way to represent complex data in a way that makes it
 Now take a look at how to read the data with a SELECT statement.
 
 ```sql
-SELECT * FROM vsearch.products WHERE item_vector ANN OF [3.4, 7.8, 9.1] LIMIT 1;
+SELECT * FROM vsearch.products ORDER BY item_vector ANN OF [3.4, 7.8, 9.1] LIMIT 1;
 ```
 
 Given the explanation above, this query is asking "give me the item most similar in price (3.4), weight (7.8), and number of reviews (9.1)" compared to the other products in the table.
@@ -130,38 +138,50 @@ SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_
 ASTRA_CLIENT_ID = '<<YOUR_CLIENT_ID>>'
 ASTRA_CLIENT_SECRET = '<<YOUR_CLIENT_SECRET>>'
 KEYSPACE_NAME = 'vsearch'
+TABLE_NAME = 'products'
 
-from cassandra.cluster import Cluster
+print("Staring guide example")
+from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
 from cassandra.auth import PlainTextAuthProvider
+from cassandra import ConsistencyLevel
 
 cloud_config = {
    'secure_connect_bundle': SECURE_CONNECT_BUNDLE_PATH
 }
 auth_provider = PlainTextAuthProvider(ASTRA_CLIENT_ID, ASTRA_CLIENT_SECRET)
-cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
+
+profile = ExecutionProfile(
+    consistency_level=ConsistencyLevel.LOCAL_QUORUM,
+)
+
+cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider, execution_profiles={EXEC_PROFILE_DEFAULT: profile})
 session = cluster.connect()
 
-session.execute("create table {KEYSPACE_NAME}.foo(i int primary key, j float vector[3])")
-session.execute("create custom index ann_index on {KEYSPACE_NAME}.foo(j) using 'StorageAttachedIndex'")
-session.execute("insert into {KEYSPACE_NAME}.foo (i, j) values (1, [8, 2.3, 58])")
-session.execute("insert into {KEYSPACE_NAME}.foo (i, j) values (2, [1.2, 3.4, 5.6])")
-session.execute("insert into {KEYSPACE_NAME}.foo (i, j) values (5, [23, 18, 3.9])")
-for row in session.execute("select j from {KEYSPACE_NAME}.foo where j ann of [3.4, 7.8, 9.1] limit 1"):
-   results = row[0]
-   assert len(results) == 3
-   print(results)
+# Create the products table with VECTOR support
+print(f"Creating table {TABLE_NAME} in keyspace {KEYSPACE_NAME}")
+session.execute(f"CREATE TABLE IF NOT EXISTS {KEYSPACE_NAME}.{TABLE_NAME} (id int PRIMARY KEY, name varchar, description varchar, item_vector VECTOR<float, 3>)")
+
+# Create an ANN index on the VECTOR field
+print(f"Creating index ann_index on table {TABLE_NAME} and inserting example data")
+session.execute(f"CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON {KEYSPACE_NAME}.{TABLE_NAME}(item_vector) USING 'StorageAttachedIndex'")
+
+# Insert a few example rows including VECTOR data
+session.execute(f"INSERT INTO {KEYSPACE_NAME}.{TABLE_NAME} (id, name, description, item_vector) VALUES (1, 'Coded Cleats', 'ChatGPT integrated sneakers that talk to you', [8, 2.3, 58])")
+session.execute(f"INSERT INTO {KEYSPACE_NAME}.{TABLE_NAME} (id, name, description, item_vector) VALUES (2, 'Logic Layers', 'An AI quilt to help you sleep forever', [1.2, 3.4, 5.6])")
+session.execute(f"INSERT INTO {KEYSPACE_NAME}.{TABLE_NAME} (id, name, description, item_vector) VALUES (5, 'Vision Vector Frame', 'A deep learning display that controls your mood', [23, 18, 3.9])")
+
+# Using an ANN search, find the 'nearest neighbors' closest to the provided vector [3.4, 7.8, 9.1]
+print(f"Returning 'nearest neighbor' using ANN search")
+for row in session.execute(f"SELECT name, description, item_vector FROM {KEYSPACE_NAME}.{TABLE_NAME} ORDER BY item_vector ANN OF [3.4, 7.8, 9.1] LIMIT 1"):
+   print("\t" + str(row))
 
 # Close the connection
 cluster.shutdown()
 ```
   
-### 6c Execute example python code
-
-```bash
-python vector_example.py
-```
-  
 ## 7 Summarize what you learned
 Wrapping up, this guide has empowered you with Vector Search basics. You've built a VSS-enabled Astra database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.
+
+Now that you’re done learning about the vector data type in Astra DB, you should explore [CassIO](https://cassio.org). Its purpose is to simplify database access for Generative AI or other Machine Learning workloads, providing ready-to-use tools for easy integration of Astra DB and Apache Cassandra in your next AI application.
 
 Happy searching.

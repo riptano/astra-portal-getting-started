@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS vsearch.products (
   id int PRIMARY KEY,
   name varchar,
   description varchar,
-  item_vector VECTOR<float, 3> //create a vector with 3 values
+  item_vector VECTOR<float, 3> //create a vector with 3 dimensions
 );
 ```
 

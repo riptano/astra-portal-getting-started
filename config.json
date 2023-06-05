@@ -185,9 +185,7 @@
         "url": "https://cassio.org/",
         "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
       }],
-      "recommendedGuides": [
-        "overviewOfAstraDB", "astraDBApplicationQuickstartPython"
-      ],
+      "recommendedGuides": [],
       "contentSrc": "gettingStartedWithVSS/README.md",
       "stepCount": 7
     }

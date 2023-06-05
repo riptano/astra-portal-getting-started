@@ -2,27 +2,21 @@
 Discover how to set up a schema and load vector data with CQL, along with reading that vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
 
 **In this guide, you will**
-- Learn about vector Search
+- Learn about Vector Search
 - Create a Vector Search enabled database
 - Create a schema
 - Load vector data with CQL
 - Read vector data with CQL
-- Read vector data with python
+- Read vector data with Python
 - Summarize what you learned
 
 ## 1 Learn about Vector Seach
 Vector Search is a method of searching for similar vectors in a vector space. A vector is an array of numbers (floats) that represents a specific object or entity. In the context of databases, a vector could represent anything from an image to a document or even a user's behavior. Vector Search can be extremely useful in machine learning models, for instance in recommendation systems or image retrieval tasks where we want to find the most similar items to a given item.
 
-_What's in a Vector?_
-
-_It's certainly not intuitively clear what exactly the data in a vector is there to represent. How does a piece of data get converted into a vector, and why do we want that in the first place? Well, the second question is answered by this guide. When we have data in the form of a vector, it's computationally simple to compare two pieces of data for similarity by measuring how close vectors are to each other. Which means that if we know how to represent a particular piece of data as a vector, then we have a way to find similar data based on the vector proximity. So, the utility is pretty apparent, but we still haven't answered "how"._
-
-_The process by which data is converted into a vector is called "embedding". There are various embedding libraries for all kinds of different data types and purposes. An embedding library analyzes a datum in the context of the data type that it was created for, and outputs a vector representation. Input that is substantially similar will produce output vectors that are geometrically close, and inputs that bear no similarity will be geometrically far apart._ 
-
-Now that you have a better understanding of what a vector is and how it’s used, let’s create a vector search enabled database and explore a bit.
+Now that you have a better understanding of what a vector is and how it’s used, let’s create a vector-search enabled database and explore a bit.
 
 ## 2 Create a Vector Search enabled database
-First, create a vector search enabled database with the following database and keyspace name with the button below.
+First, create a vector-search enabled database with the following database and keyspace name with the button below.
 
 **Database Name:** 
 ```shell 
@@ -36,17 +30,16 @@ vsearch
 
 <<createVectorDatabase>>
   
-_This only takes a couple minutes. Once your database is ACTIVE, continue on to the next section._
+_This only takes a couple minutes. Once your database is READY, continue on to the next section._
   
 ## 3 Create a schema
 The next step is to create tables.
   
 ### 3a Launch the CQL Console and login to the database
-Open the CQL Console using the button below.
-  
-_We recommend opening the console and this guide simultaneously for easy copying._
   
 <<launchCQLConsole>>
+
+_Opening the console in another tab allows for easy copying._
   
 ### 3b Create a table with the VECTOR type
 This table contains a VECTOR type example. Copy and paste the following command into your CQL console and press enter.
@@ -100,23 +93,20 @@ Given the explanation above, this query is asking "give me the item most similar
 
 _The vector values themselves are arbitrary and based on the dataset and embeddings used. They could be just about any range of floats._
 
-## 6 Read vector data with python
-Now that you’ve executed some basic CQL commands using the new vector data type, take this to the next level and experiment with some python code.
+## 6 Read vector data with Python
+Now that you’ve executed some basic CQL commands using the new vector data type, take this to the next level and experiment with some Python code.
 
 You’ll need to do this next part on your _localhost_. Ensure you have at least Python 3.8 installed and ready to go.
   
-### 6a Install python dependencies
+### 6a Install Python dependencies
 First, install the Cassandra Python driver with the following command on your _localhost_.
 
 ```python
 pip install git+https://github.com/datastax/python-driver.git@cep-vsearch#egg=cassandra-driver
 ```
-```python
-pip install os
-```
   
-### 6b Copy and configure example python code
-In order to connect the example application to your vector search enabled database, you’ll need a couple items first:
+### 6b Copy and configure example Python code
+In order to connect the example application to your vector-search enabled database, you’ll need a couple items first:
 
 - Have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
    - You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token.
@@ -128,7 +118,7 @@ In order to connect the example application to your vector search enabled databa
 
 <<downloadSCB>>
 
-Copy the following code into a file called ‘vector_example.py’ and paste in the SECURE_CONNECT_BUNDLE_PATH, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
+Copy the following code into a file called ‘vector_example.py’ and paste in the PATH_TO_YOUR_SECURE_BUNDLE, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
 
 ```python
 import os
@@ -150,9 +140,7 @@ cloud_config = {
 
 auth_provider = PlainTextAuthProvider(ASTRA_CLIENT_ID, ASTRA_CLIENT_SECRET)
 
-profile = ExecutionProfile(consistency_level=ConsistencyLevel.LOCAL_QUORUM)
-
-cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider, execution_profiles={EXEC_PROFILE_DEFAULT: profile})
+cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
 print(f"Creating table {TABLE_NAME} in keyspace {KEYSPACE_NAME}")

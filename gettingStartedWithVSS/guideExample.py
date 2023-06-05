@@ -3,9 +3,9 @@ from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
 from cassandra.auth import PlainTextAuthProvider
 from cassandra import ConsistencyLevel
 
-SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR_SECURE_BUNDLE>>')
-ASTRA_CLIENT_ID = '<<YOUR_CLIENT_ID>>'
-ASTRA_CLIENT_SECRET = '<<YOUR_CLIENT_SECRET>>'
+SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), 'secure-connect-for-silas-death.zip')
+ASTRA_CLIENT_ID = 'ZZHNzjGieeeQNyhIjuFDZlwy'
+ASTRA_CLIENT_SECRET = 'H5N,dXy8TbpNaWxWqme9qh_gpEH8b,IWnELaGRRufofEUGkQie53OG9b3bsTYGmZz1TciKc+Nwz85pIBgLDR_GChjjXvZh06BhqbOGbtOiScnZu3JMq4MiRr8fl5IPPm'
 KEYSPACE_NAME = 'vsearch'
 TABLE_NAME = 'products'
 
@@ -17,9 +17,10 @@ cloud_config = {
 
 auth_provider = PlainTextAuthProvider(ASTRA_CLIENT_ID, ASTRA_CLIENT_SECRET)
 
-profile = ExecutionProfile(consistency_level=ConsistencyLevel.LOCAL_QUORUM)
+#profile = ExecutionProfile(consistency_level=ConsistencyLevel.LOCAL_QUORUM)
 
-cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider, execution_profiles={EXEC_PROFILE_DEFAULT: profile})
+#cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider, execution_profiles={EXEC_PROFILE_DEFAULT: profile})
+cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
 print(f"Creating table {TABLE_NAME} in keyspace {KEYSPACE_NAME}")

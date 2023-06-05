@@ -1,19 +1,19 @@
 # Overview
-Stream real-time, human-readable blockchain data to your app with Astra Block. Simply request access to the feature within Astra (we'll enable it for your account within 24 hours) and you can create a blockchain database that auto updates as new blocks are mined.
+Empower your app with real-time, human-readable blockchain data using Astra Block. With Astra Block, clone a comprehensive blockchain database and enable subscriptions for automatic updates as new Ethereum blocks are mined.
 
 **In this guide, we'll**
-- Explore how to stream real-time blockchain data into your Astra database
-- Practice this new feature with example queries
-- Request access to try Astra Block
+- Create an Astra Block-ready database
+- Stream real-time blockchain data into your Astra database
+- Experiment with example queries
 
 Let's get started!
 
 ## 1 Introduction to Astra Block
-With Astra Block, you can stream real-time blockchain data directly to your Astra database. 
+With Astra Block, you can stream real-time blockchain data directly into your Astra database. 
 
-We currently support Ethereum, with Polygon and Bitcoin coming soon. Interested in support for other chains? [Let us know](mailto:blockchain@datastax.com).
+We currently support Ethereum, with Polygon and Bitcoin coming soon. Are you interested in support for other chains? [Let us know](mailto:blockchain@datastax.com).
 
-We also support the following data models:
+Astra Block also supports the following data models:
 - Assets
 - Blocks
 - Block numbers by date
@@ -27,10 +27,30 @@ We also support the following data models:
 - Traces
 - Transactions
 
-Interested in support for other data? [Let us know](mailto:blockchain@datastax.com).
+If you're interested in support for other types of data, [let us know](mailto:blockchain@datastax.com).
 
-## 2 Example Queries
-After creating your database, navigate to the CQL console and try the queries below:
+## 2 Cloning a Blockchain Database
+Astra Block offers flexible cloning options. You can choose between:
+
+- **Complete Dataset**: This option provides the complete blockchain dataset. It includes all existing data up to the point of cloning.
+
+- **Schema Only**: This is a lightweight option providing only the database structure, without any pre-existing data. It's an excellent starting point for experimenting with Astra Block. 
+
+We recommend beginners start with the 'Schema Only' option for a smoother introduction to Astra Block's powerful features.
+
+<<launchAstraBlockDialog>>
+
+## 3 Enabling Specific Data Sets
+After cloning your database, customize it to suit your needs. Navigate to the 'Block' tab, where you'll find options to enable specific data sets to which you wish to subscribe.
+
+If you chose the 'Schema Only' option during cloning, an additional 'Sync Historical Data' feature is available. This allows you to sync past data into your database, providing a comprehensive view of your chosen blockchain.
+
+Start customizing your database today and unlock the true potential of Astra Block!
+
+<<goToAstraBlockTab>>
+
+## 4 Example Queries
+Once you've created your database and subscribed to some data, navigate to the CQL console and try the following queries:
 
 Search for the first block number that occured on a date:
 ```sql
@@ -117,8 +137,4 @@ Search for human readable event signatures by event hash:
 SELECT * FROM event_signatures WHERE event_hex='0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef';
 ```
 
-## 3 Request Access to Astra Block
-You're now ready to give Astra Block a try! Request access by clicking the button below:
-
-<<launchRequestAstraBlock>>
-
+These queries will help you explore the power and flexibility of Astra Block, letting you understand how to search for specific information across different aspects of the blockchain data.

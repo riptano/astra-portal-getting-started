@@ -182,4 +182,21 @@ Wrapping up, this guide has empowered you with Vector Search basics. You've buil
 
 Now that you’re done learning about the vector data type in Astra DB, you should explore [CassIO](https://cassio.org). Its purpose is to simplify database access for Generative AI or other Machine Learning workloads, providing ready-to-use tools for easy integration of Astra DB and Apache Cassandra in your next AI application.
 
+Here’s a code excerpt from [CassIO](https://cassio.org). Click the “[Getting Started with CassIO](https://cassio.org)” link to learn more.
+
+```python
+from langchain.vectorstores.cassandra import Cassandra
+
+index_creator = VectorstoreIndexCreator(
+vectorstore_cls=Cassandra,
+embedding=myEmbedding,
+...
+)
+
+loader = TextLoader('texts/amontillado.txt', encoding='utf8')
+index = index_creator.from_loaders([loader])
+
+answer = index.query("Who is Luchesi?")
+```
+
 Happy searching.

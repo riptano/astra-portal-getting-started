@@ -178,7 +178,7 @@
     "gettingStartedWithVSS": {
       "locale": "en-us",
       "title": "Getting Started with Vector Search ⚡️",
-      "description": "This guide teaches Vector Search basics, creating schema, and reading vector data with CQL and Python.",
+      "description": "Learn Vector Search basics like creating a schema and reading vector data with CQL and Python",
       "skillLevel": "Beginner",
       "timeToComplete": "15 minutes",
       "recommendedLinks": [{

@@ -1,9 +1,10 @@
 import os
-from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
+from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 from cassandra import ConsistencyLevel
 
-SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR_SECURE_BUNDLE>>')
+# Replace these values with the path to your secure connect bundle and the database credentials
+SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<YOUR_SECURE_CONNECT_BUNDLE_PATH>>')
 ASTRA_CLIENT_ID = '<<YOUR_CLIENT_ID>>'
 ASTRA_CLIENT_SECRET = '<<YOUR_CLIENT_SECRET>>'
 

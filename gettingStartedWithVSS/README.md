@@ -1,22 +1,13 @@
 # Overview
 Discover how to set up a schema and load vector data with CQL, along with reading that vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
 
-**In this guide, you will**
-- Learn about Vector Search
-- Create a Vector Search enabled database
-- Create a schema
-- Load vector data with CQL
-- Read vector data with CQL
-- Read vector data with Python
-- Summarize what you learned
-
 ## 1 Learn about Vector Seach
 Vector Search is a method of searching for similar vectors in a vector space. A vector is an array of numbers (floats) that represents a specific object or entity. In the context of databases, a vector could represent anything from an image to a document or even a user's behavior. Vector Search can be extremely useful in machine learning models, for instance in recommendation systems or image retrieval tasks where we want to find the most similar items to a given item.
 
-Now that you have a better understanding of what a vector is and how it’s used, let’s create a vector-search enabled database and explore a bit.
+Now that you have a better understanding of what a vector is and how it’s used, let’s create a vector-enabled database and explore a bit.
 
-## 2 Create a Vector Search enabled database
-First, create a vector-search enabled database with the following database and keyspace name with the button below.
+## 2 Create a database with Vector Search
+First, create a vector-enabled database with the following database and keyspace name with the button below.
 
 **Database Name:** 
 ```shell 
@@ -30,19 +21,15 @@ vsearch
 
 <<createVectorDatabase>>
   
-_This only takes a couple minutes. Once your database is READY, continue on to the next section._
+_This only takes a couple minutes. Once your database is ready, continue on to the next section._
   
-## 3 Create a schema
-The next step is to create tables.
-  
-### 3a Launch the CQL Console and login to the database
+## 3 Create a table
+Start by opening the CQL console with the button below. This will open the CQL console in a new tab, which should allow for easier copying of the following code blocks.
   
 <<launchCQLConsole>>
-
-_Opening the console in another tab allows for easy copying._
   
-### 3b Create a table with the VECTOR type
-This table contains a VECTOR type example. Copy and paste the following command into your CQL console and press enter.
+### Create a table with the VECTOR type
+This table contains a VECTOR type example. Copy and paste the following commands into your CQL console and press enter.
   
 ```sql
 CREATE TABLE IF NOT EXISTS vsearch.products (
@@ -60,7 +47,7 @@ CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON vsearch.products(item_vector) USI
 _Embedding vectors usually have several hundred dimensions: here, for the sake of clarity, we will work with a simplified embedding space with just five dimensions._
 
 ## 4 Load vector data with CQL
-You created the _products_ table in the step above with a VECTOR type. Now insert the following data into the table using the new type.
+You created the **products** table in the step above with a VECTOR type. Now insert the following data into the table using the new type.
 
 ```sql
 INSERT INTO vsearch.products (id, name, description, item_vector) 
@@ -68,7 +55,7 @@ VALUES (
    1, //id
    'Coded Cleats', //name
    'ChatGPT integrated sneakers that talk to you', //description
-   [0.1, 0.15, 0.3, 0.12, 0.05] //price, weight, numReviews
+   [0.1, 0.15, 0.3, 0.12, 0.05] //item_vector
 );
 
 INSERT INTO vsearch.products (id, name, description, item_vector) 
@@ -97,36 +84,40 @@ Now that you’ve executed some basic CQL commands using the new vector data typ
 
 You’ll need to do this next part on your _localhost_. Ensure you have at least Python 3.8 installed and ready to go.
   
-### 6a Install Python dependencies
+### Install Python dependencies
 First, install the Cassandra Python driver with the following command on your _localhost_.
 
 ```python
 pip install cassandra-driver
 ```
+_Depending on your OS and installed Python versions, you might need to use “pip3” for the command above._
   
-### 6b Copy and configure example Python code
+### Copy and configure example Python code
 In order to connect the example application to your vector-search enabled database, you’ll need a couple items first:
 
-- Have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
-   - You will need both the CLIENT_ID and CLIENT_SECRET values from the generated token.
-   - Recommended role: "Database Administrator"
+Have an Astra DB Token ready. If you need to create one, you can do that here. Be sure to keep this information handy. 
+   - **Recommended Role:** Database Administrator
+   - You will need both the **CLIENT_ID** and **CLIENT_SECRET** values from the generated token
 
 <<createToken>>
 
-- Now, download the secure connect bundle for this database.
+Now, download the Secure Connect Bundle for this database.
 
 <<downloadSCB>>
 
-Copy the following code into a file called ‘vector_example.py’ and paste in the PATH_TO_YOUR_SECURE_BUNDLE, ASTRA_CLIENT_ID, and ASTRA_CLIENT_SECRET **variables from the information provided a moment ago**.
+Copy the following code into a file named ‘vector_example.py’ and update the values for the following variables: 
+- **SECURE_CONNECT_BUNDLE_PATH**
+- **ASTRA_CLIENT_ID**
+- **ASTRA_CLIENT_SECRET** 
 
 ```python
 import os
-from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
+from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 from cassandra import ConsistencyLevel
 
 # Replace these values with the path to your secure connect bundle and the database credentials
-SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR_SECURE_BUNDLE>>')
+SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<YOUR_SECURE_CONNECT_BUNDLE_PATH>>')
 ASTRA_CLIENT_ID = '<<YOUR_CLIENT_ID>>'
 ASTRA_CLIENT_SECRET = '<<YOUR_CLIENT_SECRET>>'
 
@@ -165,7 +156,7 @@ cluster.shutdown()
 ```
   
 ## 7 Summarize what you learned
-Wrapping up, this guide has empowered you with Vector Search basics. You've built a VSS-enabled Astra database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.
+Wrapping up, this guide has empowered you with Vector Search basics. You've built a vector-enabled database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.
 
 Now that you’re done learning about the vector data type in Astra DB, you should explore [CassIO](https://cassio.org). Its purpose is to simplify database access for Generative AI or other Machine Learning workloads, providing ready-to-use tools for easy integration of Astra DB and Apache Cassandra in your next AI application.
 
@@ -186,4 +177,4 @@ index = index_creator.from_loaders([loader])
 answer = index.query("Who is Luchesi?")
 ```
 
-Happy searching.
+Happy searching 🎉

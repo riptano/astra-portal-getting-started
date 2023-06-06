@@ -1,5 +1,19 @@
 {
   "guides": {
+    "gettingStartedWithVSS": {
+      "locale": "en-us",
+      "title": "Getting Started with Vector Search ⚡️",
+      "description": "Learn Vector Search basics like creating a schema and reading vector data with CQL and Python",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "https://cassio.org/",
+        "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
+      }],
+      "contentSrc": "gettingStartedWithVSS/README.md",
+      "stepCount": 7
+    },
+
     "overviewOfAstraDB": {
       "locale": "en-us",
       "title": "Overview of Astra DB 🌱",
@@ -39,23 +53,6 @@
       ],
       "contentSrc": "introToDataWithAstra/README.md",
       "stepCount": 4
-    },
-    
-    "gettingStartedWithAstraBlock": {
-      "locale": "en-us",
-      "title": "Build Web3 Apps with Astra Block ⚡️",
-      "description": "Learn how to stream real-time, human-readable blockchain data to your Astra database.",
-      "skillLevel": "Beginner",
-      "timeToComplete": "10 minutes",
-      "recommendedLinks": [{
-        "url": "https://github.com/datastax/block-explorer",
-        "text": "Block Explorer Sample App"
-      }],
-      "recommendedGuides": [
-        "overviewOfAstraDB", "introToDataWithAstraDB"
-      ],
-      "contentSrc": "gettingStartedWithAstraBlock/README.md",
-      "stepCount": 3
     },
 
     "astracliGettingStarted": {
@@ -175,18 +172,21 @@
       "stepCount": 4
     },
 
-    "gettingStartedWithVSS": {
+    "gettingStartedWithAstraBlock": {
       "locale": "en-us",
-      "title": "Getting Started with Vector Search ⚡️",
-      "description": "This guide teaches Vector Search basics, creating schema, and reading vector data with CQL and Python.",
+      "title": "Build Web3 Apps with Astra Block ⚡️",
+      "description": "Learn how to stream real-time, human-readable blockchain data to your Astra database.",
       "skillLevel": "Beginner",
-      "timeToComplete": "15 minutes",
+      "timeToComplete": "10 minutes",
       "recommendedLinks": [{
-        "url": "https://cassio.org/",
-        "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
+        "url": "https://github.com/datastax/block-explorer",
+        "text": "Block Explorer Sample App"
       }],
-      "contentSrc": "gettingStartedWithVSS/README.md",
-      "stepCount": 7
+      "recommendedGuides": [
+        "overviewOfAstraDB", "introToDataWithAstraDB"
+      ],
+      "contentSrc": "gettingStartedWithAstraBlock/README.md",
+      "stepCount": 3
     }
 
   }

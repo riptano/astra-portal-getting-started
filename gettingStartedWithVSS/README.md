@@ -49,13 +49,15 @@ CREATE TABLE IF NOT EXISTS vsearch.products (
   id int PRIMARY KEY,
   name varchar,
   description varchar,
-  item_vector VECTOR<float, 3> //create a vector with 3 dimensions
+  item_vector VECTOR<float, 5> //create a 5-dimensional embedding
 );
 ```
 
 ```sql
 CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON vsearch.products(item_vector) USING 'StorageAttachedIndex';
 ```
+
+_Embedding vectors usually have several hundred dimensions: here, for the sake of clarity, we will work with a simplified embedding space with just five dimensions._
 
 ## 4 Load vector data with CQL
 You created the _products_ table in the step above with a VECTOR type. Now insert the following data into the table using the new type.
@@ -66,32 +68,29 @@ VALUES (
    1, //id
    'Coded Cleats', //name
    'ChatGPT integrated sneakers that talk to you', //description
-   [8, 2.3, 58] //price, weight, numReviews
+   [0.1, 0.15, 0.3, 0.12, 0.05] //price, weight, numReviews
 );
+
 INSERT INTO vsearch.products (id, name, description, item_vector) 
-   VALUES (2, 'Logic Layers', 'An AI quilt to help you sleep forever', [1.2, 3.4, 5.6]);
+   VALUES (2, 'Logic Layers', 'An AI quilt to help you sleep forever', [0.45, 0.09, 0.01, 0.2, 0.11]);
+
 INSERT INTO vsearch.products (id, name, description, item_vector) 
-   VALUES (5, 'Vision Vector Frame', 'A deep learning display that controls your mood', [23, 18, 3.9]);
+   VALUES (5, 'Vision Vector Frame', 'A deep learning display that controls your mood', [0.1, 0.05, 0.08, 0.3, 0.6]);
 ```
 
-In the context of Vector Search, a vector is an array of numbers (floats) that represents a specific object or entity. The numbers in the vector are features that describe the object or entity.
+_In the context of Vector Search, a vector is an array of numbers (floats) that represents a specific object or entity. The numbers in the vector are features that describe the object or entity._
 
-In the examples given, _item_vector_ is a VECTOR type. Each array that you're inserting into _item_vector_ ([8, 2.3, 58], [1.2, 3.4, 5.6], [23, 18, 3.9]) is a vector. These vectors might represent anything from an image to a document or even a user's behavior. The specific meaning of the numbers in each vector depends on the context in which they're used.
-
-For instance, if you were using vectors to represent products in an ecommerce application, the numbers in the vector could represent various characteristics of each product - things like its price, weight, or number of reviews. If the vectors represented user behavior, they might include things like the number of times a user visited a certain page, the number of items they purchased, etc.
-
-These numbers are a compact way to represent complex data in a way that makes it easy to compare and contrast different entities (like products or user behaviors) in a vector space. That's what makes Vector Similarity Search a powerful tool for tasks like recommendation systems, image retrieval, and many others.
+_Note that the vectors above are a fictional, albeit somewhat realistic example. Usually embedding vectors have unit length, but this does not have to always be the case. In fact, you can do any kind of vector search with Astra DB, not limited to embeddings: for instance, you could use this feature to locate the star system closest to a given point in the universe, provided you have its 3-D coordinates…_
 
 ## 5 Read vector data with CQL
-Now take a look at how to read the data with a SELECT statement.
+Let's say a customer entered "An AI-powered display to alter how I feel" in the search box of the e-commerce website. The superpower of embedding vectors is that they can turn such a description into a vector as well, say [0.15, 0.1, 0.1, 0.35, 0.55], that happens to be geometrically closer to the item with the most similar description.
+So, once you get the embedding function to output this vector for the search-box sentence, all you have to do is to search the table for a similar item.
+
+Let's look for a similar item with a SELECT statement.
 
 ```sql
-SELECT * FROM vsearch.products ORDER BY item_vector ANN OF [3.4, 7.8, 9.1] LIMIT 1;
+SELECT * FROM vsearch.products ORDER BY item_vector ANN OF [0.15, 0.1, 0.1, 0.35, 0.55] LIMIT 1;
 ```
-
-Given the explanation above, this query is asking "give me the item most similar in price (3.4), weight (7.8), and number of reviews (9.1)" compared to the other products in the table.
-
-_The vector values themselves are arbitrary and based on the dataset and embeddings used. They could be just about any range of floats._
 
 ## 6 Read vector data with Python
 Now that you’ve executed some basic CQL commands using the new vector data type, take this to the next level and experiment with some Python code.
@@ -102,7 +101,7 @@ You’ll need to do this next part on your _localhost_. Ensure you have at least
 First, install the Cassandra Python driver with the following command on your _localhost_.
 
 ```python
-pip install git+https://github.com/datastax/python-driver.git@cep-vsearch#egg=cassandra-driver
+pip install cassandra-driver
 ```
   
 ### 6b Copy and configure example Python code
@@ -126,9 +125,11 @@ from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
 from cassandra.auth import PlainTextAuthProvider
 from cassandra import ConsistencyLevel
 
+# Replace these values with the path to your secure connect bundle and the database credentials
 SECURE_CONNECT_BUNDLE_PATH = os.path.join(os.path.dirname(__file__), '<<PATH_TO_YOUR_SECURE_BUNDLE>>')
 ASTRA_CLIENT_ID = '<<YOUR_CLIENT_ID>>'
 ASTRA_CLIENT_SECRET = '<<YOUR_CLIENT_SECRET>>'
+
 KEYSPACE_NAME = 'vsearch'
 TABLE_NAME = 'products'
 
@@ -137,29 +138,27 @@ print("Starting guide example")
 cloud_config = {
    'secure_connect_bundle': SECURE_CONNECT_BUNDLE_PATH
 }
-
 auth_provider = PlainTextAuthProvider(ASTRA_CLIENT_ID, ASTRA_CLIENT_SECRET)
-
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
 print(f"Creating table {TABLE_NAME} in keyspace {KEYSPACE_NAME}")
-session.execute(f"CREATE TABLE IF NOT EXISTS {KEYSPACE_NAME}.{TABLE_NAME} (id int PRIMARY KEY, name varchar, description varchar, item_vector VECTOR<float, 3>)")
+session.execute(f"CREATE TABLE IF NOT EXISTS {KEYSPACE_NAME}.{TABLE_NAME} (id int PRIMARY KEY, name varchar, description varchar, item_vector VECTOR<float, 5>)")
 
 print(f"Creating index ann_index on table {TABLE_NAME} and inserting example data")
 session.execute(f"CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON {KEYSPACE_NAME}.{TABLE_NAME}(item_vector) USING 'StorageAttachedIndex'")
 
 product_data = [
-    (1, 'Coded Cleats', 'ChatGPT integrated sneakers that talk to you', [8, 2.3, 58]),
-    (2, 'Logic Layers', 'An AI quilt to help you sleep forever', [1.2, 3.4, 5.6]),
-    (5, 'Vision Vector Frame', 'A deep learning display that controls your mood', [23, 18, 3.9])
+    (1, 'Coded Cleats', 'ChatGPT integrated sneakers that talk to you', [0.1, 0.15, 0.3, 0.12, 0.05]),
+    (2, 'Logic Layers', 'An AI quilt to help you sleep forever', [0.45, 0.09, 0.01, 0.2, 0.11]),
+    (5, 'Vision Vector Frame', 'A deep learning display that controls your mood', [0.1, 0.05, 0.08, 0.3, 0.6])
 ]
 
 for product in product_data:
     session.execute(f"INSERT INTO {KEYSPACE_NAME}.{TABLE_NAME} (id, name, description, item_vector) VALUES {product}")
 
 print(f"Returning 'nearest neighbor' using ANN search")
-for row in session.execute(f"SELECT name, description, item_vector FROM {KEYSPACE_NAME}.{TABLE_NAME} ORDER BY item_vector ANN OF [3.4, 7.8, 9.1] LIMIT 1"):
+for row in session.execute(f"SELECT name, description, item_vector FROM {KEYSPACE_NAME}.{TABLE_NAME} ORDER BY item_vector ANN OF [0.15, 0.1, 0.1, 0.35, 0.55] LIMIT 1"):
    print("\t" + str(row))
 
 cluster.shutdown()

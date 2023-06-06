@@ -38,9 +38,7 @@ CREATE TABLE IF NOT EXISTS vsearch.products (
   description varchar,
   item_vector VECTOR<float, 5> //create a 5-dimensional embedding
 );
-```
 
-```sql
 CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON vsearch.products(item_vector) USING 'StorageAttachedIndex';
 ```
 

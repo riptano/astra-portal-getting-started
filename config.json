@@ -177,8 +177,8 @@
 
     "gettingStartedWithVSS": {
       "locale": "en-us",
-      "title": "Getting Started with Vector Similarity Search in Astra",
-      "description": "Learn the ropes of VSS using Astra and Python",
+      "title": "Getting Started with Vector Search ⚡️",
+      "description": "This guide teaches Vector Search basics, creating schema, and reading vector data with CQL and Python.",
       "skillLevel": "Beginner",
       "timeToComplete": "15 minutes",
       "recommendedLinks": [{

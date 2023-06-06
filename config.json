@@ -1,19 +1,5 @@
 {
   "guides": {
-    "gettingStartedWithVSS": {
-      "locale": "en-us",
-      "title": "Getting Started with Vector Search ⚡️",
-      "description": "Learn Vector Search basics like creating a schema and reading vector data with CQL and Python",
-      "skillLevel": "Beginner",
-      "timeToComplete": "15 minutes",
-      "recommendedLinks": [{
-        "url": "https://cassio.org/",
-        "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
-      }],
-      "contentSrc": "gettingStartedWithVSS/README.md",
-      "stepCount": 7
-    },
-
     "overviewOfAstraDB": {
       "locale": "en-us",
       "title": "Overview of Astra DB 🌱",
@@ -187,6 +173,20 @@
       ],
       "contentSrc": "gettingStartedWithAstraBlock/README.md",
       "stepCount": 3
+    },
+
+    "gettingStartedWithVSS": {
+      "locale": "en-us",
+      "title": "Getting Started with Vector Search ⚡️",
+      "description": "Learn Vector Search basics like creating a schema and reading vector data with CQL and Python",
+      "skillLevel": "Beginner",
+      "timeToComplete": "15 minutes",
+      "recommendedLinks": [{
+        "url": "https://cassio.org/",
+        "text": "Getting Started with CassIO: Integrating Apache Cassandra® with ML/GenAI Workloads"
+      }],
+      "contentSrc": "gettingStartedWithVSS/README.md",
+      "stepCount": 7
     }
 
   }

@@ -34,9 +34,9 @@ This table contains a VECTOR type example. Copy and paste the following commands
 ```sql
 CREATE TABLE IF NOT EXISTS vsearch.products (
   id int PRIMARY KEY,
-  name varchar,
-  description varchar,
-  item_vector VECTOR<float, 5> //create a 5-dimensional embedding
+  name TEXT,
+  description TEXT,
+  item_vector VECTOR<FLOAT, 5> //create a 5-dimensional embedding
 );
 
 CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON vsearch.products(item_vector) USING 'StorageAttachedIndex';
@@ -132,7 +132,7 @@ cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
 print(f"Creating table {TABLE_NAME} in keyspace {KEYSPACE_NAME}")
-session.execute(f"CREATE TABLE IF NOT EXISTS {KEYSPACE_NAME}.{TABLE_NAME} (id int PRIMARY KEY, name varchar, description varchar, item_vector VECTOR<float, 5>)")
+session.execute(f"CREATE TABLE IF NOT EXISTS {KEYSPACE_NAME}.{TABLE_NAME} (id int PRIMARY KEY, name TEXT, description TEXT, item_vector VECTOR<FLOAT, 5>)")
 
 print(f"Creating index ann_index on table {TABLE_NAME} and inserting example data")
 session.execute(f"CREATE CUSTOM INDEX IF NOT EXISTS ann_index ON {KEYSPACE_NAME}.{TABLE_NAME}(item_vector) USING 'StorageAttachedIndex'")
@@ -152,6 +152,12 @@ for row in session.execute(f"SELECT name, description, item_vector FROM {KEYSPAC
 
 cluster.shutdown()
 ```
+
+### Run your code!
+```python
+python vector_example.py
+```
+_Depending on your OS and installed Python versions, you might need to use “python3” for the command above._
   
 ## 7 Summarize what you learned
 Wrapping up, this guide has empowered you with Vector Search basics. You've built a vector-enabled database, interacted with vector data using CQL and Python, and applied hands-on code examples. This is just a taste of what is to come.

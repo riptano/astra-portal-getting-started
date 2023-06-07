@@ -1,7 +1,7 @@
 # Overview
 Discover how to set up a schema and load vector data with CQL, along with reading that vector data using both CQL and Python. Get hands-on experience with actual code examples and the opportunity to try it out on your local machine. By the end of this guide, you’ll have a schema, data, and a working code example to play with.
 
-## 1 Learn about Vector Seach
+## 1 Learn about Vector Search
 Vector Search is a method of searching for similar vectors in a vector space. A vector is an array of numbers (floats) that represents a specific object or entity. In the context of databases, a vector could represent anything from an image to a document or even a user's behavior. Vector Search can be extremely useful in machine learning models, for instance in recommendation systems or image retrieval tasks where we want to find the most similar items to a given item.
 
 Now that you have a better understanding of what a vector is and how it’s used, let’s create a vector-enabled database and explore a bit.
